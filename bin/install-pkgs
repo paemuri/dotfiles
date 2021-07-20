@@ -17,7 +17,6 @@ paru -Sr \
     jq \
     lutris \
     neovim \
-    nnn \
     nodejs \
     openssh \
     otf-fira-mono \
@@ -40,11 +39,9 @@ paru -Sr \
 paru -Sa \
     bisq \
     brave-bin \
-    greetd \
-    greetd-tuigreet-bin \
     grimshot \
-    swaylock-effects-git \
-    vscodium-bin
+    lf-bin \
+    swaylock-effects-git
 
 # Sound.
 paru -Sr

@@ -15,9 +15,9 @@ bindsym $mod+control+e exec swaymsg exit
 # Software control.
 bindsym $mod+f     fullscreen toggle
 bindsym $mod+q     kill
-bindsym $mod+t     exec alacritty
+bindsym $mod+t     exec alacritty -t "alacritty"
 bindsym $mod+b     exec qutebrowser
-bindsym $mod+e     exec alacritty -e ranger
+bindsym $mod+e     exec alacritty -t "files" -e lf
 bindsym $mod+space exec bemenu-run
 
 # Window.
