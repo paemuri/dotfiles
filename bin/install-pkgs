@@ -2,49 +2,58 @@
 
 paru -Syyu
 
-paru -Sr \
+paru -S \
     acpi \
     alacritty \
-    bemenu \
-    bemenu-wayland \
     bluez \
     bluez-utils \
     brightnessctl \
     discord \
-    fish \
-    glfw-wayland \
     htop \
     jq \
-    lutris \
     neovim \
-    nodejs \
     openssh \
     otf-fira-mono \
     otf-font-awesome \
-    qt5-wayland \
     rtorrent \
-    rustup \
     sl \
-    steam \
-    sway \
     telegram-desktop \
     the_silver_searcher \
     unzip \
     mpv \
-    wayland \
-    wl-clipboard \
-    xorg-xwayland \
     zip
-
 paru -Sa \
     bisq \
     brave-bin \
+    lf-bin
+
+# Games.
+paru -S \
+    lutris \
+    steam
+
+# Langs.
+paru -S \
+    fish \
+    nodejs \
+    rustup
+
+# Wayland desktop.
+paru -S \
+    bemenu \
+    bemenu-wayland \
+    glfw-wayland \
+    qt5-wayland \
+    sway \
+    wayland \
+    wl-clipboard \
+    xorg-xwayland
+paru -Sa \
     grimshot \
-    lf-bin \
     swaylock-effects-git
 
 # Sound.
-paru -Sr
+paru -S
     alsa-firmware \
     pipewire \
     pipewire-alsa \
@@ -53,9 +62,8 @@ paru -Sa \
     ponymix
 
 # Virt-manager.
-paru -Sr \
+paru -S \
     iptables-nft \
-    openbsd-netcat \
     bridge-utils \
     dnsmasq \
     virt-manager \
