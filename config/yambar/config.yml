@@ -1,18 +1,128 @@
 bar:
   height: 20
-  location: top
-  foreground: fdf4c1ff
-  background: 282828ff
+  location: "top"
+  foreground: "fdf4c1ff"
+  background: "282828ff"
   monitor: "*"
   font: "Fira Mono" 
-  # right-margin: 2
+  spacing: 5
 
   border:
     width: 0
 
-  right:
-    - clock:
-        time-format: "%H:%M:%S"
-        date-format: "%Y-%m-%d"
+  left:
+    - river:
         content:
-          - string: {text: "{date} {time}"}
+          map:
+            tag: state
+            values:
+              focused:
+                string:
+                  margin: 5
+                  text: "{id}"
+                  foreground: "79740eff"
+                  deco:
+                    underline:
+                      size: 2
+                      color: "79740eff"
+              unfocused:
+                string:
+                  margin: 5
+                  text: "{id}"
+              invisible:
+                map:
+                  tag: occupied
+                  values:
+                    false:
+                      empty: {}
+                    true:
+                      string:
+                        margin: 5
+                        text: "{id}"
+
+  right:
+    - backlight:
+        name: "amdgpu_bl1"
+        content:
+          - string:
+              font: "Font Awesome 5 Free"
+              text: ""
+          - string:
+              text: "{percent}%"
+    - network:
+        name: "wlan0"
+        content:
+          - string:
+              font: "Font Awesome 5 Free"
+              text: ""
+          - string:
+              text: "{state}"
+    - battery:
+        name: "BAT1" 
+        content:
+          map:
+            tag: state
+            default:
+              ramp:
+                tag: "capacity"
+                items:
+                  - list:
+                      items:
+                        - string:
+                            font: "Font Awesome 5 Free"
+                            text: ""
+                        - string:
+                            text: "{capacity}%"
+                  - list:
+                      items:
+                        - string:
+                            font: "Font Awesome 5 Free"
+                            text: " "
+                        - string:
+                            text: "{capacity}%"
+                  - list:
+                      items:
+                        - string:
+                            font: "Font Awesome 5 Free"
+                            text: " "
+                        - string:
+                            text: "{capacity}%"
+                  - list:
+                      items:
+                        - string:
+                            font: "Font Awesome 5 Free"
+                            text: " "
+                        - string:
+                            text: "{capacity}%"
+                  - list:
+                      items:
+                        - string:
+                            font: "Font Awesome 5 Free"
+                            text: " "
+                        - string:
+                            text: "{capacity}%"
+            values:
+              full:
+                - list:
+                    items:
+                      - string:
+                          font: "Font Awesome 5 Free"
+                          text: ""
+                      - string:
+                          text: "{capacity}%"
+              charging:
+                - list:
+                    items:
+                      - string:
+                          font: "Font Awesome 5 Free"
+                          text: ""
+                      - string:
+                          text: "{capacity}%"
+    - clock:
+        date-format: "%Y-%m-%d"
+        time-format: "%H:%M:%S"
+        content:
+          - string:
+              right-margin: 5
+              text: "{date} {time}"
+
