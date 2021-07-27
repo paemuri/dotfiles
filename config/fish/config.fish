@@ -17,7 +17,7 @@ set fish_color_search_match green
 if status --is-login
 and test -z "$DISPLAY"
 and test (tty) = "/dev/tty1"
-    exec sway
+    exec river
 end
 
 if status --is-interactive

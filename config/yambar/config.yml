@@ -1,0 +1,18 @@
+bar:
+  height: 20
+  location: top
+  foreground: fdf4c1ff
+  background: 282828ff
+  monitor: "*"
+  font: "Fira Mono" 
+  # right-margin: 2
+
+  border:
+    width: 0
+
+  right:
+    - clock:
+        time-format: "%H:%M:%S"
+        date-format: "%Y-%m-%d"
+        content:
+          - string: {text: "{date} {time}"}
