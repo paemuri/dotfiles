@@ -4,18 +4,18 @@ alt="Mod1"
 super="Mod4"
 
 # System Control.
-riverctl map normal $super+Control L spawn swaylock
-riverctl map normal $super+Control Z spawn $XDG_CONFIG_HOME/river/config
-riverctl map normal $super+Control R spawn reboot
-riverctl map normal $super+Control Q spawn poweroff
+riverctl map normal $super+Control L spawn "swaylock"
+riverctl map normal $super+Control Z spawn "$XDG_CONFIG_HOME/river/config"
+riverctl map normal $super+Control R spawn "reboot"
+riverctl map normal $super+Control Q spawn "poweroff"
 riverctl map normal $super+Control E exit
 
 # Software Control.
 riverctl map normal $super       F     toggle-fullscreen
 riverctl map normal $super+Shift F     toggle-float
 riverctl map normal $super       Q     close
-riverctl map normal $super       Space spawn bemenu-run
-riverctl map normal $super       B     spawn qutebrowser
+riverctl map normal $super       Space spawn "bemenu-run"
+riverctl map normal $super       B     spawn "qutebrowser"
 riverctl map normal $super       T     spawn "alacritty -t alacritty"
 riverctl map normal $super       E     spawn "alacritty -t files -e lf"
 
@@ -54,50 +54,40 @@ all_tags=$(((1 << 32) - 1))
 riverctl map normal $super       0 set-focused-tags $all_tags
 riverctl map normal $super+Shift 0 set-view-tags $all_tags
 
-# riverctl declare-mode passthrough
-# riverctl map normal $super F11 enter-mode passthrough
-# riverctl map passthrough $super F11 enter-mode normal
 
 # Screenshot.
-riverctl map normal None          Print spawn grimshot copy output
-riverctl map normal Control       Print spawn grimshot copy area
-riverctl map normal Shift         Print spawn grimshot save output
-riverctl map normal Shift+Control Print spawn grimshot save area
+riverctl map normal None          Print spawn "grimshot copy output"
+riverctl map normal Control       Print spawn "grimshot copy area"
+riverctl map normal Shift         Print spawn "grimshot save output"
+riverctl map normal Shift+Control Print spawn "grimshot save area"
 
 for mode in normal locked
 do
 
     # Volume.
-    riverctl map normal None  XF86AudioRaiseVolume spawn ponymix --output --max-volume=150 increase 10
-    riverctl map normal None  XF86AudioLowerVolume spawn ponymix --output decrease 10
-    riverctl map normal None  XF86AudioMute        spawn ponymix --output toggle
-    riverctl map normal Shift XF86AudioRaiseVolume spawn ponymix --input --max-volume=150 increase 10
-    riverctl map normal Shift XF86AudioLowerVolume spawn ponymix --input decrease 10
-    riverctl map normal Shift XF86AudioMute        spawn ponymix --input toggle
+    riverctl map $mode None  XF86AudioRaiseVolume spawn "ponymix --output --max-volume=150 increase 10"
+    riverctl map $mode None  XF86AudioLowerVolume spawn "ponymix --output decrease 10"
+    riverctl map $mode None  XF86AudioMute        spawn "ponymix --output toggle"
+    riverctl map $mode Shift XF86AudioRaiseVolume spawn "ponymix --input --max-volume=150 increase 10"
+    riverctl map $mode Shift XF86AudioLowerVolume spawn "ponymix --input decrease 10"
+    riverctl map $mode Shift XF86AudioMute        spawn "ponymix --input toggle"
 
     # Brightness.
-    riverctl map normal None XF86MonBrightnessUp   spawn brightnessctl set 10%+
-    riverctl map normal None XF86MonBrightnessDown spawn brightnessctl set 10%-
+    riverctl map $mode None XF86MonBrightnessUp   spawn "brightnessctl set 10%+"
+    riverctl map $mode None XF86MonBrightnessDown spawn "brightnessctl set 10%-"
 
-    # riverctl map normal $super None XF86AudioMedia spawn 'playerctl play-pause'
-    # riverctl map normal $super None XF86AudioPlay  spawn 'playerctl play-pause'
-    # riverctl map normal $super None XF86AudioPrev  spawn 'playerctl previous'
-    # riverctl map normal $super None XF86AudioNext  spawn 'playerctl next'
+    # riverctl map $mode $super None XF86AudioMedia spawn "playerctl play-pause"
+    # riverctl map $mode $super None XF86AudioPlay  spawn "playerctl play-pause"
+    # riverctl map $mode $super None XF86AudioPrev  spawn "playerctl previous"
+    # riverctl map $mode $super None XF86AudioNext  spawn "playerctl next"
 done
 
-riverctl border-color-focused   "#79740e"
-riverctl border-color-unfocused "#282828"
+riverctl border-color-focused   "0x79740e"
+riverctl border-color-unfocused "0x282828"
 riverctl border-width           2
 
-riverctl focus-follows-cursor normal
-riverctl set-cursor-warp on-output-change
-riverctl attach-mode top
-riverctl float-filter-add "float"
-riverctl float-filter-add "popup"
-riverctl default-layout rivertile
-
 pointer_inputs=$(riverctl list-inputs | grep --no-group-separator -B1 "type: pointer" | grep -v "type: pointer")
-keyboard_inputs=$(riverctl list-inputs | grep --no-group-separator -B1 "type: keyboard" | grep -v "type: keyboard")
+# keyboard_inputs=$(riverctl list-inputs | grep --no-group-separator -B1 "type: keyboard" | grep -v "type: keyboard")
 
 for input in $pointer_inputs
 do
@@ -105,6 +95,15 @@ do
     riverctl input $input tap enabled
 done 
 
-# ?
+riverctl declare-mode passthrough
+riverctl map normal $super F11 enter-mode passthrough
+riverctl map passthrough $super F11 enter-mode normal
+
+riverctl focus-follows-cursor normal
+riverctl set-cursor-warp on-output-change
+riverctl attach-mode top
+riverctl float-filter-add "float"
+riverctl float-filter-add "popup"
 riverctl set-repeat 50 300
+riverctl default-layout rivertile
 
