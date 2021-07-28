@@ -1,0 +1,23 @@
+#!/bin/sh
+
+last_percent=""
+last_usage=""
+
+while true
+do
+
+  raw="$(df -ah --output=pcent,used --total | tail -n 1)"
+  percent="$(echo $raw | awk '{ print $1 }' | tr -d %)"
+  usage="$(echo $raw | awk '{ print $2 }')"
+
+  if [ "$percent" != "$last_percent" ] || [ "$usage" != "$last_usage" ]
+  then
+    last_percent="$percent"
+    echo "percent|range:0-100|$percent"
+    last_usage="$usage"
+    echo "usage|string|$usage"
+    echo
+  fi
+
+  sleep 60
+done

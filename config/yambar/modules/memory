@@ -1,0 +1,27 @@
+#!/bin/sh
+
+last_percent=""
+last_usage=""
+
+while true
+do
+
+  raw_avail="$(cat /proc/meminfo | grep MemAvailable | tr -Cd "[0-9]")"
+  raw_total="$(cat /proc/meminfo | grep MemTotal | tr -Cd "[0-9]")"
+
+  avail="$(( raw_avail / 1024 ))"
+  total="$(( raw_total / 1024 ))"
+  usage="$(( total - avail ))"
+  percent="$(( usage * 100 / total ))"
+
+  if [ "$percent" != "$last_percent" ] || [ "$usage" != "$last_usage" ]
+  then
+    last_percent="$percent"
+    echo "percent|range:0-100|$percent"
+    last_usage="$usage"
+    echo "usage|int|$usage"
+    echo
+  fi
+
+  sleep 60
+done

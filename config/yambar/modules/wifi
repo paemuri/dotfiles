@@ -1,0 +1,23 @@
+#!/bin/sh
+
+last_state=""
+last_ssid=""
+
+while true
+do
+
+  state="$(iwctl station wlan0 show | grep State | awk '{ print $2 }')"
+  ssid="$(iwctl station wlan0 show | grep network | awk '{ print $3 }')"
+
+  if [ "$state" != "$last_state" ] || [ "$ssid" != "$last_ssid" ]
+  then
+    last_state="$state"
+    echo "state|string|$state"
+    last_ssid="$ssid"
+    echo "ssid|string|$ssid"
+    echo
+  fi
+
+  sleep 1
+done
+

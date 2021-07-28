@@ -1,11 +1,12 @@
+awesome: &awesome "Font Awesome 5 Free"
+
 bar:
   height: 20
   location: "top"
   foreground: "fdf4c1ff"
   background: "282828ff"
-  monitor: "*"
   font: "Fira Mono" 
-  spacing: 5
+  spacing: 7
 
   border:
     width: 0
@@ -14,13 +15,12 @@ bar:
     - river:
         content:
           map:
-            tag: state
+            tag: "state"
             values:
               focused:
                 string:
                   margin: 5
                   text: "{id}"
-                  foreground: "79740eff"
                   deco:
                     underline:
                       size: 2
@@ -31,7 +31,7 @@ bar:
                   text: "{id}"
               invisible:
                 map:
-                  tag: occupied
+                  tag: "occupied"
                   values:
                     false:
                       empty: {}
@@ -41,27 +41,98 @@ bar:
                         text: "{id}"
 
   right:
+    - script:
+        path: /home/nhanderu/.config/yambar/modules/uptime
+        content:
+          - string:
+              font: *awesome
+              text: ""
+          - string:
+              text: "{time}"
+    - script:
+        path: /home/nhanderu/.config/yambar/modules/audio
+        content:
+          - map:
+              tag: "muted"
+              values:
+                true:
+                  string:
+                    font: *awesome
+                    text: ""
+                false:
+                  string:
+                    font: *awesome
+                    text: ""
+          - string:
+              text: "{volume}"
+    - script:
+        path: /home/nhanderu/.config/yambar/modules/mic
+        content:
+          - map:
+              tag: "muted"
+              values:
+                true:
+                  string:
+                    font: *awesome
+                    text: ""
+                false:
+                  string:
+                    font: *awesome
+                    text: ""
+          - string:
+              text: "{volume}"
     - backlight:
         name: "amdgpu_bl1"
         content:
           - string:
-              font: "Font Awesome 5 Free"
+              font: *awesome
               text: ""
           - string:
               text: "{percent}%"
-    - network:
-        name: "wlan0"
+    - script:
+        path: /home/nhanderu/.config/yambar/modules/wifi
         content:
           - string:
-              font: "Font Awesome 5 Free"
+              font: *awesome
               text: ""
+          - map:
+              tag: "state"
+              default:
+                string:
+                  text: "{state}"
+              values:
+                connected:
+                  string:
+                    text: "{ssid}"
+    - script:
+        path: /home/nhanderu/.config/yambar/modules/disk
+        content:
           - string:
-              text: "{state}"
+              font: *awesome
+              text: ""
+          - string:
+              text: "{percent}% {usage}"
+    - script:
+        path: /home/nhanderu/.config/yambar/modules/memory
+        content:
+          - string:
+              font: *awesome
+              text: ""
+          - string:
+              text: "{percent}% {usage}M"
+    - script:
+        path: /home/nhanderu/.config/yambar/modules/temp
+        content:
+          - string:
+              font: *awesome
+              text: ""
+          - string:
+              text: "{temp}°C"
     - battery:
         name: "BAT1" 
         content:
           map:
-            tag: state
+            tag: "state"
             default:
               ramp:
                 tag: "capacity"
@@ -69,36 +140,36 @@ bar:
                   - list:
                       items:
                         - string:
-                            font: "Font Awesome 5 Free"
+                            font: *awesome
                             text: ""
                         - string:
                             text: "{capacity}%"
                   - list:
                       items:
                         - string:
-                            font: "Font Awesome 5 Free"
-                            text: " "
+                            font: *awesome
+                            text: ""
                         - string:
                             text: "{capacity}%"
                   - list:
                       items:
                         - string:
-                            font: "Font Awesome 5 Free"
-                            text: " "
+                            font: *awesome
+                            text: ""
                         - string:
                             text: "{capacity}%"
                   - list:
                       items:
                         - string:
-                            font: "Font Awesome 5 Free"
-                            text: " "
+                            font: *awesome
+                            text: ""
                         - string:
                             text: "{capacity}%"
                   - list:
                       items:
                         - string:
-                            font: "Font Awesome 5 Free"
-                            text: " "
+                            font: *awesome
+                            text: ""
                         - string:
                             text: "{capacity}%"
             values:
@@ -106,7 +177,7 @@ bar:
                 - list:
                     items:
                       - string:
-                          font: "Font Awesome 5 Free"
+                          font: *awesome
                           text: ""
                       - string:
                           text: "{capacity}%"
@@ -114,7 +185,7 @@ bar:
                 - list:
                     items:
                       - string:
-                          font: "Font Awesome 5 Free"
+                          font: *awesome
                           text: ""
                       - string:
                           text: "{capacity}%"
@@ -123,6 +194,6 @@ bar:
         time-format: "%H:%M:%S"
         content:
           - string:
-              right-margin: 5
               text: "{date} {time}"
+              right-margin: 5
 
