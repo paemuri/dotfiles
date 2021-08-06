@@ -6,9 +6,9 @@ last_usage=""
 while true
 do
 
-  raw="$(df -ah --output=pcent,used --total | tail -n 1)"
-  percent="$(echo $raw | awk '{ print $1 }' | tr -d %)"
-  usage="$(echo $raw | awk '{ print $2 }')"
+  raw="$(df -ah --output=source,pcent,used "/dev/nvme0n1p3")"
+  percent="$(echo $raw | awk '{ print $2 }' | tr -d %)"
+  usage="$(echo $raw | awk '{ print $3 }')"
 
   if [ "$percent" != "$last_percent" ] || [ "$usage" != "$last_usage" ]
   then
