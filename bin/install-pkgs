@@ -24,6 +24,7 @@ paru -S \
     zip
 paru -Sa \
     bisq \
+    bitwarden-cli \
     brave-bin \
     lf-bin
 
@@ -43,6 +44,7 @@ paru -S \
     bemenu \
     bemenu-wayland \
     glfw-wayland \
+    mako \
     qt5-wayland \
     sway \
     wayland \
