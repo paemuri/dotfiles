@@ -2,7 +2,7 @@
 
 mako &
 yambar &
-swaybg --image ~/images/wallpaper.jpg &
+wbg ~/images/wallpaper.jpg &
 
 $XDG_CONFIG_HOME/river/config
 exec rivertile

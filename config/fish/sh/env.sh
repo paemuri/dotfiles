@@ -26,6 +26,8 @@ export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 export LESSHISTFILE="$XDG_DATA_HOME/less/history"
 export LESSKEY="$XDG_CONFIG_HOME/less/keys"
 
+export GRIM_DEFAULT_DIR="$HOME/images/screenshots"
+
 export BEMENU_OPTS="\
     --ignorecase \
     --prompt=search \

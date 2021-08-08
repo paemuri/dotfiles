@@ -56,10 +56,10 @@ riverctl map normal $super+Shift 0 set-view-tags $all_tags
 
 
 # Screenshot.
-riverctl map normal None          Print spawn "grimshot copy output"
-riverctl map normal Control       Print spawn "grimshot copy area"
-riverctl map normal Shift         Print spawn "grimshot save output"
-riverctl map normal Shift+Control Print spawn "grimshot save area"
+riverctl map normal None          Print spawn "grim - | wl-copy"
+riverctl map normal Control       Print spawn 'grim -g "$(slurp)" - | wl-copy'
+riverctl map normal Shift         Print spawn "grim"
+riverctl map normal Shift+Control Print spawn 'grim -g "$(slurp)"'
 
 for mode in normal locked
 do

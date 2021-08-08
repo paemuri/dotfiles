@@ -44,15 +44,16 @@ paru -S \
     bemenu \
     bemenu-wayland \
     glfw-wayland \
+    grim \
     mako \
     qt5-wayland \
-    sway \
+    slurp \
     wayland \
     wl-clipboard \
     xorg-xwayland
 paru -Sa \
-    grimshot \
-    swaylock-effects-git
+    swaylock-effects-git \
+    wbg
 
 # Sound.
 paru -S
