@@ -105,14 +105,6 @@ bar:
                   string:
                     text: "{ssid}"
     - script:
-        path: /home/nhanderu/.config/yambar/modules/disk
-        content:
-          - string:
-              font: *awesome
-              text: ""
-          - string:
-              text: "{percent}% {usage}"
-    - script:
         path: /home/nhanderu/.config/yambar/modules/memory
         content:
           - string:
@@ -128,60 +120,60 @@ bar:
               text: ""
           - string:
               text: "{temp}°C"
-    - battery:
-        name: "BAT1" 
+    - script:
+        path: /home/nhanderu/.config/yambar/modules/disk
+        content:
+          - string:
+              font: *awesome
+              text: ""
+          - string:
+              text: "{percent}% {usage}"
+    - script:
+        path: /home/nhanderu/.config/yambar/modules/battery
         content:
           map:
-            tag: "state"
-            default:
-              ramp:
-                tag: "capacity"
-                items:
-                  - list:
-                      items:
-                        - string:
-                            font: *awesome
-                            text: ""
-                        - string:
-                            text: "{capacity}%"
-                  - list:
-                      items:
-                        - string:
-                            font: *awesome
-                            text: ""
-                        - string:
-                            text: "{capacity}%"
-                  - list:
-                      items:
-                        - string:
-                            font: *awesome
-                            text: ""
-                        - string:
-                            text: "{capacity}%"
-                  - list:
-                      items:
-                        - string:
-                            font: *awesome
-                            text: ""
-                        - string:
-                            text: "{capacity}%"
-                  - list:
-                      items:
-                        - string:
-                            font: *awesome
-                            text: ""
-                        - string:
-                            text: "{capacity}%"
+            tag: "charging"
             values:
-              full:
-                - list:
+              false:
+                - ramp:
+                    tag: "capacity"
                     items:
-                      - string:
-                          font: *awesome
-                          text: ""
-                      - string:
-                          text: "{capacity}%"
-              charging:
+                      - list:
+                          items:
+                            - string:
+                                font: *awesome
+                                text: ""
+                            - string:
+                                text: "{capacity}%"
+                      - list:
+                          items:
+                            - string:
+                                font: *awesome
+                                text: ""
+                            - string:
+                                text: "{capacity}%"
+                      - list:
+                          items:
+                            - string:
+                                font: *awesome
+                                text: ""
+                            - string:
+                                text: "{capacity}%"
+                      - list:
+                          items:
+                            - string:
+                                font: *awesome
+                                text: ""
+                            - string:
+                                text: "{capacity}%"
+                      - list:
+                          items:
+                            - string:
+                                font: *awesome
+                                text: ""
+                            - string:
+                                text: "{capacity}%"
+              true:
                 - list:
                     items:
                       - string:
