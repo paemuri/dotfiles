@@ -1,0 +1,41 @@
+#!/bin/sh
+
+capacity="$1"
+if [ "$capacity" = "" ] || [ "$capacity" -ne "$capacity" ]
+then
+  echo    "Missing capacity." >&2
+  echo    "Command should be:" >&2
+  echo -e "\tbattery-alert <capacity>" >&2
+  exit 1
+elif [ "$2" != "" ]
+then
+  echo    "Unkown arguments." >&2
+  echo    "Command should be:" >&2
+  echo -e "\tbattery-alert <capacity>" >&2
+  exit 1
+fi
+
+cache_dir="${XDG_CACHO_HOME:-$HOME/.cache}/battery-alert"
+[ ! -e "$cache_dir" ] && mkdir -p "$cache_dir"
+cache_path="$cache_dir/last-alert"
+[ ! -e "$cache_path" ] && touch "$cache_path"
+
+last_alert="$(cat "$cache_path")"
+
+[ "$last_alert" != "" ] && \
+  [ "$capacity" -gt 15 ] && \
+  > $cache_path
+
+[ "$last_alert" != "low" ] && \
+  [ "$capacity" -le 15 ] && \
+  [ "$capacity" -gt 5 ] && \
+  notify-send -u critical -t 5000 "Battery level is low!" \
+    "Battery capacity at $capacity%. Consider charging the notebook." && \
+  echo "low" > "$cache_path"
+
+[ "$last_alert" != "critical" ] && \
+  [ "$capacity" -le 5 ] && \
+  notify-send -u critical -t 5000 "Battery level is CRITICAL!" \
+    "Battery capacity at $capacity%! Charge the notebook NOW!" && \
+  echo "critical" > "$cache_path"
+
