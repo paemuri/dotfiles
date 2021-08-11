@@ -8,7 +8,6 @@ paru -S \
     bluez \
     bluez-utils \
     brightnessctl \
-    discord \
     htop \
     jq \
     neovim \
