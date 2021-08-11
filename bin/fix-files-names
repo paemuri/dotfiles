@@ -1,92 +1,157 @@
-#!/usr/bin/env fish
+#!/bin/sh
 
-function __fix
+set -e
 
-    set -l file $argv[1]
-    set -l format $argv[2]
-    set -l prefix $argv[3]
+regex() {
+    echo "$1" | grep -P "$2" >/dev/null
+}
+
+rename() {
+
+    local filepath="$1"
+    local dir=$(dirname $filepath)
+    local file=$(basename "$filepath")
+    local format="$2"
+    local prefix="$3"
 
     # Ignores the ones that were already fixed.
-    if string match -rq $prefix'-\d{14}-\d{3}\.'$format $file
+    if regex "$file" $prefix'-\d{14}-\d{3}\.'$format
+    then
         return
-    end
+    fi
 
     # Tries to parse the creation time from exiftool.
-    set -l creation_time ( \
-        exiftool $file | \
+    local exif_creation_time=$( \
+        exiftool "$filepath" | \
         grep -i 'create date' | \
-        head -n 1 | \
+        head -1 | \
         cut -d : -f 2- | \
-        tr -d ': ' | \
-        string sub -l 14 \
+        awk '{ $1=$1; print }' \
+    )
+    local timestamp=$( \
+        echo "$exif_creation_time" | \
+        tr -d ': ' \
     )
 
-    # Then, tries to parse the creation time from the file name.
-    if test -z "$creation_time"
-    or test "$creation_time" = "20021208120000" # ???
-    or test "$creation_time" = "00000000000000"
-        set -l file_name (echo $file | rev | cut -d / -f 1 | cut -d . -f 2- | rev)
-        if string match -rq '^\d{8}_\d{6}_0( \(\d\))?$' $file_name
-            set creation_time (echo $file_name | cut -d _ -f 1-2 | tr -d _)
-        else if string match -rq '^\w{3}_\d{8}_\d{6}_?(\d{3})?$' $file_name
-            set creation_time (echo $file_name | cut -d _ -f 2-3 | tr -d _ | string sub -l 14)
-        else if string match -rq '^\w{3}-\d{8}-WA\d{4}$' $file_name
-            set creation_time (echo $file_name | cut -d - -f 2 | tr -d _)000000
-        else if string match -rq '^photo_\d{4}-\d{2}-\d{2}_\d{2}-\d{2}-\d{2}( \(\d+\))?$' $file_name
-            set creation_time (echo $file_name | cut -d _ -f 2- | cut -d ' ' -f 1 | tr -d _-)
-        else if string match -rq '^WhatsApp Image \d{4}-\d{2}-\d{2} at \d{2}.\d{2}.\d{2}( \(\d\))?$' $file_name
-            set creation_time (echo $file_name | cut -d ' ' -f 3,5 | tr -d '.- ')
-        else
-            # Give up.
-            return
-        end
-    end
-
     # Fix left padding zeros.
-    if test (string length $creation_time) != 14
-        set creation_time ''
-        for d in ( \
-            exiftool $file | \
-            grep -i 'create date' | \
-            cut -d : -f 2- | \
+    if test "${#timestamp}" -gt 0 && \
+        test "${#timestamp}" -lt 14
+    then
+        timestamp=''
+        for d in $( \
+            echo "$exif_creation_time" | \
             tr : ' ' | \
-            string trim | \
             tr ' ' \n \
         )
-            set creation_time (printf $creation_time%02d $d)
-        end
-    end
+        do
+            timestamp+=$(printf "%02d" "$d")
+        done
+    fi
 
-    # Gets dir -- path without file.
-    set -l dir (echo $file | rev | cut -d / -f 2- | rev)
-    if test $dir = $file
-        set dir .
-    end
+    # Then, tries to parse the creation time from the filepath name.
+    if test -z "$timestamp" || \
+        test "$timestamp" = "00000000000000" || \
+        test "$timestamp" = "20021208120000" # ???
+    then
 
-    # Create unique suffix.
-    set -l suffix 001
-    while test -f (echo $dir/$prefix-$creation_time-$suffix.$format)
-        set suffix (printf %03d (math $suffix + 1))
-    end
+        timestamp=''
+        local fname="${file%.*}" # Removes extension.
+        
+        if regex "$fname" '^\d{8}_\d{6}_0( \(\d\))?$'
+        then
+            timestamp=$( \
+                echo "$fname" | \
+                cut -d _ -f 1-2 | \
+                tr -d _ \
+            )
 
-    set -l new_file (echo $dir/$prefix-$creation_time-$suffix.$format)
-    echo $file → $new_file
-    mv $file $new_file
-    touch -t (echo $creation_time | sed 's/./&./12') $new_file
-end
+        elif regex "$fname" '^\w{3}_\d{8}_\d{6}_?(\d{3})?$'
+        then
+            timestamp=$( \
+                echo "$fname" | \
+                cut -d _ -f 2-3 | \
+                tr -d _ \
+            )
 
-for file in **.jpg **.JPG **.jpeg **.JPEG
-    __fix $file jpg img
-end
+        elif regex "$fname" '^\w{3}-\d{8}-WA\d{4}$'
+        then
+            timestamp=$( \
+                echo "$fname" | \
+                cut -d - -f 2 | \
+                tr -d _ \
+            )
+        
+        elif regex "$fname" '^photo_\d{4}-\d{2}-\d{2}_\d{2}-\d{2}-\d{2}( \(\d+\))?$'
+        then
+            timestamp=$( \
+                echo "$fname" | \
+                cut -d _ -f 2- | \
+                cut -d ' ' -f 1 | \
+                tr -d '_-' \
+            )
+        
+        elif regex "$fname" '^WhatsApp Image \d{4}-\d{2}-\d{2} at \d{2}.\d{2}.\d{2}( \(\d\))?$'
+        then
+            timestamp=$( \
+                echo "$fname" | \
+                cut -d ' ' -f 3,5 | \
+                tr -d '.- ' \
+            )
+        
+        fi
+        
+    fi
 
-for file in **.png **.PNG
-    __fix $file png img
-end
+    # Limits to 14 chars.
+    timestamp=$( \
+        echo "$timestamp" | \
+        cut -b 1-14 \
+    )
 
-for file in **.mp4 **.MP4
-    __fix $file mp4 vid
-end
+    # Validates if could not fix the name.
+    if test -z "$timestamp"
+    then
+        >&2 echo "$filepath: could not fix"
+        return
+    fi
 
-for file in **.mov **.MOV
-    __fix $file mov vid
-end
+    # Create unique new filepath.
+    local new_filepath=''
+    local suffix="001"
+    while new_filepath="$dir/$prefix-$timestamp-$suffix.$format" && \
+        test -f "$new_filepath"
+    do
+        suffix=$(printf "%03d" $(($suffix + 1)))
+    done
+
+    echo "$filepath → $new_filepath"
+    mv "$filepath" "$new_filepath"
+    touch -t $(echo "$timestamp" | sed 's/./&./12') "$new_filepath"
+}
+
+tmp_ifs="$IFS"
+IFS='
+'
+
+for filepath in $(find $@ -iname  '*.jpg' -o -iname '*.jpeg')
+do
+    rename "$filepath" jpg img
+done
+
+for filepath in $(find $@ -iname  '*.png')
+do
+    rename "$filepath" png img
+done
+
+for filepath in $(find $@ -iname  '*.mp4')
+do
+    rename "$filepath" mp4 vid
+done
+
+for filepath in $(find $@ -iname  '*.mov')
+do
+    rename "$filepath" mov vid
+done
+
+IFS="$tmp_ifs"
+

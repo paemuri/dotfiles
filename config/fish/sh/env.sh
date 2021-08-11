@@ -46,12 +46,10 @@ export BEMENU_OPTS="\
 "
 
 export PATH="$DOTFILES/bin"
-PATH+=":/bin"
-PATH+=":/sbin"
 PATH+=":/usr/bin"
-PATH+=":/usr/sbin"
 PATH+=":/usr/local/bin"
 PATH+=":/usr/local/sbin"
+PATH+=":/usr/bin/vendor_perl"
 PATH+=":/opt"
 PATH+=":$GOROOT/bin"
 PATH+=":$GOPATH/bin"

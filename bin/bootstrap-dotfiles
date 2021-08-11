@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/bin/sh
 
 sh_dir="$(dirname $0)/../config/fish/sh"
 source $sh_dir/env.sh

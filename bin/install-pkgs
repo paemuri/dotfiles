@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/bin/sh
 
 paru -Syyu
 
@@ -15,6 +15,7 @@ paru -S \
     openssh \
     otf-fira-mono \
     otf-font-awesome \
+    perl-image-exiftool \
     rtorrent \
     sl \
     telegram-desktop \
@@ -72,31 +73,6 @@ paru -S \
     virt-manager \
     edk2-ovmf
 
-curl -sL git.io/fisher | source
-test ! -d $GOENV_ROOT && git clone https://github.com/syndbg/goenv.git $GOENV_ROOT
-
-fisher install \
-    jorgebucaran/fisher \
-    jorgebucaran/nvm.fish \
-    edc/bass
-
 cargo install \
    cargo-edit
 
-codium --install-extension bmalehorn.vscode-fish
-codium --install-extension codezombiech.gitignore
-codium --install-extension donjayamanne.githistory
-codium --install-extension eriklynd.json-tools
-codium --install-extension golang.go
-codium --install-extension hashicorp.terraform
-codium --install-extension kumar-harsh.graphql-for-vscode
-codium --install-extension mrmlnc.vscode-pugbeautify
-codium --install-extension mrmlnc.vscode-puglint
-codium --install-extension ms-azuretools.vscode-docker
-codium --install-extension Poorchop.theme-darktooth
-codium --install-extension run-at-scale.terraform-doc-snippets
-codium --install-extension rust-lang.rust
-codium --install-extension sysoev.language-stylus
-codium --install-extension vadimcn.vscode-lldb
-codium --install-extension waderyan.gitblame
-codium --install-extension wmaurer.change-case

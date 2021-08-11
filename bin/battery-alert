@@ -7,7 +7,9 @@ then
   echo    "Command should be:" >&2
   echo -e "\tbattery-alert <capacity>" >&2
   exit 1
-elif [ "$2" != "" ]
+fi
+
+if [ "$2" != "" ]
 then
   echo    "Unkown arguments." >&2
   echo    "Command should be:" >&2
@@ -15,7 +17,7 @@ then
   exit 1
 fi
 
-cache_dir="${XDG_CACHO_HOME:-$HOME/.cache}/battery-alert"
+cache_dir="${XDG_CACHE_HOME:-$HOME/.cache}/battery-alert"
 [ ! -e "$cache_dir" ] && mkdir -p "$cache_dir"
 cache_path="$cache_dir/last-alert"
 [ ! -e "$cache_path" ] && touch "$cache_path"
