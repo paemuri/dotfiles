@@ -9,7 +9,7 @@ regex() {
 rename() {
 
     local filepath="$1"
-    local dir=$(dirname $filepath)
+    local dir=$(dirname "$filepath")
     local file=$(basename "$filepath")
     local format="$2"
     local prefix="$3"
