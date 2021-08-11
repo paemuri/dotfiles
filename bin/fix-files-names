@@ -3,7 +3,7 @@
 set -e
 
 regex() {
-    echo "$1" | grep -P "$2" >/dev/null
+    echo "$1" | pcre2grep "$2" >/dev/null
 }
 
 rename() {
