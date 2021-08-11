@@ -31,13 +31,13 @@ last_alert="$(cat "$cache_path")"
 [ "$last_alert" != "low" ] && \
   [ "$capacity" -le 15 ] && \
   [ "$capacity" -gt 5 ] && \
-  notify-send -u critical -t 5000 "Battery level is low!" \
+  notify-send -u critical "Battery level is low!" \
     "Battery capacity at $capacity%. Consider charging the notebook." && \
   echo "low" > "$cache_path"
 
 [ "$last_alert" != "critical" ] && \
   [ "$capacity" -le 5 ] && \
-  notify-send -u critical -t 5000 "Battery level is CRITICAL!" \
+  notify-send -u critical "Battery level is CRITICAL!" \
     "Battery capacity at $capacity%! Charge the notebook NOW!" && \
   echo "critical" > "$cache_path"
 

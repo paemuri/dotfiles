@@ -111,7 +111,7 @@ rename() {
     # Validates if could not fix the name.
     if test -z "$timestamp"
     then
-        >&2 echo "$filepath: could not fix"
+        echo "$filepath: could not fix" >&2 
         return
     fi
 
