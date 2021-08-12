@@ -2,11 +2,9 @@
 
 [![License][badge-1-img]][badge-1-link]
 
-My own dotfiles. Yay.
-
 ## Bootstrap
 
-Simply run `./bin/bootstrap-dotfiles -i`.
+Simply run `./bootstrap -i`.
 
 ## License
 

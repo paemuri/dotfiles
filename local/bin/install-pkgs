@@ -35,7 +35,6 @@ paru -S \
 
 # Langs.
 paru -S \
-    fish \
     nodejs \
     rustup
 

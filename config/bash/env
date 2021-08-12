@@ -1,4 +1,7 @@
-export BROWSER=$(which brave)
+#!/bin/bash
+
+export BROWSER=$(which qutebrowser)
+export EDITOR=$(which nvim)
 export VISUAL=$(which nvim)
 export TERMINAL=$(which alacritty)
 
@@ -9,18 +12,19 @@ export XDG_DATA_HOME="$HOME/.local/share"
 export PROJ="$HOME/projects"
 export DOTFILES="$PROJ/nhanderu/dotfiles"
 
+export HISTFILE="$XDG_CACH_HOME/bash/history"
+
 export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
 export CARGO_HOME="$XDG_DATA_HOME/cargo"
 export CARGO_NAME="Rafael Escobar"
 export CARGO_EMAIL="rescobar@pm.me"
 
 export GOENV_ROOT="$XDG_DATA_HOME/goenv"
-export GOENV_SHELL=fish
-export GOROOT="/usr/local/go"
 export GOPATH="$XDG_DATA_HOME/go"
 
-export XDG_CURRENT_DESKTOP=wayland
 export SDL_VIDEODRIVER=wayland
+export XDG_SESSION_TYPE=wayland
+export XDG_CURRENT_DESKTOP=river
 
 export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 export LESSHISTFILE="$XDG_DATA_HOME/less/history"
@@ -45,7 +49,7 @@ export BEMENU_OPTS="\
     --sf=#79740e \
 "
 
-export PATH="$DOTFILES/bin"
+export PATH="~/.local/bin"
 PATH+=":/usr/bin"
 PATH+=":/usr/local/bin"
 PATH+=":/usr/local/sbin"

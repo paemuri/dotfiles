@@ -1,0 +1,4 @@
+[Desktop Entry]
+Type=Application
+Name=lf file manager
+Exec=/usr/local/bin/alacritty -t files -e lf %u

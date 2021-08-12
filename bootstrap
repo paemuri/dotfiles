@@ -1,0 +1,14 @@
+#!/bin/sh
+
+root_dir="$(dirname $0)"
+cp -rp $root_dir/config/. ~/.config
+cp -rp $root_dir/local/. ~/.local
+
+echo "source ~/.config/bash/config" > ~/.bashrc
+echo "source ~/.config/bash/config" > ~/.bash_profile
+
+if test "$1" = "-i" || test "$1" = "--install"
+then
+    install-pkgs
+fi
+
