@@ -4,17 +4,12 @@
 " https://github.com/giioohbernini/dotnvim/blob/master/init.vim
 
 call plug#begin()
-Plug 'terryma/vim-multiple-cursors'
 Plug 'junegunn/fzf', { 'do': './install --all --xdg' }
 Plug 'junegunn/fzf.vim'
-Plug 'scrooloose/nerdtree'
 Plug 'itchyny/lightline.vim'
 Plug 'taohexxx/lightline-buffer'
-Plug 'itchyny/vim-gitbranch'
 Plug 'machakann/vim-highlightedyank'
 Plug 'andymass/vim-matchup'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'sheerun/vim-polyglot'
 call plug#end()
 
 set undofile
@@ -34,22 +29,12 @@ set background=dark
 set nocompatible
 set showtabline=2
 
-let mapleader="\<c-x>"
-nnoremap ; :
+let mapleader="\<space>"
 nnoremap <leader>p :Files<cr>
 nnoremap <leader>f :Ag<cr>
-nnoremap <leader>t :NERDTreeToggle<cr>
 nnoremap <leader>b :buffers<cr>:buffer<space>
-nnoremap <leader><left> :bprev<CR>
-nnoremap <leader><right> :bnext<CR>
-nnoremap <silent> [g <Plug>(coc-diagnostic-prev)
-nnoremap <silent> ]g <Plug>(coc-diagnostic-next)
-nnoremap <silent> gd <Plug>(coc-definition)
-nnoremap <silent> gy <Plug>(coc-type-definition)
-nnoremap <silent> gi <Plug>(coc-implementation)
-nnoremap <silent> gr <Plug>(coc-references)
-map H ^
-map L $
+nnoremap <leader>, :bprev<CR>
+nnoremap <leader>. :bnext<CR>
 
 let g:rustfmt_autosave = 1
 let g:rustfmt_emit_files = 1
@@ -60,28 +45,12 @@ let g:go_play_open_browser = 0
 let g:go_fmt_fail_silently = 1
 let g:go_fmt_command = "goimports"
 
-let g:NERDTreeDirArrowExpandable = "\u00a0"
-let g:NERDTreeDirArrowCollapsible = "\u00a0"
-
-let g:coc_global_extensions =
-    \ [ 'coc-json'
-    \ , 'coc-yaml'
-    \ , 'coc-toml'
-    \ , 'coc-sql'
-    \ , 'coc-sh'
-    \ , 'coc-rust-analyzer'
-    \ , 'coc-fsharp'
-    \ , 'coc-go'
-    \ , 'coc-graphql'
-    \ , 'coc-markdownlint'
-    \ ]
-
 let g:lightline =
     \ { 'colorscheme': 'jellybeans'
     \ , 'active':
     \     { 'left':
     \         [ [ 'mode', 'paste' ]
-    \         , [ 'gitbranch', 'filename', 'cocstatus', 'readonly', 'modified' ]
+    \         , [ 'gitbranch', 'filename', 'readonly', 'modified' ]
     \         ]
     \     }
     \ , 'tabline':
@@ -104,18 +73,15 @@ let g:lightline =
     \     }
     \ , 'component_function':
     \     { 'gitbranch': 'gitbranch#name'
-    \     , 'cocstatus': 'coc#status'
     \     }
     \ }
 
 autocmd BufRead *.md set filetype=markdown
 autocmd BufRead *.tex set filetype=tex
-autocmd FileType gitcommit setlocal spell textwidth=72 colorcolumn=50
-autocmd FileType markdown setlocal spell textwidth=72 colorcolumn=50
-autocmd FileType text setlocal spell textwidth=72 colorcolumn=50
+autocmd FileType gitcommit setlocal spell textwidth=72
+autocmd FileType markdown setlocal colorcolumn=100
 autocmd Filetype rust setlocal colorcolumn=100
-autocmd User CocStatusChange,CocDiagnosticChange call lightline#update()
-autocmd CursorHold * silent call CocActionAsync('highlight')
+autocmd Filetype go setlocal colorcolumn=100
 
 syntax on
 colorscheme darktooth
