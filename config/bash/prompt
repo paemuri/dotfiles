@@ -1,5 +1,6 @@
 #!/bin/bash
 
+reset="\e[m"       # fdf4c1
 white="\e[38;2;253;244;193m"       # fdf4c1
 green="\e[38;2;121;116;14m"        # 79740e
 light_green="\e[38;2;184;187;38m"  # b8bb26
@@ -66,10 +67,12 @@ prompt1() {
       fi
     fi
   fi
+
+  echo -en "$reset"
 }
 
 prompt2() {
-  echo -en "$white→ "
+  echo -en "→ "
 }
 
 export PS1="\n\$(prompt1)\n\$(prompt2)"
