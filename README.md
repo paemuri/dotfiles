@@ -1,4 +1,4 @@
-# Nhanderu's dotfiles
+# paemuri's dotfiles
 
 [![License][badge-1-img]][badge-1-link]
 
@@ -18,5 +18,5 @@ domain, without any additional terms or conditions.
 
 [1]: ./LICENSE
 
-[badge-1-img]: https://img.shields.io/github/license/Nhanderu/dotfiles?style=flat-square
-[badge-1-link]: https://github.com/Nhanderu/dotfiles/blob/master/LICENSE
+[badge-1-img]: https://img.shields.io/github/license/paemuri/dotfiles?style=flat-square
+[badge-1-link]: https://github.com/paemuri/dotfiles/blob/master/LICENSE
