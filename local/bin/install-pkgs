@@ -5,6 +5,8 @@ paru -Syyu
 paru -S \
     acpi \
     alacritty \
+    bash \
+    bash-completion \
     bluez \
     bluez-utils \
     brightnessctl \

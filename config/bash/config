@@ -1,14 +1,16 @@
 #!/bin/bash
 
 source ~/.config/bash/env
-source ~/.config/bash/prompt
 
 if test -z "$WAYLAND_DISPLAY" && test "$(tty)" = "/dev/tty1"
 then
   mkdir -p /var/log/river
   timestamp=$(date "+%Y-%m-%d-%H-%M-%S")
-  exec river -log-level info # > /var/log/river/${timestamp}.log 2>&1
+  exec river -log-level info > /var/log/river/${timestamp}.log 2>&1
 fi
+
+source ~/.config/bash/prompt
+source /usr/share/bash-completion/bash_completion
 
 eval "$(goenv init -)"
 
