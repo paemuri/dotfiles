@@ -1,14 +1,21 @@
 #!/bin/sh
 
-root_dir="$(dirname $0)"
-cp -rp $root_dir/config/. ~/.config
-cp -rp $root_dir/local/. ~/.local
+dotfiles="$(dirname $0)"
+for dir in "config" "local/bin" "local/share/applications"
+do
+  mkdir -p ~/.$dir
+  for file in $dotfiles/$dir/*
+  do
+    # ln -s "$file" ~/.$dir/
+    cp -r $file ~/.$dir/
+  done
+done
 
 echo "source ~/.config/bash/config" > ~/.bashrc
 echo "source ~/.config/bash/config" > ~/.bash_profile
 
 if test "$1" = "-i" || test "$1" = "--install"
 then
-    install-pkgs
+    ${dotfiles}/local/bin/install-pkgs
 fi
 
