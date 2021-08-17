@@ -10,7 +10,7 @@ export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
 
 export PROJ="$HOME/projects"
-export DOTFILES="$PROJ/nhanderu/dotfiles"
+export DOTFILES="$PROJ/paemuri/dotfiles"
 
 export HISTFILE="$XDG_CACHE_HOME/bash/history"
 export GREP_COLOR="38;2;181;118;20"
