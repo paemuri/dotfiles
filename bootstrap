@@ -6,8 +6,7 @@ do
   mkdir -p ~/.$dir
   for file in $dotfiles/$dir/*
   do
-    # ln -s "$file" ~/.$dir/
-    cp -r $file ~/.$dir/
+    ln -snfv "$(realpath "$file")" ~/.$dir/
   done
 done
 
