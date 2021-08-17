@@ -1,0 +1,42 @@
+icons=0
+markup=0
+actions=1
+history=1
+max-history=20
+max-visible=5
+sort=-time
+ignore-timeout=0
+default-timeout=0
+
+on-button-left=invoke-default-action
+on-button-middle=none
+on-button-right=dismiss
+on-touch=dismiss
+on-notify=exec mpv /usr/share/sounds/freedesktop/stereo/window-attention.oga
+
+layer=top
+anchor=top-right
+output=
+font=Fira Mono 12
+text-alignment=left
+
+width=250
+height=100
+margin=5
+padding=5
+border-size=2
+border-radius=0
+border-color=#79740eee
+background-color=#282828ee
+text-color=#fdf4c1ee
+progress-color=source #79740eee
+
+[urgency=low]
+border-color=#076678ee
+
+[urgency=normal]
+border-color=#79740eee
+
+[urgency=critical]
+border-color=#9d0006ee
+
