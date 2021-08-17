@@ -16,6 +16,8 @@ export HISTFILE="$XDG_CACHE_HOME/bash/history"
 export GREP_COLOR="38;2;181;118;20"
 export GREP_COLORS="ms=$COLOR_COLOR"
 
+export XKB_DEFAULT_LAYOUT="br"
+
 export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
 export CARGO_HOME="$XDG_DATA_HOME/cargo"
 export CARGO_NAME="Rafael Escobar"
