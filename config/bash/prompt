@@ -1,11 +1,11 @@
 #!/bin/bash
 
-reset="\e[m"       # fdf4c1
-white="\e[38;2;253;244;193m"       # fdf4c1
-green="\e[38;2;121;116;14m"        # 79740e
-light_green="\e[38;2;184;187;38m"  # b8bb26
-yellow="\e[38;2;181;118;20m"       # b57614
-light_yellow="\e[38;2;250;189;47m" # fabd2f
+reset="\033[m"
+white="\033[38;2;253;244;193m"       # fdf4c1
+green="\033[38;2;121;116;14m"        # 79740e
+light_green="\033[38;2;184;187;38m"  # b8bb26
+yellow="\033[38;2;181;118;20m"       # b57614
+light_yellow="\033[38;2;250;189;47m" # fabd2f
 
 prompt1() {
 
