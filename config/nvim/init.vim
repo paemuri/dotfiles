@@ -46,35 +46,35 @@ let g:go_fmt_fail_silently = 1
 let g:go_fmt_command = "goimports"
 
 let g:lightline =
-    \ { 'colorscheme': 'jellybeans'
-    \ , 'active':
-    \     { 'left':
-    \         [ [ 'mode', 'paste' ]
-    \         , [ 'gitbranch', 'filename', 'readonly', 'modified' ]
-    \         ]
-    \     }
-    \ , 'tabline':
-    \     { 'left':
-    \         [ [ 'bufferinfo' ]
-    \         , [ 'separator' ]
-    \         , [ 'bufferbefore', 'buffercurrent', 'bufferafter' ]
-    \        ]
-    \     , 'right': [[ 'close' ]]
-    \     }
-    \ , 'component_expand':
-    \     { 'buffercurrent': 'lightline#buffer#buffercurrent'
-    \     , 'bufferbefore': 'lightline#buffer#bufferbefore'
-    \     , 'bufferafter': 'lightline#buffer#bufferafter'
-    \     }
-    \ , 'component_type':
-    \     { 'buffercurrent': 'tabsel'
-    \     , 'bufferbefore': 'raw'
-    \     , 'bufferafter': 'raw'
-    \     }
-    \ , 'component_function':
-    \     { 'gitbranch': 'gitbranch#name'
-    \     }
-    \ }
+  \ { 'colorscheme': 'jellybeans'
+  \ , 'active':
+  \     { 'left':
+  \         [ [ 'mode', 'paste' ]
+  \         , [ 'gitbranch', 'filename', 'readonly', 'modified' ]
+  \         ]
+  \     }
+  \ , 'tabline':
+  \     { 'left':
+  \         [ [ 'bufferinfo' ]
+  \         , [ 'separator' ]
+  \         , [ 'bufferbefore', 'buffercurrent', 'bufferafter' ]
+  \        ]
+  \     , 'right': [[ 'close' ]]
+  \     }
+  \ , 'component_expand':
+  \     { 'buffercurrent': 'lightline#buffer#buffercurrent'
+  \     , 'bufferbefore': 'lightline#buffer#bufferbefore'
+  \     , 'bufferafter': 'lightline#buffer#bufferafter'
+  \     }
+  \ , 'component_type':
+  \     { 'buffercurrent': 'tabsel'
+  \     , 'bufferbefore': 'raw'
+  \     , 'bufferafter': 'raw'
+  \     }
+  \ , 'component_function':
+  \     { 'gitbranch': 'gitbranch#name'
+  \     }
+  \ }
 
 autocmd BufRead *.md set filetype=markdown
 autocmd BufRead *.tex set filetype=tex

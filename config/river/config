@@ -45,9 +45,9 @@ riverctl map-pointer normal $super BTN_RIGHT resize-view
 # Tags.
 for i in $(seq 1 9)
 do
-    tags=$((1 << ($i - 1)))
-    riverctl map normal $super       $i set-focused-tags $tags
-    riverctl map normal $super+Shift $i set-view-tags $tags
+  tags=$((1 << ($i - 1)))
+  riverctl map normal $super       $i set-focused-tags $tags
+  riverctl map normal $super+Shift $i set-view-tags $tags
 done
 
 all_tags=$(((1 << 32) - 1))
@@ -64,22 +64,22 @@ riverctl map normal Shift+Control Print spawn 'grim -g "$(slurp)"'
 for mode in normal locked
 do
 
-    # Volume.
-    riverctl map $mode None  XF86AudioRaiseVolume spawn "ponymix --output --max-volume=150 increase 10"
-    riverctl map $mode None  XF86AudioLowerVolume spawn "ponymix --output decrease 10"
-    riverctl map $mode None  XF86AudioMute        spawn "ponymix --output toggle"
-    riverctl map $mode Shift XF86AudioRaiseVolume spawn "ponymix --input --max-volume=150 increase 10"
-    riverctl map $mode Shift XF86AudioLowerVolume spawn "ponymix --input decrease 10"
-    riverctl map $mode Shift XF86AudioMute        spawn "ponymix --input toggle"
+  # Volume.
+  riverctl map $mode None  XF86AudioRaiseVolume spawn "ponymix --output --max-volume=150 increase 10"
+  riverctl map $mode None  XF86AudioLowerVolume spawn "ponymix --output decrease 10"
+  riverctl map $mode None  XF86AudioMute        spawn "ponymix --output toggle"
+  riverctl map $mode Shift XF86AudioRaiseVolume spawn "ponymix --input --max-volume=150 increase 10"
+  riverctl map $mode Shift XF86AudioLowerVolume spawn "ponymix --input decrease 10"
+  riverctl map $mode Shift XF86AudioMute        spawn "ponymix --input toggle"
 
-    # Brightness.
-    riverctl map $mode None XF86MonBrightnessUp   spawn "brightnessctl set 10%+"
-    riverctl map $mode None XF86MonBrightnessDown spawn "brightnessctl set 10%-"
+  # Brightness.
+  riverctl map $mode None XF86MonBrightnessUp   spawn "brightnessctl set 10%+"
+  riverctl map $mode None XF86MonBrightnessDown spawn "brightnessctl set 10%-"
 
-    # riverctl map $mode $super None XF86AudioMedia spawn "playerctl play-pause"
-    # riverctl map $mode $super None XF86AudioPlay  spawn "playerctl play-pause"
-    # riverctl map $mode $super None XF86AudioPrev  spawn "playerctl previous"
-    # riverctl map $mode $super None XF86AudioNext  spawn "playerctl next"
+  # riverctl map $mode $super None XF86AudioMedia spawn "playerctl play-pause"
+  # riverctl map $mode $super None XF86AudioPlay  spawn "playerctl play-pause"
+  # riverctl map $mode $super None XF86AudioPrev  spawn "playerctl previous"
+  # riverctl map $mode $super None XF86AudioNext  spawn "playerctl next"
 done
 
 riverctl border-color-focused   "0x79740e"
@@ -91,8 +91,8 @@ pointer_inputs=$(riverctl list-inputs | grep --no-group-separator -B1 "type: poi
 
 for input in $pointer_inputs
 do
-    riverctl input $input natural-scroll enabled
-    riverctl input $input tap enabled
+  riverctl input $input natural-scroll enabled
+  riverctl input $input tap enabled
 done 
 
 riverctl declare-mode passthrough
