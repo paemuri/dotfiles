@@ -53,7 +53,7 @@ export BEMENU_OPTS="\
   --sf=#79740e \
 "
 
-export PATH="~/.local/bin"
+export PATH="$HOME/.local/bin"
 PATH+=":/usr/bin"
 PATH+=":/usr/local/bin"
 PATH+=":/usr/local/sbin"
