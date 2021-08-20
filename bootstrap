@@ -1,7 +1,11 @@
 #!/bin/sh
 
 dotfiles="$(dirname $0)"
-for dir in "config" "local/bin" "local/share/applications"
+for dir in \
+  "config" \
+  "local/bin" \
+  "local/share/applications" \
+  "local/share/packages"
 do
   mkdir -p ~/.$dir
   for file in $dotfiles/$dir/*
