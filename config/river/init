@@ -1,8 +1,10 @@
 #!/bin/sh
 
+$XDG_CONFIG_HOME/river/config
+
 mako &
 yambar &
 wbg ~/images/wallpaper.jpg &
+mpv /usr/share/sounds/freedesktop/stereo/service-login.oga &
 
-$XDG_CONFIG_HOME/river/config
 exec rivertile
