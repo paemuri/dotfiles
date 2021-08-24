@@ -14,9 +14,6 @@ do
   done
 done
 
-echo "source ~/.config/bash/config" > ~/.bashrc
-echo "source ~/.config/bash/config" > ~/.bash_profile
-
 if test "$1" = "-i" || test "$1" = "--install"
 then
     ${dotfiles}/local/bin/install-pkgs

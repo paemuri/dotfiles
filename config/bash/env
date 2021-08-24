@@ -12,7 +12,15 @@ export XDG_DATA_HOME="$HOME/.local/share"
 export PROJ="$HOME/projects"
 export DOTFILES="$PROJ/paemuri/dotfiles"
 
+export INPUTRC="$XDG_CONFIG_HOME/readline/inputrc"
+
 export HISTFILE="$XDG_CACHE_HOME/bash/history"
+export HISTCONTROL="ignoreboth:erasedups"
+export HISTIGNORE="?:??"
+export HISTFILESIZE="99999"
+export HISTSIZE="99999"
+export PROMPT_COMMAND="history -a"
+
 export GREP_COLOR="38;2;181;118;20"
 export GREP_COLORS="ms=$COLOR_COLOR"
 

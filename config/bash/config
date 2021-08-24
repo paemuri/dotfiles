@@ -6,7 +6,8 @@ if test -z "$WAYLAND_DISPLAY" && test "$(tty)" = "/dev/tty1"
 then
   mkdir -p /var/log/river
   timestamp=$(date "+%Y-%m-%d-%H-%M-%S")
-  exec dbus-run-session river -log-level info > /var/log/river/${timestamp}.log 2>&1
+  exec dbus-run-session river -log-level info > \
+    /var/log/river/${timestamp}.log 2>&1
 fi
 
 alias less="less --RAW-CONTROL-CHARS"
@@ -20,4 +21,11 @@ source ~/.config/bash/prompt
 source /usr/share/bash-completion/bash_completion
 
 eval "$(goenv init -)"
+
+set -o vi
+shopt -s \
+  globstar \
+  histappend \
+  histverify \
+  checkwinsize
 
