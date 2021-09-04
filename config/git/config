@@ -13,3 +13,5 @@
 	insteadOf = https://github.com/RedVentures
 [push]
 	default = current
+[init]
+	defaultBranch = main
