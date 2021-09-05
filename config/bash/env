@@ -32,7 +32,7 @@ export CARGO_NAME="Rafael Escobar"
 export CARGO_EMAIL="rescobar@pm.me"
 
 export GOENV_ROOT="$XDG_DATA_HOME/goenv"
-export GOPATH="$XDG_DATA_HOME/go"
+export GOENV_GOPATH_PREFIX="$XDG_DATA_HOME/go"
 
 export SDL_VIDEODRIVER=wayland
 export XDG_SESSION_TYPE=wayland
@@ -67,8 +67,6 @@ PATH+=":/usr/local/bin"
 PATH+=":/usr/local/sbin"
 PATH+=":/usr/bin/vendor_perl"
 PATH+=":/opt"
-PATH+=":$GOROOT/bin"
-PATH+=":$GOPATH/bin"
-PATH+=":$CARGO_HOME/bin"
 PATH+=":$GOENV_ROOT/bin"
 PATH+=":$GOENV_ROOT/shims"
+PATH+=":$CARGO_HOME/bin"
