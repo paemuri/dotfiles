@@ -1,0 +1,4 @@
+[Desktop Entry]
+Type=Application
+Name=Zathura document reader
+Exec=/usr/bin/zathura %u

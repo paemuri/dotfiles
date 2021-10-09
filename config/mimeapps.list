@@ -1,6 +1,11 @@
 [Default Applications]
+
 # lf.desktop
 inode/directory=lf.desktop
+
+# zathura.desktop
+application/pdf=zathura.desktop
+
 # org.qutebrowser.qutebrowser.desktop
 application/x-extension-htm=org.qutebrowser.qutebrowser.desktop
 application/x-extension-html=org.qutebrowser.qutebrowser.desktop
@@ -12,6 +17,7 @@ text/html=org.qutebrowser.qutebrowser.desktop
 x-scheme-handler/chrome=org.qutebrowser.qutebrowser.desktop
 x-scheme-handler/http=org.qutebrowser.qutebrowser.desktop
 x-scheme-handler/https=org.qutebrowser.qutebrowser.desktop
+
 # mpv.desktop
 application/ogg=mpv.desktop
 application/vnd.rn-realmedia=mpv.desktop
