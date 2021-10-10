@@ -6,6 +6,7 @@ bluez
 bluez-utils
 brightnessctl
 htop
+imv
 jq
 neovim
 openssh
