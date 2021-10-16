@@ -6,17 +6,17 @@ inode/directory=lf.desktop
 # zathura.desktop
 application/pdf=zathura.desktop
 
-# org.qutebrowser.qutebrowser.desktop
-application/x-extension-htm=org.qutebrowser.qutebrowser.desktop
-application/x-extension-html=org.qutebrowser.qutebrowser.desktop
-application/x-extension-shtml=org.qutebrowser.qutebrowser.desktop
-application/x-extension-xht=org.qutebrowser.qutebrowser.desktop
-application/x-extension-xhtml=org.qutebrowser.qutebrowser.desktop
-application/xhtml+xml=org.qutebrowser.qutebrowser.desktop
-text/html=org.qutebrowser.qutebrowser.desktop
-x-scheme-handler/chrome=org.qutebrowser.qutebrowser.desktop
-x-scheme-handler/http=org.qutebrowser.qutebrowser.desktop
-x-scheme-handler/https=org.qutebrowser.qutebrowser.desktop
+# qutebrowser.desktop
+application/x-extension-htm=qutebrowser.desktop
+application/x-extension-html=qutebrowser.desktop
+application/x-extension-shtml=qutebrowser.desktop
+application/x-extension-xht=qutebrowser.desktop
+application/x-extension-xhtml=qutebrowser.desktop
+application/xhtml+xml=qutebrowser.desktop
+text/html=qutebrowser.desktop
+x-scheme-handler/chrome=qutebrowser.desktop
+x-scheme-handler/http=qutebrowser.desktop
+x-scheme-handler/https=qutebrowser.desktop
 
 # mpv.desktop
 application/ogg=mpv.desktop
