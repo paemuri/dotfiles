@@ -1,4 +1,7 @@
 [Desktop Entry]
 Type=Application
-Name=lf file manager
-Exec=/usr/local/bin/alacritty -t files -e lf %u
+Name=LF file manager
+GenericName=File manager
+TryExec=lf
+Exec=alacritty -t files -e lf %u
+MimeType=inode/directory;

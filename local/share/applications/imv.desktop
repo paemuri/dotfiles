@@ -1,14 +1,7 @@
 [Desktop Entry]
-Name=imv
-GenericName=Image viewer
-GenericName[en_US]=Image viewer
-Comment=Fast freeimage-based Image Viewer
-Exec=imv %F
-NoDisplay=true
-Terminal=false
 Type=Application
-Categories=Graphics;2DGraphics;Viewer;
+Name=IMV image viewer
+GenericName=Image viewer
+TryExec=imv
+Exec=imv %F
 MimeType=image/bmp;image/gif;image/jpeg;image/jpg;image/pjpeg;image/png;image/tiff;image/x-bmp;image/x-pcx;image/x-png;image/x-portable-anymap;image/x-portable-bitmap;image/x-portable-graymap;image/x-portable-pixmap;image/x-tga;image/x-xbitmap;image/heif
-Name[en_US]=imv
-Icon=multimedia-photo-viewer
-Keywords=photo;picture;
