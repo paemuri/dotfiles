@@ -6,19 +6,9 @@ regex() {
   echo "$1" | pcre2grep "$2" >/dev/null
 }
 
-rename() {
+get_timestamp() {
 
   local filepath="$1"
-  local dir=$(dirname "$filepath")
-  local file=$(basename "$filepath")
-  local format="$2"
-  local prefix="$3"
-
-  # Ignores the ones that were already fixed.
-  if regex "$file" $prefix'-\d{14}-\d{3}\.'$format
-  then
-    return
-  fi
 
   # Tries to parse the creation time from exiftool.
   local exif_creation_time=$( \
@@ -57,7 +47,14 @@ rename() {
     timestamp=''
     local fname="${file%.*}" # Removes extension.
     
-    if regex "$fname" '^\d{8}_\d{6}_0( \(\d\))?$'
+    if regex "$fname" '^(img|vid)-\d{1,13}-\d{3}$'
+    then
+      timestamp=$( \
+        echo "$fname" | \
+	cut -d - -f 2 \
+      )
+
+    elif regex "$fname" '^\d{8}_\d{6}_0( \(\d\))?$'
     then
       timestamp=$( \
         echo "$fname" | \
@@ -65,7 +62,7 @@ rename() {
         tr -d _ \
       )
 
-    elif regex "$fname" '^\w{3}_\d{8}_\d{6}_?(\d{3})?$'
+    elif regex "$fname" '^\w{3}_\d{8}_\d{6}.*$'
     then
       timestamp=$( \
         echo "$fname" | \
@@ -73,7 +70,7 @@ rename() {
         tr -d _ \
       )
 
-    elif regex "$fname" '^\w{3}-\d{8}-WA\d{4}$'
+    elif regex "$fname" '^\w{3}-\d{8}-WA\d{4}.*$'
     then
       timestamp=$( \
         echo "$fname" | \
@@ -97,9 +94,18 @@ rename() {
         cut -d ' ' -f 3,5 | \
         tr -d '.- ' \
       )
-    
+
+    elif regex "$fname" '^signal-\d{4}-\d{2}-\d{2}-\d{6}( .*)?$'
+    then
+      timestamp=$( \
+        echo "$fname" | \
+        cut -d - -f 2- | \
+	cut -d ' ' -f 1 | \
+	tr -d - \
+      )
+
     fi
-    
+
   fi
 
   # Limits to 14 chars.
@@ -107,6 +113,34 @@ rename() {
     echo "$timestamp" | \
     cut -b 1-14 \
   )
+
+  # Fix missing time by padding right with zeroes.
+  while test "${#timestamp}" -gt 0 && \
+    test "${#timestamp}" -lt 14
+  do
+    timestamp+="0"
+  done
+
+  # Prints value to return it.
+  echo "$timestamp"
+}
+
+rename() {
+
+  local filepath="$1"
+  local dir=$(dirname "$filepath")
+  local file=$(basename "$filepath")
+  local format="$2"
+  local prefix="$3"
+
+  # Ignores the ones that were already fixed.
+  if regex "$file" $prefix'-\d{14}-\d{3}\.'$format
+  then
+    return
+  fi
+
+  # Gets the file's timestamp.
+  local timestamp=$(get_timestamp "$filepath")
 
   # Validates if could not fix the name.
   if test -z "$timestamp"
@@ -121,7 +155,7 @@ rename() {
   while new_filepath="$dir/$prefix-$timestamp-$suffix.$format" && \
     test -f "$new_filepath"
   do
-    suffix=$(printf "%03d" $(($suffix + 1)))
+    suffix=$(printf "%03d" $(( 10#$suffix + 1 )))
   done
 
   echo "$filepath → $new_filepath"
