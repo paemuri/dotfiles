@@ -30,7 +30,7 @@ do
     echo
   fi
 
-  battery-alert $capacity
+  battery-alert "$capacity" "$charging"
 
   sleep 1
 done

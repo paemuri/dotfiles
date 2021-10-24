@@ -1,15 +1,36 @@
 #!/bin/sh
 
+#
+# Arguments.
+#
+
 capacity="$1"
-if [ "$capacity" = "" ] || [ "$capacity" -ne "$capacity" ]
+if test "$capacity" = ""
 then
   echo    "Missing capacity." >&2
   echo    "Command should be:" >&2
-  echo -e "\tbattery-alert <capacity>" >&2
+  echo -e "\tbattery-alert <capacity> <is_charging>" >&2
   exit 1
+elif test "$capacity" -ne "$capacity"
+then
+  echo "Invalid capacity: should be an integer number between 0-100." >&2
+  exit 2
 fi
 
-if [ "$2" != "" ]
+is_charging="$2"
+if test "$is_charging" = ""
+then
+  echo    "Missing is_charging." >&2
+  echo    "Command should be:" >&2
+  echo -e "\tbattery-alert <capacity> <is_charging>" >&2
+  exit 1
+elif test "$is_charging" != "false" && test "$is_charging" != "true"
+then
+  echo "Invalid is_charging: should be either true or false." >&2
+  exit 2
+fi
+
+if test "$3" != ""
 then
   echo    "Unkown arguments." >&2
   echo    "Command should be:" >&2
@@ -17,27 +38,51 @@ then
   exit 1
 fi
 
-cache_dir="${XDG_CACHE_HOME:-$HOME/.cache}/battery-alert"
-[ ! -e "$cache_dir" ] && mkdir -p "$cache_dir"
-cache_path="$cache_dir/last-alert"
-[ ! -e "$cache_path" ] && touch "$cache_path"
+#
+# Cached last alert data.
+#
 
+cache_dir="${XDG_CACHE_HOME:-$HOME/.cache}/battery-alert"
+test ! -e "$cache_dir" && mkdir -p "$cache_dir"
+cache_path="$cache_dir/last-alert"
+test ! -e "$cache_path" && touch "$cache_path"
 last_alert="$(cat "$cache_path")"
 
-[ "$last_alert" != "" ] && \
-  [ "$capacity" -gt 15 ] && \
+#
+# Alerts.
+#
+
+# Ignores and resets if charging.
+if test "$is_charging" = "true"
+then
   > $cache_path
+  exit 0
+fi
 
-[ "$last_alert" != "low" ] && \
-  [ "$capacity" -le 15 ] && \
-  [ "$capacity" -gt 5 ] && \
-  notify-send -u critical "Battery level is low!" \
-    "Battery capacity at $capacity%. Consider charging the notebook." && \
+# Resets if normal capacity.
+if test "$last_alert" != "" && test "$capacity" -gt 15
+then
+  > $cache_path
+fi
+
+# Alerts low if between 5-15.
+if test "$last_alert" != "low" && \
+  test "$capacity" -le 15 && \
+  test "$capacity" -gt 5
+then
   echo "low" > "$cache_path"
+  notify-send -u critical \
+    "Battery level is low!" \
+    "Battery capacity at $capacity%. Consider charging the notebook."
+fi
 
-[ "$last_alert" != "critical" ] && \
-  [ "$capacity" -le 5 ] && \
-  notify-send -u critical "Battery level is CRITICAL!" \
-    "Battery capacity at $capacity%! Charge the notebook NOW!" && \
+# Alerts critical if between 0-5.
+if test "$last_alert" != "critical" && \
+  test "$capacity" -le 5
+then
   echo "critical" > "$cache_path"
+  notify-send -u critical \
+    "Battery level is critical!" \
+    "Battery capacity at $capacity%! Charge the notebook now!"
+fi
 
