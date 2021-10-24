@@ -14,7 +14,7 @@ on-button-right=dismiss
 on-touch=dismiss
 on-notify=exec mpv /usr/share/sounds/freedesktop/stereo/window-attention.oga
 
-layer=top
+layer=overlay
 anchor=top-right
 output=
 font=Fira Mono 12
