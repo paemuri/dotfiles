@@ -50,7 +50,7 @@ do
   riverctl map normal $super+Shift $i set-view-tags $tags
 done
 
-all_tags=$(((1 << 32) - 1))
+all_tags=$(((1 << 9) - 1))
 riverctl map normal $super       0 set-focused-tags $all_tags
 riverctl map normal $super+Shift 0 set-view-tags $all_tags
 
