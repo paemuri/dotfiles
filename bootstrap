@@ -16,6 +16,6 @@ done
 
 if test "$1" = "-i" || test "$1" = "--install"
 then
-    ${dotfiles}/local/bin/install-pkgs
+    ${dotfiles}/local/bin/pkg-install
 fi
 

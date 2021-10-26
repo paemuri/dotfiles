@@ -1,6 +1,0 @@
-#!/bin/sh
-
-cat $XDG_DATA_HOME/packages/* |
-  paru -Syyu --noconfirm --mflags "--skipchecksums --skippgpcheck" -
-
-cargo install cargo-edit

@@ -4,16 +4,20 @@ Personal executables.
 
 ## Files and subfolders
 
+### `pkg-install`
+
+Simple `paru` wrapper that install all packages defined in
+`$HOME/local/share/packages/`.
+
+### `pkg-update`
+
+Another `paru` wrapper. It updates all installed packages.
+
 ### `battery-alert`
 
 Simple script that alerts that the battery is running out. *When*
 it is alerted is defined inside the yambar modules/scripts (it's
 probably not the best place, but it's there).
-
-### `install-pkgs`
-
-Simple `paru` wrapper that install all packages defined in
-`$HOME/local/share/packages/`.
 
 ### `steam`
 

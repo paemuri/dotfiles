@@ -1,0 +1,5 @@
+#!/bin/sh
+
+cat $XDG_DATA_HOME/packages/* |
+  paru -Syyu --needed --noconfirm --mflags "--skipchecksums --skippgpcheck" -
+
