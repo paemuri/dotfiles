@@ -2,5 +2,8 @@
 
 paru -Syyu --mflags="--skippgpcheck --skipchecksums" --noconfirm
 
-paru -Qtdq |
-  paru -Rns --mflags="--skippgpcheck --skipchecksums" --noconfirm -
+orphans="$(paru -Qtdq)"
+if test -n "$orphans"
+then
+  paru -Rns --mflags="--skippgpcheck --skipchecksums" --noconfirm "$orphans"
+fi
