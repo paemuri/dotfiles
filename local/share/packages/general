@@ -2,10 +2,11 @@ acpi
 alacritty
 bash
 bash-completion
-bisq
 bluez
 bluez-utils
 brightnessctl
+chromium
+discord
 htop
 imv
 jq
