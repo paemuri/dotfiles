@@ -6,7 +6,7 @@ last_usage=""
 while true
 do
 
-  raw="$(df -h --output=pcent,used /dev/nvme0n1p3 | tail -1)"
+  raw="$(df -h --output=pcent,used /dev/nvme0n1p2 | tail -1)"
   percent="$(echo $raw | awk '{ print $1 }' | tr -d %)"
   usage="$(echo $raw | awk '{ print $2 }')"
 
