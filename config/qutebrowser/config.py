@@ -64,6 +64,7 @@ c.colors.tabs.selected.even.bg = '#504945'
 c.colors.tabs.selected.even.fg = '#fdf4c1'
 c.colors.tabs.selected.odd.bg = '#504945'
 c.colors.tabs.selected.odd.fg = '#fdf4c1'
+c.colors.webpage.darkmode.enabled = True
 c.colors.webpage.preferred_color_scheme = 'dark'
 c.content.autoplay = False
 c.content.pdfjs = False
