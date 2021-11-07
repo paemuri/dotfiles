@@ -86,6 +86,8 @@ riverctl border-color-focused   "0x79740e"
 riverctl border-color-unfocused "0x282828"
 riverctl border-width           2
 
+riverctl xcursor-theme "$XCURSOR_THEME"
+
 pointer_inputs=$(riverctl list-inputs | grep --no-group-separator -B1 "type: pointer" | grep -v "type: pointer")
 # keyboard_inputs=$(riverctl list-inputs | grep --no-group-separator -B1 "type: keyboard" | grep -v "type: keyboard")
 
