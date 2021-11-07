@@ -42,7 +42,7 @@ bar:
 
   right:
     - script:
-        path: /home/paemuri/.config/yambar/modules/uptime
+        path: /home/paemuri/.local/bin/yambar-mod-uptime
         content:
           - string:
               font: *awesome
@@ -50,7 +50,7 @@ bar:
           - string:
               text: "{time}"
     - script:
-        path: /home/paemuri/.config/yambar/modules/audio
+        path: /home/paemuri/.local/bin/yambar-mod-audio
         content:
           - map:
               tag: "muted"
@@ -66,7 +66,7 @@ bar:
           - string:
               text: "{volume}"
     - script:
-        path: /home/paemuri/.config/yambar/modules/mic
+        path: /home/paemuri/.local/bin/yambar-mod-mic
         content:
           - map:
               tag: "muted"
@@ -90,7 +90,7 @@ bar:
           - string:
               text: "{percent}%"
     - script:
-        path: /home/paemuri/.config/yambar/modules/wifi
+        path: /home/paemuri/.local/bin/yambar-mod-wifi
         content:
           - string:
               font: *awesome
@@ -105,7 +105,7 @@ bar:
                   string:
                     text: "{ssid}"
     - script:
-        path: /home/paemuri/.config/yambar/modules/memory
+        path: /home/paemuri/.local/bin/yambar-mod-memory
         content:
           - string:
               font: *awesome
@@ -113,7 +113,7 @@ bar:
           - string:
               text: "{percent}% {usage}M"
     - script:
-        path: /home/paemuri/.config/yambar/modules/temp
+        path: /home/paemuri/.local/bin/yambar-mod-temp
         content:
           - string:
               font: *awesome
@@ -121,7 +121,7 @@ bar:
           - string:
               text: "{temp}°C"
     - script:
-        path: /home/paemuri/.config/yambar/modules/disk
+        path: /home/paemuri/.local/bin/yambar-mod-disk
         content:
           - string:
               font: *awesome
@@ -129,7 +129,7 @@ bar:
           - string:
               text: "{percent}% {usage}"
     - script:
-        path: /home/paemuri/.config/yambar/modules/battery
+        path: /home/paemuri/.local/bin/yambar-mod-battery
         content:
           map:
             tag: "charging"
