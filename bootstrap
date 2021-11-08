@@ -1,5 +1,7 @@
 #!/bin/sh
 
+source config/bash/env
+
 dotfiles="$(dirname $0)"
 for dir in \
   "config" \

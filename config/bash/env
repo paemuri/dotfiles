@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 export BROWSER=$(which qutebrowser)
 export EDITOR=$(which nvim)
