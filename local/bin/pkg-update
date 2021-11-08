@@ -1,9 +1,9 @@
 #!/bin/sh
 
-paru -Syu --mflags="--skippgpcheck --skipchecksums" --noconfirm
+paru -Syu --noconfirm
 
 orphans="$(paru -Qtdq)"
 if test -n "$orphans"
 then
-  paru -Rns --mflags="--skippgpcheck --skipchecksums" --noconfirm $orphans
+  paru -Rns --noconfirm $orphans
 fi
