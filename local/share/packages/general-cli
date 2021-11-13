@@ -4,9 +4,14 @@ bash-completion
 htop
 jq
 lf-bin
+man-db
+man-pages
 neovim
+opendoas
 openssh
+openssl
 perl-image-exiftool
+rsync
 sl
 the_silver_searcher
 trash-cli
