@@ -84,7 +84,7 @@ autocmd Filetype rust setlocal colorcolumn=100
 autocmd Filetype go setlocal colorcolumn=100
 
 syntax on
-colorscheme darktooth
+"colorscheme darktooth
 highlight ColorColumn ctermbg=238
 filetype plugin indent on
 
