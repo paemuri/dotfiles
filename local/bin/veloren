@@ -1,0 +1,6 @@
+#!/bin/sh
+
+WAYLAND_DISPLAY=
+airshipper update
+airshipper run
+
