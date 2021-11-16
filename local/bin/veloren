@@ -1,6 +1,6 @@
 #!/bin/sh
 
 WAYLAND_DISPLAY=
-airshipper update
-airshipper run
+$TERMINAL -e /usr/bin/airshipper update
+/usr/bin/airshipper run
 
