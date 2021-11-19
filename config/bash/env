@@ -49,7 +49,7 @@ export GRIM_DEFAULT_DIR="$HOME/images/screenshots"
 export BEMENU_OPTS="\
   --ignorecase \
   --prompt=search \
-  --fn \"FiraMono-Regular 10\" \
+  --fn \"FiraMono 10\" \
   --line-height=20
   --tb=#282828 \
   --tf=#79740e \
