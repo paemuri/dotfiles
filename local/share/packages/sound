@@ -1,6 +1,6 @@
 alsa-firmware
 alsa-utils
-pipewire
-pipewire-alsa
-pipewire-pulse
+pulseaudio
+pulseaudio-alsa
+pulseaudio-bluetooth
 ponymix
