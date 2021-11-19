@@ -20,8 +20,7 @@ alias open="xdg-open"
 
 source ${XDG_CONFIG_HOME}/bash/prompt
 source /usr/share/bash-completion/bash_completion
-
-eval "$(goenv init -)"
+source /usr/share/nvm/init-nvm.sh
 
 set -o vi
 shopt -s \
