@@ -1,6 +1,6 @@
 #!/bin/sh
 
-which bwmenu 2>/dev/null || \
+which bwmenu >/dev/null 2>&1 || \
   notify-send --expire-time=5000 --urgency=critical "Missing bwmenu"
 
 menu_path=$(which bemenu)
