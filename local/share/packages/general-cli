@@ -1,6 +1,7 @@
 acpi
 bash
 bash-completion
+bitwarden-cli
 htop
 jq
 lf-bin

@@ -48,6 +48,8 @@ export GRIM_DEFAULT_DIR="$HOME/images/screenshots"
 
 export BEMENU_OPTS="\
   --ignorecase \
+  --list=10 \
+  --scrollbar=autohide \
   --prompt=search \
   --fn \"FiraMono 10\" \
   --line-height=20
@@ -61,6 +63,8 @@ export BEMENU_OPTS="\
   --hf=#79740e \
   --sb=#282828 \
   --sf=#79740e \
+  --scb=#282828 \
+  --scf=#79740e \
 "
 
 export PATH="$HOME/.local/bin"

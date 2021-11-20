@@ -1,0 +1,10 @@
+#!/bin/sh
+
+which bwmenu 2>/dev/null || \
+  notify-send --expire-time=5000 --urgency=critical "Missing bwmenu"
+
+menu_path=$(which bemenu)
+bwmenu \
+  --clear 15 \
+  --search-command "$menu_path --prompt 'item'" \
+  --ask-password-command "$menu_path --password --prompt 'pass'"

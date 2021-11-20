@@ -15,6 +15,7 @@ riverctl map normal $super       F     toggle-fullscreen
 riverctl map normal $super+Shift F     toggle-float
 riverctl map normal $super       Q     close
 riverctl map normal $super       Space spawn "bemenu-run"
+riverctl map normal $super       P     spawn "bemenu-bitwarden"
 riverctl map normal $super       B     spawn "qutebrowser"
 riverctl map normal $super       T     spawn "alacritty -t alacritty"
 riverctl map normal $super       E     spawn "alacritty -t files -e lf"
