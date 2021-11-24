@@ -5,27 +5,29 @@ source ~/.config/bash/env
 if test -z "$WAYLAND_DISPLAY" && test "$(tty)" = "/dev/tty1"
 then
   mkdir -p ~/.local/share/river/logs
-  timestamp=$(date "+%Y-%m-%d-%H-%M-%S")
+  timestamp="$(date "+%Y-%m-%d-%H-%M-%S")"
   exec river -log-level info > \
-    ~/.local/share/river/logs/${timestamp}.log 2>&1
+    ${XDG_DATA_HOME}/river/logs/${timestamp}.log 2>&1
 fi
 
 alias less="less --RAW-CONTROL-CHARS"
-alias ls="ls --classify --color=auto"
+alias ls="ls --almost-all --classify --color=auto"
 alias grep="grep --color=auto"
 alias egrep="egrep --color=auto"
 alias fgrep="fgrep --color=auto"
 alias pacman="pacman --color=auto"
+alias open="xdg-open"
 
-source ~/.config/bash/prompt
+source ${XDG_CONFIG_HOME}/bash/prompt
 source /usr/share/bash-completion/bash_completion
 
 eval "$(goenv init -)"
 
 set -o vi
 shopt -s \
+  checkwinsize \
+  cmdhist \
+  dotglob \
   globstar \
-  histappend \
-  histverify \
-  checkwinsize
+  histappend
 
