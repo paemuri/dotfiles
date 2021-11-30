@@ -46,6 +46,8 @@ export LESSKEY="$XDG_CONFIG_HOME/less/keys"
 
 export GRIM_DEFAULT_DIR="$HOME/images/screenshots"
 
+export PGSERVICEFILE="$XDG_CONFIG_HOME/postgresql/pg_service.conf"
+
 export BEMENU_OPTS="\
   --ignorecase \
   --list=10 \
