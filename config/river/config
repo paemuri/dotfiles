@@ -39,6 +39,11 @@ riverctl map normal $super       L send-layout-cmd rivertile "main-ratio +0.05"
 riverctl map normal $super+Shift H send-layout-cmd rivertile "main-count +1"
 riverctl map normal $super+Shift L send-layout-cmd rivertile "main-count -1"
 
+# Notification control.
+riverctl map normal $super+$alt Space     spawn "makoctl dismiss --all"
+riverctl map normal $super+$alt Backspace spawn "makoctl dismiss"
+riverctl map normal $super+$alt Return    spawn "makoctl invoke"
+
 # Mouse.
 riverctl map-pointer normal $super BTN_LEFT  move-view
 riverctl map-pointer normal $super BTN_RIGHT resize-view
@@ -66,7 +71,7 @@ for mode in normal locked
 do
 
   # Volume.
-  riverctl map $mode None  XF86AudioRaiseVolume spawn "ponymix --output --max-volume=100 increase 10"
+  riverctl map $mode None  XF86AudioRaiseVolume spawn "ponymix --output --max-volume=150 increase 10"
   riverctl map $mode None  XF86AudioLowerVolume spawn "ponymix --output decrease 10"
   riverctl map $mode None  XF86AudioMute        spawn "ponymix --output toggle"
   riverctl map $mode Shift XF86AudioRaiseVolume spawn "ponymix --input --max-volume=25 increase 5"

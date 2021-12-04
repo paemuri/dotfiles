@@ -7,4 +7,8 @@ yambar &
 wbg ~/images/wallpaper.jpg &
 mpv /usr/share/sounds/freedesktop/stereo/service-login.oga &
 
+ponymix --output --max-volume=150 set-volume 100
+ponymix --input  --max-volume=25  set-volume 25
+
 exec rivertile
+
