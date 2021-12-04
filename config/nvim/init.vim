@@ -1,15 +1,20 @@
-" Based on:
-" https://github.com/jonhoo/configs/blob/master/editor/.config/nvim/init.vim
-" https://github.com/plentiform/go-ide/blob/master/init.vim
-" https://github.com/giioohbernini/dotnvim/blob/master/init.vim
+if ! filereadable(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/autoload/plug.vim"'))
+  silent !mkdir -p ${XDG_CONFIG_HOME:-$HOME/.config}/nvim/autoload/
+  silent !curl "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
+    \ > ${XDG_CONFIG_HOME:-$HOME/.config}/nvim/autoload/plug.vim
+  autocmd VimEnter * PlugInstall
+endif
 
-call plug#begin()
+call plug#begin(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/plugged"'))
+Plug 'neovim/nvim-lspconfig'
+Plug 'andymass/vim-matchup'
+Plug 'itchyny/lightline.vim'
+Plug 'itchyny/vim-gitbranch'
 Plug 'junegunn/fzf', { 'do': './install --all --xdg' }
 Plug 'junegunn/fzf.vim'
-Plug 'itchyny/lightline.vim'
-Plug 'taohexxx/lightline-buffer'
 Plug 'machakann/vim-highlightedyank'
-Plug 'andymass/vim-matchup'
+Plug 'scrooloose/nerdtree'
+Plug 'taohexxx/lightline-buffer'
 call plug#end()
 
 set undofile
@@ -29,12 +34,13 @@ set background=dark
 set nocompatible
 set showtabline=2
 
-let mapleader="\<space>"
-nnoremap <leader>p :Files<cr>
-nnoremap <leader>f :Ag<cr>
-nnoremap <leader>b :buffers<cr>:buffer<space>
-nnoremap <leader>, :bprev<CR>
-nnoremap <leader>. :bnext<CR>
+nnoremap <a-p> :Files<cr>
+nnoremap <a-f> :Ag<cr>
+nnoremap <a-e> :NERDTreeToggle<cr>
+nnoremap <a-q> :bdelete<cr>
+nnoremap <a-w> :write<cr>
+nnoremap <a-,> :bprev<cr>
+nnoremap <a-.> :bnext<cr>
 
 let g:rustfmt_autosave = 1
 let g:rustfmt_emit_files = 1
