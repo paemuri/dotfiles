@@ -15,6 +15,10 @@ probably not the best place, but it's there).
 Wrapper around [bwmenu][1], which is a menu wrapper around Bitwarden
 CLI, the password manager I use. 
 
+### `code`
+
+~Gambiarra~ *Workaround* script to make VS Codium pseudo-XDG-compliant.
+
 ### `fix-files-names`
 
 Script to organize my media files. I have to many images and videos
