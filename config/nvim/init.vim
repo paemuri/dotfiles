@@ -15,7 +15,63 @@ Plug 'junegunn/fzf.vim'
 Plug 'machakann/vim-highlightedyank'
 Plug 'scrooloose/nerdtree'
 Plug 'taohexxx/lightline-buffer'
+Plug 'neovim/nvim-lspconfig'
 call plug#end()
+
+lua << EOF
+
+local nvim_lsp = require('lspconfig')
+
+local on_attach = function(client, bufnr)
+
+  local function buf_set_keymap(...)
+    vim.api.nvim_buf_set_keymap(bufnr, ...)
+  end
+  local function buf_set_option(...)
+    vim.api.nvim_buf_set_option(bufnr, ...)
+  end
+
+  -- <c-x><c-o>
+  buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
+
+  local opts = { noremap=true }
+  buf_set_keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
+  buf_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
+  buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
+  buf_set_keymap('n', 'gt', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
+  buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
+  buf_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
+  buf_set_keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
+  buf_set_keymap('n', ';f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
+  buf_set_keymap('n', ';r', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
+  buf_set_keymap('n', ';e', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
+  buf_set_keymap('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
+  buf_set_keymap('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
+  buf_set_keymap('n', ';q', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
+  buf_set_keymap('n', ';wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
+  buf_set_keymap('n', ';wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
+  buf_set_keymap('n', ';wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
+  buf_set_keymap('n', ';ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
+
+end
+
+local servers = {
+  'gopls',
+  'rust_analyzer',
+  'tsserver',
+  'zls',
+  'graphql',
+}
+for _, lsp in ipairs(servers) do
+  nvim_lsp[lsp].setup {
+    on_attach = on_attach,
+    flags = {
+      debounce_text_changes = 150,
+    }
+  }
+end
+
+EOF
 
 set undofile
 set undodir=~/.local/share/nvim/undodir/
@@ -34,13 +90,14 @@ set background=dark
 set nocompatible
 set showtabline=2
 
-nnoremap <a-p> :Files<cr>
-nnoremap <a-f> :Ag<cr>
-nnoremap <a-e> :NERDTreeToggle<cr>
-nnoremap <a-q> :bdelete<cr>
-nnoremap <a-w> :write<cr>
-nnoremap <a-,> :bprev<cr>
-nnoremap <a-.> :bnext<cr>
+let mapleader="\<space>"
+nnoremap <leader>o :Files<cr>
+nnoremap <leader>f :Ag<cr>
+nnoremap <leader>e :NERDTreeToggle<cr>
+nnoremap <leader>q :bdelete<cr>
+nnoremap <leader>w :write<cr>
+nnoremap <leader>, :bprev<cr>
+nnoremap <leader>. :bnext<cr>
 
 let g:rustfmt_autosave = 1
 let g:rustfmt_emit_files = 1
