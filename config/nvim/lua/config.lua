@@ -13,6 +13,10 @@ opt.showmode = false
 opt.background = 'dark'
 opt.compatible = false
 opt.showtabline = 2
+opt.smarttab = true
+opt.expandtab = true
+opt.softtabstop = 4
+opt.shiftwidth = 4
 
 g.mapleader = ' '
 map('n', '<leader>o', ':Telescope find_files<cr>')
@@ -56,14 +60,22 @@ require('lualine').setup({
   extensions = {},
 })
 
-cmd('autocmd BufRead *.md set filetype=markdown')
-cmd('autocmd BufRead *.tex set filetype=tex')
-cmd('autocmd FileType gitcommit setlocal spell textwidth=72')
-cmd('autocmd FileType markdown setlocal colorcolumn=100')
-cmd('autocmd Filetype rust setlocal colorcolumn=100')
-cmd('autocmd Filetype go setlocal colorcolumn=100')
+cmd [[
+  set list listchars=tab:\›\ ,trail:-,extends:>,precedes:<,eol:¬,space:·
+]]
 
-cmd('syntax on')
-cmd('highlight ColorColumn ctermbg=238')
-cmd('filetype plugin indent on')
+cmd [[
+  autocmd BufRead *.md set filetype=markdown
+  autocmd BufRead *.tex set filetype=tex
+  autocmd FileType gitcommit setlocal spell textwidth=72
+  autocmd FileType markdown setlocal colorcolumn=100
+  autocmd Filetype rust setlocal colorcolumn=100
+  autocmd Filetype go setlocal colorcolumn=100
+]]
+
+cmd [[
+  syntax on
+  highlight ColorColumn ctermbg=238
+  filetype plugin indent on
+]]
 
