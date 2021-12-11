@@ -22,7 +22,6 @@ source ${XDG_CONFIG_HOME}/bash/prompt
 source /usr/share/bash-completion/bash_completion
 source /usr/share/nvm/init-nvm.sh
 
-set -o vi
 shopt -s \
   checkwinsize \
   cmdhist \
