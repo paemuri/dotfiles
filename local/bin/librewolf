@@ -1,0 +1,3 @@
+#!/bin/sh
+HOME=$XDG_CONFIG_HOME/librewolf
+exec /usr/bin/librewolf $@
