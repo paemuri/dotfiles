@@ -6,6 +6,7 @@ then
   mkdir -p "$data_home"
 fi
 
+HOME=$data_home
 exec /usr/bin/codium \
   --extensions-dir $data_home/extensions \
   --user-data-dir $data_home/user-data \
