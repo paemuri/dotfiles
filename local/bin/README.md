@@ -24,10 +24,6 @@ CLI, the password manager I use.
 Script to organize my media files. I have to many images and videos
 to do it manually.
 
-### `librewolf`
-
-~Gambiarra~ *Workaround* script to make Librewolf pseudo-XDG-compliant.
-
 ### `pkg-install`
 
 Simple `paru` wrapper that install all packages defined in
