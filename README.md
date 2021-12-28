@@ -31,7 +31,7 @@ Linux.
 - Bash: I don't love it, but I've never seen a good reason to change
 - NeoVim: but I still suck at it
 - [Alacritty][2]: GPU acceletared terminal
-- [qutebrowser][3]: keyboard-focused web browser
+- [Librewolf][3]: Firefox privacy-focused fork
 - [River][4]: Wayland compositor / window manager
 - [Yambar][5]: Wayland panel with River integration
 - [Mako][6]: Wayland notification daemon
@@ -58,7 +58,7 @@ domain, without any additional terms or conditions.
 
 [1]: ./LICENSE
 [2]: https://github.com/alacritty/alacritty
-[3]: https://github.com/qutebrowser/qutebrowser
+[3]: https://librewolf.net
 [4]: https://github.com/ifreund/river
 [5]: https://codeberg.org/dnkl/yambar
 [6]: https://github.com/emersion/mako

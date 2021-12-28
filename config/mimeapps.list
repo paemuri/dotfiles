@@ -6,17 +6,17 @@ inode/directory=lf.desktop
 # zathura.desktop
 application/pdf=zathura.desktop
 
-# qutebrowser.desktop
-application/x-extension-htm=qutebrowser.desktop
-application/x-extension-html=qutebrowser.desktop
-application/x-extension-shtml=qutebrowser.desktop
-application/x-extension-xht=qutebrowser.desktop
-application/x-extension-xhtml=qutebrowser.desktop
-application/xhtml+xml=qutebrowser.desktop
-text/html=qutebrowser.desktop
-x-scheme-handler/chrome=qutebrowser.desktop
-x-scheme-handler/http=qutebrowser.desktop
-x-scheme-handler/https=qutebrowser.desktop
+# librewolf-personal.desktop
+application/x-extension-htm=librewolf-personal.desktop
+application/x-extension-html=librewolf-personal.desktop
+application/x-extension-shtml=librewolf-personal.desktop
+application/x-extension-xht=librewolf-personal.desktop
+application/x-extension-xhtml=librewolf-personal.desktop
+application/xhtml+xml=librewolf-personal.desktop
+text/html=librewolf-personal.desktop
+x-scheme-handler/chrome=librewolf-personal.desktop
+x-scheme-handler/http=librewolf-personal.desktop
+x-scheme-handler/https=librewolf-personal.desktop
 
 # mpv.desktop
 application/ogg=mpv.desktop
@@ -101,3 +101,18 @@ text/x-moc=nvim.desktop
 text/x-pascal=nvim.desktop
 text/x-tcl=nvim.desktop
 text/x-tex=nvim.desktop
+
+[Added Associations]
+
+# librewolf-work.desktop
+application/x-extension-htm=librewolf-work.desktop
+application/x-extension-html=librewolf-work.desktop
+application/x-extension-shtml=librewolf-work.desktop
+application/x-extension-xht=librewolf-work.desktop
+application/x-extension-xhtml=librewolf-work.desktop
+application/xhtml+xml=librewolf-work.desktop
+text/html=librewolf-work.desktop
+x-scheme-handler/chrome=librewolf-work.desktop
+x-scheme-handler/http=librewolf-work.desktop
+x-scheme-handler/https=librewolf-work.desktop
+

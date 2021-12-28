@@ -1,7 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=Qutebrowser web browser
-GenericName=Web browser
-TryExec=qutebrowser
-Exec=qutebrowser %u
-MimeType=text/html;text/xml;application/xhtml+xml;application/xml;application/rdf+xml;image/gif;image/jpeg;image/png;x-scheme-handler/http;x-scheme-handler/https;x-scheme-handler/qute;

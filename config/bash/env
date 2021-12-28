@@ -1,6 +1,6 @@
 #!/bin/sh
 
-export BROWSER=$(which qutebrowser)
+export BROWSER=$(which librewolf-personal)
 export EDITOR=$(which nvim)
 export VISUAL=$(which nvim)
 export TERMINAL=$(which alacritty)
