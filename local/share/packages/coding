@@ -7,6 +7,7 @@ nvm
 pgcli
 postgresql
 rustup
+texlive-core
 typescript
 typescript-language-server-bin
 zig
