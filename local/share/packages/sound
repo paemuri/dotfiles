@@ -1,6 +1,7 @@
 alsa-firmware
 alsa-utils
+pavucontrol
+ponymix
 pulseaudio
 pulseaudio-alsa
 pulseaudio-bluetooth
-ponymix
