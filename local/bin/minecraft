@@ -7,8 +7,5 @@ then
 fi
 
 HOME=$data_home
-exec /usr/bin/minecraft-launcher \
-  --workDir="$data_home" \
-  --lockDir="$data_home" \
-  $@
+exec /usr/bin/minecraft-launcher $@
 
