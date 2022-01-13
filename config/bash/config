@@ -4,9 +4,9 @@ source ~/.config/bash/env
 
 if test -z "$WAYLAND_DISPLAY" && test "$(tty)" = "/dev/tty1"
 then
-  mkdir -p ~/.local/share/river/logs
+  mkdir -p ${XDG_DATA_HOME}/river/logs
   timestamp="$(date "+%Y-%m-%d-%H-%M-%S")"
-  exec river -log-level info > \
+  exec dbus-run-session river -log-level info > \
     ${XDG_DATA_HOME}/river/logs/${timestamp}.log 2>&1
 fi
 

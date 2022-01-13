@@ -2,6 +2,8 @@
 
 $XDG_CONFIG_HOME/river/config
 
+dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
+
 mako &
 yambar &
 wbg ~/images/wallpaper.jpg &
