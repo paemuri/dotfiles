@@ -5,6 +5,7 @@ window:
   decorations:     full
   startup_mode:    Windowed
   dynamic_title:   true
+  opacity:         1.0
 
 scrolling:
   history:    10000
@@ -67,8 +68,6 @@ bell:
   animation: EaseOutExpo
   duration:  0
   color:     '0xfdf4c1'
-
-background_opacity: 1.0
 
 mouse_bindings:
   - { mouse: Middle, action: PasteSelection }
