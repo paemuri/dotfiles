@@ -3,6 +3,7 @@ docker-compose
 gopls
 graphql-lsp
 gvm
+kafkactl
 nvm
 pgcli
 postgresql
