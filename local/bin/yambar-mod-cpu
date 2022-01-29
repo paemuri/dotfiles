@@ -1,0 +1,19 @@
+#!/bin/sh
+
+last_percent=""
+
+while true
+do
+
+  free="$(vmstat | tail -1 | awk '{print $15}')"
+  percent="$(( 100 - free ))"
+
+  if [ "$percent" != "$last_percent" ]
+  then
+    last_percent="$percent"
+    echo "percent|range:0-100|$percent"
+    echo
+  fi
+
+  sleep 1
+done
