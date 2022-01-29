@@ -28,10 +28,10 @@ Linux.
 
 ### Things that I use
 
-- Bash: I don't love it, but I've never seen a good reason to change
-- NeoVim: but I still suck at it
-- [Alacritty][2]: GPU acceletared terminal
-- [Librewolf][3]: Firefox privacy-focused fork
+- Bash: shell
+- NeoVim: terminal editor
+- [foot][2]: lightweight Wayland terminal
+- [Librewolf][3]: privacy-focused Firefox fork
 - [River][4]: Wayland compositor / window manager
 - [Yambar][5]: Wayland panel with River integration
 - [Mako][6]: Wayland notification daemon
@@ -40,7 +40,8 @@ Linux.
 - [imv][9]: Wayland image viewer
 - [lf][10]: terminal file manager
 - [Zathura][11]: PDF reader
-- [mpv][12]: media/video player
+- [mpv][12]: video player
+- [wbg][13]: Wayland background
 
 ## Bootstrap
 
@@ -57,9 +58,9 @@ submitted for inclusion in the work by you shall be in the public
 domain, without any additional terms or conditions.
 
 [1]: ./LICENSE
-[2]: https://github.com/alacritty/alacritty
+[2]: https://codeberg.org/dnkl/foot
 [3]: https://librewolf.net
-[4]: https://github.com/ifreund/river
+[4]: https://github.com/riverwm/river
 [5]: https://codeberg.org/dnkl/yambar
 [6]: https://github.com/emersion/mako
 [7]: https://github.com/mortie/swaylock-effects
@@ -68,6 +69,7 @@ domain, without any additional terms or conditions.
 [10]: https://github.com/gokcehan/lf
 [11]: https://git.pwmt.org/pwmt/zathura
 [12]: https://github.com/mpv-player/mpv
+[13]: https://codeberg.org/dnkl/wbg
 
 [badge-1-img]: https://img.shields.io/github/license/paemuri/dotfiles?style=flat-square
 [badge-1-link]: https://github.com/paemuri/dotfiles/blob/master/LICENSE

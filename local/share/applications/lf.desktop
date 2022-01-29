@@ -3,5 +3,5 @@ Type=Application
 Name=LF file manager
 GenericName=File manager
 TryExec=lf
-Exec=alacritty -t files -e lf %u
+Exec=\$TERMINAL -e lf %u
 MimeType=inode/directory;

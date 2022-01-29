@@ -3,6 +3,8 @@
 alt="Mod1"
 super="Mod4"
 
+$XDG_CONFIG_HOME/bash/env
+
 #########
 # Style #
 #########
@@ -89,8 +91,8 @@ riverctl map normal $super       Space spawn bemenu-run
 riverctl map normal $super       P     spawn bemenu-bitwarden
 riverctl map normal $super       B     spawn librewolf-personal
 riverctl map normal $super+Shift B     spawn librewolf-work
-riverctl map normal $super       T     spawn "alacritty -t alacritty"
-riverctl map normal $super       E     spawn "alacritty -t files -e lf"
+riverctl map normal $super       T     spawn "$TERMINAL"
+riverctl map normal $super       E     spawn "$TERMINAL -e lf"
 
 #######################
 # Software: secondary #

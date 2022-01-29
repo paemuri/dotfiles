@@ -3,7 +3,7 @@
 export BROWSER=$(which librewolf-personal)
 export EDITOR=$(which nvim)
 export VISUAL=$(which nvim)
-export TERMINAL=$(which alacritty)
+export TERMINAL=$(which foot)
 
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
