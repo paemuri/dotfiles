@@ -57,7 +57,7 @@ pointer_inputs=$(
   grep --no-group-separator -B1 "type: pointer" |
   grep -v "type: pointer"
 )
-for input in "$pointer_inputs"
+for input in $pointer_inputs
 do
   riverctl input $input click-method         clickfinger
   riverctl input $input drag                 enabled
