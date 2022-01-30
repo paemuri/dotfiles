@@ -105,14 +105,6 @@ bar:
                   string:
                     text: "{ssid}"
     - script:
-        path: /home/paemuri/.local/bin/yambar-mod-cpu
-        content:
-          - string:
-              font: *awesome
-              text: ""
-          - string:
-              text: "{percent}%"
-    - script:
         path: /home/paemuri/.local/bin/yambar-mod-memory
         content:
           - string:
