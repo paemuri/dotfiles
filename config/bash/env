@@ -1,55 +1,67 @@
 #!/bin/sh
 
-export BROWSER=$(which librewolf-personal)
-export EDITOR=$(which nvim)
-export VISUAL=$(which nvim)
-export TERMINAL=$(which foot)
+export BROWSER="$(which librewolf-personal)"
+export EDITOR="$(which nvim)"
+export VISUAL="$(which nvim)"
+export TERMINAL="$(which foot)"
 
-export XDG_CONFIG_HOME="$HOME/.config"
-export XDG_CACHE_HOME="$HOME/.cache"
-export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_CONFIG_HOME=$HOME/.config
+export XDG_CACHE_HOME=$HOME/.cache
+export XDG_DATA_HOME=$HOME/.local/share
 
-export PROJ="$HOME/projects"
-export DOTFILES="$PROJ/paemuri/dotfiles"
+source $XDG_CONFIG_HOME/user-dirs.dirs
+export XDG_DESKTOP_DIR
+export XDG_DOCUMENTS_DIR
+export XDG_DOWNLOAD_DIR
+export XDG_MUSIC_DIR
+export XDG_PICTURES_DIR
+export XDG_SCREENSHOTS_DIR
+export XDG_PUBLICSHARE_DIR
+export XDG_TEMPLATES_DIR
+export XDG_VIDEOS_DIR
 
-export INPUTRC="$XDG_CONFIG_HOME/readline/inputrc"
+export PROJECTS_DIR=$HOME/projects
+export DOTFILES=$PROJECTS_DIR/paemuri/dotfiles
 
-export HISTFILE="$XDG_CACHE_HOME/bash/history"
-export HISTCONTROL="ignoreboth:erasedups"
+export INPUTRC=$XDG_CONFIG_HOME/readline/inputrc
+export HISTFILE=$XDG_CACHE_HOME/bash/history
+export HISTCONTROL=ignoreboth:erasedups
 export HISTIGNORE="?:??"
-export HISTFILESIZE="99999"
-export HISTSIZE="99999"
+export HISTFILESIZE=99999
+export HISTSIZE=99999
 export PROMPT_COMMAND="history -a"
 
 export GREP_COLOR="38;2;181;118;20"
 export GREP_COLORS="ms=$GREP_COLOR"
 
-export XKB_DEFAULT_LAYOUT="br"
-export XKB_DEFAULT_OPTIONS="caps:escape"
+export XKB_DEFAULT_LAYOUT=br
+export XKB_DEFAULT_OPTIONS=caps:escape
 
-export XCURSOR_THEME="Simp1e"
+export XCURSOR_THEME=Simp1e
+export XCURSOR_SIZE=24
+export XCURSOR_PATH=$XDG_DATA_HOME/icons:/usr/share/icons
 
-export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
-export CARGO_HOME="$XDG_DATA_HOME/cargo"
+export RUSTUP_HOME=$XDG_DATA_HOME/rustup
+export CARGO_HOME=$XDG_DATA_HOME/cargo
 export CARGO_NAME="Rafael Escobar"
-export CARGO_EMAIL="rescobar@pm.me"
+export CARGO_EMAIL=rescobar@pm.me
 
-export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/config"
-export NVM_DIR="$XDG_DATA_HOME/nvm"
-export NODE_REPL_HISTORY="$XDG_DATA_HOME/node/repl-history"
+export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/config
+export NVM_DIR=$XDG_DATA_HOME/nvm
+export NODE_REPL_HISTORY=$XDG_DATA_HOME/node/repl-history
 
 export SDL_VIDEODRIVER=wayland
 export XDG_SESSION_TYPE=wayland
 export XDG_CURRENT_DESKTOP=river
 export MOZ_ENABLE_WAYLAND=1
 
-export GNUPGHOME="$XDG_DATA_HOME/gnupg"
-export LESSHISTFILE="$XDG_DATA_HOME/less/history"
-export LESSKEY="$XDG_CONFIG_HOME/less/keys"
+export GNUPGHOME=$XDG_DATA_HOME/gnupg
+export LESSHISTFILE=$XDG_DATA_HOME/less/history
+export LESSKEY=$XDG_CONFIG_HOME/less/keys
 
-export GRIM_DEFAULT_DIR="$HOME/images/screenshots"
+export GRIM_DEFAULT_DIR="$XDG_SCREENSHOTS_DIR"
 
-export PGSERVICEFILE="$XDG_CONFIG_HOME/postgresql/pg_service.conf"
+export PGSERVICEFILE=$XDG_CONFIG_HOME/postgresql/pg_service.conf
 
 export BEMENU_OPTS="\
   --ignorecase \
@@ -72,11 +84,11 @@ export BEMENU_OPTS="\
   --scf=#79740e \
 "
 
-export PATH="$HOME/.local/bin"
-PATH+=":/usr/bin"
-PATH+=":/usr/local/bin"
-PATH+=":/usr/local/sbin"
-PATH+=":/usr/bin/vendor_perl"
-PATH+=":/opt"
-PATH+=":$CARGO_HOME/bin"
+export PATH=$HOME/.local/bin
+PATH+=:/usr/bin
+PATH+=:/usr/local/bin
+PATH+=:/usr/local/sbin
+PATH+=:/usr/bin/vendor_perl
+PATH+=:/opt
+PATH+=:$CARGO_HOME/bin
 
