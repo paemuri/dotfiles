@@ -9,8 +9,8 @@
 	insteadOf = https://github.com/paemuri
 	insteadOf = https://github.com/Nhanderu
 	insteadOf = git@github.com:Nhanderu
-[url "git@github.com:RedVentures"]
-	insteadOf = https://github.com/RedVentures
+[url "git@github.com:devsbb"]
+	insteadOf = https://github.com/devsbb
 [push]
 	default = current
 [init]

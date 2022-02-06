@@ -71,5 +71,5 @@ domain, without any additional terms or conditions.
 [12]: https://github.com/mpv-player/mpv
 [13]: https://codeberg.org/dnkl/wbg
 
-[badge-1-img]: https://img.shields.io/github/license/paemuri/dotfiles?style=flat-square
-[badge-1-link]: https://github.com/paemuri/dotfiles/blob/master/LICENSE
+[badge-1-img]: https://img.shields.io/badge/license-Unlicense-green?style=flat-square
+[badge-1-link]: ./LICENSE
