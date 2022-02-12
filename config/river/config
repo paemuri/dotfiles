@@ -105,8 +105,8 @@ riverctl map normal Shift         Print spawn "screen shot"
 riverctl map normal Shift+Control Print spawn "screen shot --crop"
 
 # Screen recording.
-riverctl map normal None    F2 spawn "screen record"
-riverctl map normal Control F2 spawn "screen record --crop"
+riverctl map normal $super         F2 spawn "screen record"
+riverctl map normal $super+Control F2 spawn "screen record --crop"
 
 for mode in normal locked
 do
