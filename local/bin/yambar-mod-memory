@@ -1,7 +1,7 @@
 #!/bin/sh
 
-last_percent=""
-last_usage=""
+last_text=""
+last_symbol=""
 
 while true
 do
@@ -10,15 +10,18 @@ do
   total="${raw_output% *}"
   usage="${raw_output#* }"
   percent="$(( usage * 100 / total ))"
+  text="$percent% ${usage}M"
+  symbol=""
 
-  if [ "$percent" != "$last_percent" ] || [ "$usage" != "$last_usage" ]
+  if test "$text" != "$last_text" || \
+    test "$symbol" != "$last_symbol"
   then
-    last_percent="$percent"
-    echo "percent|range:0-100|$percent"
-    last_usage="$usage"
-    echo "usage|int|$usage"
+    last_text="$text"
+    echo "text|string|$text"
+    last_symbol="$symbol"
+    echo "symbol|string|$symbol"
     echo
   fi
 
-  sleep 1
+  sleep 1s
 done

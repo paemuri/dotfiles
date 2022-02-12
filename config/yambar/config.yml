@@ -42,45 +42,36 @@ bar:
 
   right:
     - script:
+        path: /home/paemuri/.local/bin/yambar-mod-recording
+        content:
+          - string:
+              font: *awesome
+              foreground: "9d0006ff"
+              text: "{symbol}"
+    - script:
         path: /home/paemuri/.local/bin/yambar-mod-uptime
         content:
           - string:
               font: *awesome
-              text: ""
+              text: "{symbol}"
           - string:
-              text: "{time}"
+              text: "{text}"
     - script:
         path: /home/paemuri/.local/bin/yambar-mod-audio
         content:
-          - map:
-              tag: "muted"
-              values:
-                true:
-                  string:
-                    font: *awesome
-                    text: ""
-                false:
-                  string:
-                    font: *awesome
-                    text: ""
           - string:
-              text: "{volume}"
+              font: *awesome
+              text: "{symbol}"
+          - string:
+              text: "{text}"
     - script:
         path: /home/paemuri/.local/bin/yambar-mod-mic
         content:
-          - map:
-              tag: "muted"
-              values:
-                true:
-                  string:
-                    font: *awesome
-                    text: ""
-                false:
-                  string:
-                    font: *awesome
-                    text: ""
           - string:
-              text: "{volume}"
+              font: *awesome
+              text: "{symbol}"
+          - string:
+              text: "{text}"
     - backlight:
         name: "amdgpu_bl1"
         content:
@@ -94,96 +85,44 @@ bar:
         content:
           - string:
               font: *awesome
-              text: ""
-          - map:
-              tag: "state"
-              default:
-                string:
-                  text: "{state}"
-              values:
-                connected:
-                  string:
-                    text: "{ssid}"
+              text: "{symbol}"
+          - string:
+              text: "{text}"
     - script:
         path: /home/paemuri/.local/bin/yambar-mod-memory
         content:
           - string:
               font: *awesome
-              text: ""
+              text: "{symbol}"
           - string:
-              text: "{percent}% {usage}M"
+              text: "{text}"
     - script:
         path: /home/paemuri/.local/bin/yambar-mod-temp
         content:
           - string:
               font: *awesome
-              text: ""
+              text: "{symbol}"
           - string:
-              text: "{temp}°C"
+              text: "{text}"
     - script:
         path: /home/paemuri/.local/bin/yambar-mod-disk
         content:
           - string:
               font: *awesome
-              text: ""
+              text: "{symbol}"
           - string:
-              text: "{percent}% {usage}"
+              text: "{text}"
     - script:
         path: /home/paemuri/.local/bin/yambar-mod-battery
         content:
-          map:
-            tag: "charging"
-            values:
-              false:
-                - ramp:
-                    tag: "capacity"
-                    items:
-                      - list:
-                          items:
-                            - string:
-                                font: *awesome
-                                text: ""
-                            - string:
-                                text: "{capacity}%"
-                      - list:
-                          items:
-                            - string:
-                                font: *awesome
-                                text: ""
-                            - string:
-                                text: "{capacity}%"
-                      - list:
-                          items:
-                            - string:
-                                font: *awesome
-                                text: ""
-                            - string:
-                                text: "{capacity}%"
-                      - list:
-                          items:
-                            - string:
-                                font: *awesome
-                                text: ""
-                            - string:
-                                text: "{capacity}%"
-                      - list:
-                          items:
-                            - string:
-                                font: *awesome
-                                text: ""
-                            - string:
-                                text: "{capacity}%"
-              true:
-                - list:
-                    items:
-                      - string:
-                          font: *awesome
-                          text: ""
-                      - string:
-                          text: "{capacity}%"
+          - string:
+              font: *awesome
+              text: "{symbol}"
+          - string:
+              text: "{text}"
     - clock:
-        date-format: "%Y-%m-%d"
-        time-format: "%H:%M:%S"
+        date-format: "%F"
+        time-format: "%T"
         content:
           - string:
               text: "{date} {time}"

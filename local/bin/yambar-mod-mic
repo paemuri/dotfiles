@@ -1,22 +1,29 @@
 #!/bin/sh
 
-last_volume=""
-last_muted=""
+last_text=""
+last_symbol=""
 
 while true
 do
 
   volume="$(ponymix --input get-volume)"
-  muted="$(ponymix --input is-muted && echo true || echo false)"
-
-  if [ "$volume" != "$last_volume" ] || [ "$muted" != "$last_muted" ]
+  text="$volume"
+  if ponymix --input is-muted
   then
-    last_volume="$volume"
-    echo "volume|range:0-150|$volume"
-    last_muted="$muted"
-    echo "muted|bool|$muted"
+    symbol=""
+  else
+    symbol=""
+  fi
+
+  if test "$text" != "$last_text" || \
+    test "$symbol" != "$last_symbol"
+  then
+    last_text="$text"
+    echo "text|string|$text"
+    last_symbol="$symbol"
+    echo "symbol|string|$symbol"
     echo
   fi
 
-  sleep 1
+  sleep 1s
 done

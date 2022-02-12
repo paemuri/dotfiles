@@ -1,18 +1,24 @@
 #!/bin/sh
 
-last_time=""
+last_text=""
+last_symbol=""
 
 while true
 do
 
   time="$(uptime | awk -F, '{ print $1 }' | sed 's/.* up //')"
+  text="$time"
+  symbol=""
 
-  if [ "$time" != "$last_time" ]
+  if test "$text" != "$last_text" || \
+    test "$symbol" != "$last_symbol"
   then
-    last_time="$time"
-    echo "time|string|$time"
+    last_text="$text"
+    echo "text|string|$text"
+    last_symbol="$symbol"
+    echo "symbol|string|$symbol"
     echo
   fi
 
-  sleep 60
+  sleep 1m
 done

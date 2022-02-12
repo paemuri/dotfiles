@@ -1,0 +1,29 @@
+#!/bin/sh
+
+# Anything different than empty to force it to be written in the first
+# iteration.
+last_symbol=$(uuidgen)
+
+while true
+do
+
+  pid_file=${XDG_DATA_HOME:-$HOME/.local/share}/screen/wf-recorder.pid
+  current_pid=$(cat $pid_file 2>/dev/null)
+  current_process="$(ps -d | grep "$current_pid" | grep -v grep)"
+
+  symbol=""
+  if test -n "$current_pid" && \
+    test -n "$current_process"
+  then
+    symbol=""
+  fi
+
+  if test "$symbol" != "$last_symbol"
+  then
+    last_symbol="$symbol"
+    echo "symbol|string|$symbol"
+    echo
+  fi
+
+  sleep 1s
+done
