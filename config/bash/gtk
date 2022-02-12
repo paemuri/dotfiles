@@ -1,0 +1,23 @@
+#!/bin/sh
+
+config_file="${XDG_CONFIG_HOME:-$HOME/.config}/gtk-3.0/settings.ini"
+if ! test -f $config_file
+then
+  exit 1
+fi
+
+grep_setting() {
+  local field="$1"
+  grep "$field" $config_file | sed 's/.*\s*=\s*//'
+}
+
+gtk_theme="$(grep_setting gtk-theme-name)"
+icon_theme="$(grep_setting gtk-icon-theme-name)"
+cursor_theme="$(grep_setting gtk-cursor-theme-name)"
+font_name="$(grep_setting gtk-font-name)"
+
+gnome_schema=org.gnome.desktop.interface
+gsettings set $gnome_schema gtk-theme "$gtk_theme"
+gsettings set $gnome_schema icon-theme "$icon_theme"
+gsettings set $gnome_schema cursor-theme "$cursor_theme"
+gsettings set $gnome_schema font-name "$font_name"
