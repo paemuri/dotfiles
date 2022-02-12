@@ -1,0 +1,121 @@
+#!/bin/sh
+
+data_home=${XDG_DATA_HOME:-$HOME/.local/share}/screen
+if ! test -d $data_home/logs
+then
+  mkdir -p $data_home/logs
+fi
+
+cmd_record() {
+
+  local args="$1"
+  local pid_file=$data_home/wf-recorder.pid
+
+  current_pid=$(cat $pid_file 2>/dev/null)
+  if test -n "$current_pid"
+  then
+    kill -sINT $current_pid
+    rm $pid_file
+    sleep 1s
+    notify-send "Record saved"
+    exit
+  fi
+
+  current_date=$(date +%F-%H-%M-%S)
+  record_file=$SCREEN_RECORDS_DIR/$current_date.mp4
+  log_file=$data_home/logs/$current_date.log
+  wf-recorder $args -f$record_file > $log_file 2>&1 &
+
+  current_pid=$!
+  disown $current_pid
+  echo $current_pid > $pid_file
+}
+
+cmd_shot() {
+
+  args="$1"
+  copy="$2"
+  msg=""
+
+  if test "$copy" = 1
+  then
+    grim $args - | wl-copy
+    msg="copied"
+  else
+    grim $args
+    msg="saved"
+  fi
+
+  sleep 1s
+  notify-send "Screenshot $msg"
+}
+
+main() {
+
+  # Args.
+
+  local crop=0
+  local copy=0
+  local cmd=""
+
+  while test "$#" -gt 0
+  do
+
+    local opt="$1"
+    shift
+
+    case $opt in
+      # Arguments.
+      -c|--crop)
+        crop=1
+        ;;
+      -C|--copy)
+        copy=1
+        ;;
+      -*)
+        echo    "Invalid argument: $opt." >&2
+        echo    "Command should be:" >&2
+        echo -e "\tscreen <command> [-c|--crop] [-C|--copy]" >&2
+        exit 1
+        ;;
+      # Commands.
+      record|shot)
+        cmd=$opt
+        ;;
+      *)
+        echo    "Invalid command: $opt. Should be only 'record' or 'shot'." >&2
+        echo    "Command should be:" >&2
+        echo -e "\tscreen <command> [-c|--crop] [-C|--copy]" >&2
+        exit 1
+        ;;
+    esac
+  done
+
+
+  if test "$cmd" = ""
+  then
+    echo    "Missing command." >&2
+    echo    "Command should be:" >&2
+    echo -e "\tscreen <command> [-c|--crop] [-C|--copy]" >&2
+    exit 1
+  fi
+
+  # Main.
+
+  local args=""
+  if test "$crop" = 1
+  then
+    args="-g $(slurp)"
+  fi
+
+  case $cmd in
+    record)
+      cmd_record "$args"
+      ;;
+    shot)
+      cmd_shot "$args" "$copy"
+      ;;
+  esac
+}
+
+main $@
