@@ -4,13 +4,14 @@ $XDG_CONFIG_HOME/river/config
 
 dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
 
+fix-gtk-settings
+ponymix --output --max-volume=150 set-volume 100
+ponymix --input  --max-volume=25  set-volume 25
+
 mako &
 yambar &
 wbg ~/images/wallpaper.jpg &
 mpv /usr/share/sounds/freedesktop/stereo/service-login.oga &
-
-ponymix --output --max-volume=150 set-volume 100
-ponymix --input  --max-volume=25  set-volume 25
 
 exec rivertile
 

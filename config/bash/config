@@ -19,7 +19,6 @@ alias pacman="pacman --color=auto"
 alias open="xdg-open"
 
 source ${XDG_CONFIG_HOME}/bash/prompt
-source ${XDG_CONFIG_HOME}/bash/gtk
 source /usr/share/bash-completion/bash_completion
 source /usr/share/nvm/init-nvm.sh
 

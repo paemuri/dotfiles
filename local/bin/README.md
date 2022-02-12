@@ -24,6 +24,15 @@ CLI, the password manager I use.
 Script to organize my media files. I have to many images and videos
 to do it manually.
 
+### `fix-gtk-settings`
+
+Translate config values from `config/gtk-3.0/settings.ini` that GTK
+ignores into `gsettings` commands.
+
+### `librewolf-*`
+
+Wrapper script to call librewolf with specific profiles.
+
 ### `minecraft`
 
 ~Gambiarra~ *Workaround* script to make Minecraft pseudo-XDG-compliant.
@@ -36,6 +45,10 @@ Simple `paru` wrapper that install all packages defined in
 ### `pkg-update`
 
 Another `paru` wrapper. It updates all installed packages.
+
+### `screen`
+
+Script to screenshot or screen record.
 
 ### `steam`
 
