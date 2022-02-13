@@ -73,6 +73,8 @@ export GRIM_DEFAULT_DIR="$XDG_SCREENSHOTS_DIR"
 
 export PGSERVICEFILE=$XDG_CONFIG_HOME/postgresql/pg_service.conf
 
+export SANE_DEFAULT_DEVICE=pixma:04A9183D_216141
+
 export BEMENU_OPTS="\
   --ignorecase \
   --list=10 \
