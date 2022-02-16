@@ -7,14 +7,30 @@ end
 cmd 'packadd packer.nvim'
 
 require 'packer'.startup(function()
-use 'andymass/vim-matchup'
-use 'machakann/vim-highlightedyank'
-use 'neovim/nvim-lspconfig'
-use 'nvim-lualine/lualine.nvim'
-use 'scrooloose/nerdtree'
-use {
-  'nvim-telescope/telescope.nvim',
-  requires = {{'nvim-lua/plenary.nvim'}}
-}
+  -- Packer itself.
+  use 'wbthomason/packer.nvim'
+
+  -- LSP.
+  use 'neovim/nvim-lspconfig'
+
+  -- Debugging.
+  use 'mfussenegger/nvim-dap'
+  use 'leoluz/nvim-dap-go'
+
+  -- File tree.
+  use 'scrooloose/nerdtree'
+
+  -- Statusline/tabline.
+  use 'nvim-lualine/lualine.nvim'
+
+  -- Finder/opener.
+  use {
+    'nvim-telescope/telescope.nvim',
+    requires = {{'nvim-lua/plenary.nvim'}}
+  }
+
+  -- Etc.
+  use 'andymass/vim-matchup'
+  use 'machakann/vim-highlightedyank'
 end)
 

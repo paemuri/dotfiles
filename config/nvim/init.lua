@@ -1,4 +1,7 @@
 require 'utils'
 require 'plugins'
-require 'lsp'
 require 'config'
+require 'settings/lsp'
+require 'settings/statusline'
+require 'settings/dap'
+require 'settings/finder'
