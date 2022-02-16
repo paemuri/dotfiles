@@ -17,7 +17,7 @@ alias egrep="egrep --color=auto"
 alias fgrep="fgrep --color=auto"
 alias pacman="pacman --color=auto"
 alias open=xdg-open
-alias scanimage="scanimage -x210 -y297 --resolution=300 --format=pdf --progress"
+alias scanimage="doas scanimage -x210 -y297 --device --resolution=300 --format=pdf --progress"
 
 source ${XDG_CONFIG_HOME}/bash/prompt
 source /usr/share/bash-completion/bash_completion
