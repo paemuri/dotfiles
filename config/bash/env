@@ -72,6 +72,7 @@ export LESSKEY=$XDG_CONFIG_HOME/less/keys
 export GRIM_DEFAULT_DIR="$XDG_SCREENSHOTS_DIR"
 
 export PGSERVICEFILE=$XDG_CONFIG_HOME/postgresql/pg_service.conf
+export PSQL_HISTORY=$XDG_DATA_HOME/psql/history
 
 export SANE_DEFAULT_DEVICE=pixma:04A9183D_216141
 
