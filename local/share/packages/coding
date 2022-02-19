@@ -5,6 +5,7 @@ gopls
 graphql-lsp
 gvm
 kafkactl
+lldb
 nvm
 pgcli
 postgresql

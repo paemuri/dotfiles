@@ -32,7 +32,7 @@ require 'packer'.startup(function()
   -- NeoVim in the browser.
   use {
     'glacambre/firenvim',
-    run = function() vim.fn['firenvim#install'](0) end
+    run = function() fn['firenvim#install'](0) end
   }
 
   -- Etc.

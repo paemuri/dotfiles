@@ -23,6 +23,9 @@ map('n', '<leader>q', ':bdelete<cr>')
 map('n', '<leader>w', ':write<cr>')
 map('n', '<leader>,', ':bprev<cr>')
 map('n', '<leader>.', ':bnext<cr>')
+map('n', '<esc>', ':noh<return><esc>')
+map('n', '<esc>^[', '<esc>^[')
+
 
 cmd [[
   set list listchars=tab:\›\ ,trail:-,extends:>,precedes:<,eol:¬,space:·
