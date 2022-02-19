@@ -29,6 +29,12 @@ require 'packer'.startup(function()
     requires = {{'nvim-lua/plenary.nvim'}}
   }
 
+  -- NeoVim in the browser.
+  use {
+    'glacambre/firenvim',
+    run = function() vim.fn['firenvim#install'](0) end
+  }
+
   -- Etc.
   use 'andymass/vim-matchup'
   use 'machakann/vim-highlightedyank'
