@@ -1,4 +1,5 @@
-require 'lualine'.setup({
+local lualine = require 'lualine'
+lualine.setup({
   options = {
     icons_enabled = false,
     theme = 'auto',
@@ -33,24 +34,28 @@ require 'lualine'.setup({
            packer = 'Packer',
            fzf = 'FZF',
          },
+        buffers_color = {
+          active = { bg = 'blue' },
+          inactive = { bg = 'black', fg = 'white' },
+        },
       },
     },
-    lualine_b = {
+    lualine_b = {},
+    lualine_c = {},
+    lualine_x = {},
+    lualine_y = {
       {
         'filename',
         file_status = true,
         path = 1,
         shorting_target = 40,
         symbols = {
-          modified = '[+]',
-          readonly = '[-]',
-          unnamed = '[no name]',
+          modified = ' [+]',
+          readonly = ' [-]',
+          unnamed = ' [no name]',
         },
       },
     },
-    lualine_c = {},
-    lualine_x = {},
-    lualine_y = {},
     lualine_z = {'tabs'}
   },
   extensions = {},
