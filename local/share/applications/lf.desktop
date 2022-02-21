@@ -3,5 +3,5 @@ Type=Application
 Name=LF file manager
 GenericName=File manager
 TryExec=lf
-Exec=sh -c "exec $TERMINAL -e lf %u"
+Exec=foot -e lf %u
 MimeType=inode/directory;application/x-gnome-saved-search;

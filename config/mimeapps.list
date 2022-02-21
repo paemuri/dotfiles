@@ -2,7 +2,7 @@
 
 # lf.desktop
 inode/directory=lf.desktop
-application/x-gnome-saved-search
+application/x-gnome-saved-search=lf.desktop
 
 # zathura.desktop
 application/pdf=zathura.desktop
@@ -18,6 +18,11 @@ text/html=librewolf-personal.desktop
 x-scheme-handler/chrome=librewolf-personal.desktop
 x-scheme-handler/http=librewolf-personal.desktop
 x-scheme-handler/https=librewolf-personal.desktop
+
+# amfora.desktop
+text/gemini=amfora.desktop
+x-scheme-handler/gemini=amfora.desktop
+x-scheme-handler/gopher=amfora.desktop
 
 # mpv.desktop
 application/ogg=mpv.desktop

@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Amfora gemini browser
+GenericName=Gemini browser
+TryExec=amfora
+Exec=foot -e amfora %u
+MimeType=text/gemini;x-scheme-handler/gemini;x-scheme-handler/gopher;
