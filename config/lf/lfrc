@@ -4,12 +4,7 @@ set ifs "\n"
 set filesep "\n"
 
 # Trash.
-cmd trash ${{
-  printf "$fx\n"
-  printf "delete? [y/N] "
-  read answer
-  test "$answer" = "y" && trash-put $fx
-}}
+cmd trash %trash-put $fx
 map <delete> trash
 
 # Bulk rename.
@@ -17,13 +12,4 @@ cmd bulkrename %massren $fx
 map R bulkrename
 
 # Extract.
-cmd extract ${{
-  case "$f" in
-    *.tar.bz|*.tar.bz2|*.tbz|*.tbz2) tar xjvf "$f";;
-    *.tar.gz|*.tgz) tar xzvf "$f";;
-    *.tar.xz|*.txz) tar xJvf "$f";;
-    *.zip) unzip "$f";;
-    *.rar) unrar x "$f";;
-    *.7z) 7z x "$f";;
-  esac
-}}
+cmd extract %extract $f
