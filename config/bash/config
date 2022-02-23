@@ -5,22 +5,13 @@ source ~/.config/bash/env
 if test -z "$WAYLAND_DISPLAY" && test "$(tty)" = "/dev/tty1"
 then
   mkdir -p $XDG_DATA_HOME/river/logs
-  timestamp="$(date "+%Y-%m-%d-%H-%M-%S")"
+  timestamp=$(date +%F-%H-%M-%S)
   exec dbus-run-session river -log-level info > \
     $XDG_DATA_HOME/river/logs/$timestamp.log 2>&1
 fi
 
-alias less="less --RAW-CONTROL-CHARS"
-alias ls="ls --almost-all --classify --color=auto"
-alias grep="grep --color=auto"
-alias egrep="egrep --color=auto"
-alias fgrep="fgrep --color=auto"
-alias pacman="pacman --color=auto"
-alias open=xdg-open
-alias scanimage="doas scanimage --device=$SANE_DEFAULT_DEVICE -x210 -y297 --device --resolution=300 --format=pdf --progress"
-alias rm=trash
-
 source $XDG_CONFIG_HOME/bash/prompt
+source $XDG_CONFIG_HOME/bash/aliases
 source /usr/share/bash-completion/bash_completion
 source /usr/share/nvm/init-nvm.sh
 

@@ -1,0 +1,21 @@
+#!/bin/sh
+
+alias less="less --RAW-CONTROL-CHARS"
+alias ls="ls --almost-all --classify --color=auto"
+alias grep="grep --color=auto"
+alias egrep="egrep --color=auto"
+alias fgrep="fgrep --color=auto"
+alias pacman="pacman --color=auto"
+alias open=xdg-open
+alias rm=trash
+alias scanimage="
+  doas scanimage \
+    --device=$SANE_DEFAULT_DEVICE \
+    -x210 \
+    -y297 \
+    --device \
+    --resolution=300 \
+    --format=pdf \
+    --progress \
+"
+
