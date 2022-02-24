@@ -1,11 +1,22 @@
 [Default Applications]
 
 # lf.desktop
-inode/directory=lf.desktop
 application/x-gnome-saved-search=lf.desktop
+inode/directory=lf.desktop
 
-# zathura.desktop
-application/pdf=zathura.desktop
+# evince.desktop
+application/oxps=evince.desktop
+application/pdf=evince.desktop
+application/postscript=evince.desktop
+application/vnd.comicbook+zip=evince.desktop
+application/vnd.comicbook-rar=evince.desktop
+application/vnd.ms-xpsdocument=evince.desktop
+application/x-cbr=evince.desktop
+application/x-dvi=evince.desktop
+image/tiff=evince.desktop
+image/vnd.djvu=evince.desktop
+image/x-djvu=evince.desktop
+image/x-tiff=evince.desktop
 
 # librewolf-personal.desktop
 application/x-extension-htm=librewolf-personal.desktop

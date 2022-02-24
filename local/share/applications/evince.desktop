@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Evince document reader
+GenericName=Document reader
+TryExec=evince
+Exec=evince %u
+MimeType=application/oxps=evince.desktop;application/pdf=evince.desktop;application/postscript=evince.desktop;application/vnd.comicbook+zip=evince.desktop;application/vnd.comicbook-rar=evince.desktop;application/vnd.ms-xpsdocument=evince.desktop;application/x-cbr=evince.desktop;application/x-dvi=evince.desktop;image/tiff=evince.desktop;image/vnd.djvu=evince.desktop;image/x-djvu=evince.desktop;image/x-tiff=evince.desktop;

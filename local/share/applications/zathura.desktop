@@ -1,7 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=Zathura document reader
-GenericName=Document reader
-TryExec=zathura
-Exec=zathura %u
-MimeType=application/pdf;

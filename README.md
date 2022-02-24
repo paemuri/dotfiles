@@ -39,9 +39,9 @@ Linux.
 - [Bemenu][8]: Wayland application menu and program runner
 - [imv][9]: Wayland image viewer
 - [lf][10]: terminal file manager
-- [Zathura][11]: PDF reader
-- [mpv][12]: video player
-- [wbg][13]: Wayland background
+- Evince: PDF reader
+- [mpv][11]: video player
+- [wbg][12]: Wayland background
 
 ## Bootstrap
 
@@ -67,9 +67,8 @@ domain, without any additional terms or conditions.
 [8]: https://github.com/Cloudef/bemenu
 [9]: https://github.com/eXeC64/imv
 [10]: https://github.com/gokcehan/lf
-[11]: https://git.pwmt.org/pwmt/zathura
-[12]: https://github.com/mpv-player/mpv
-[13]: https://codeberg.org/dnkl/wbg
+[11]: https://github.com/mpv-player/mpv
+[12]: https://codeberg.org/dnkl/wbg
 
 [badge-1-img]: https://img.shields.io/badge/license-Unlicense-green?style=flat-square
 [badge-1-link]: ./LICENSE
