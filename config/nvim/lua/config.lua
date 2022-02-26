@@ -15,8 +15,8 @@ opt.compatible = false
 opt.showtabline = 2
 opt.smarttab = true
 opt.expandtab = true
-opt.softtabstop = 4
-opt.shiftwidth = 4
+opt.softtabstop = 2
+opt.shiftwidth = 2
 
 g.mapleader = ' '
 map('n', '<leader>q', ':bdelete<cr>')

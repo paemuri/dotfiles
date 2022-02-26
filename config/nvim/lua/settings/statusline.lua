@@ -1,3 +1,7 @@
+if g.started_by_firenvim then
+  return
+end
+
 local lualine = require 'lualine'
 lualine.setup({
   options = {
@@ -5,7 +9,6 @@ lualine.setup({
     theme = 'auto',
     component_separators = { left = '|', right = '|'},
     section_separators = { left = '', right = ''},
-    disabled_filetypes = {},
     always_divide_middle = false,
   },
   sections = {
@@ -20,7 +23,6 @@ lualine.setup({
     lualine_y = {'progress'},
     lualine_z = {'location'},
   },
-  inactive_sections = {},
   tabline = {
     lualine_a = {
       {
@@ -58,5 +60,4 @@ lualine.setup({
     },
     lualine_z = {'tabs'}
   },
-  extensions = {},
 })

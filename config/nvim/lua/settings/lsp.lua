@@ -1,3 +1,7 @@
+if g.started_by_firenvim then
+  return
+end
+
 local on_attach = function(client, bufnr)
   local opts = { buffer = bufnr }
   set_opt('omnifunc', 'v:lua.vim.lsp.omnifunc', opts)
