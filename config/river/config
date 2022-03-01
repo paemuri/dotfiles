@@ -12,7 +12,7 @@ $XDG_CONFIG_HOME/bash/env
 # Window border.
 riverctl border-color-focused   0x79740e
 riverctl border-color-unfocused 0x282828
-riverctl border-color-urgent    9d0006ee
+riverctl border-color-urgent    0x9d0006
 riverctl border-width           2
 
 # Layout.
@@ -102,7 +102,7 @@ riverctl map normal $super       E     spawn "$TERMINAL -e lf"
 riverctl map normal None          Print spawn "screen shot --copy"
 riverctl map normal Control       Print spawn "screen shot --copy --crop"
 riverctl map normal Shift         Print spawn "screen shot"
-riverctl map normal Shift+Control Print spawn "screen shot --crop"
+riverctl map normal Control+Shift Print spawn "screen shot --crop"
 
 # Screen recording.
 riverctl map normal $super         F2 spawn "screen record"
@@ -112,9 +112,10 @@ for mode in normal locked
 do
 
   # Notification control.
-  riverctl map $mode $super+$alt Space     spawn "makoctl dismiss --all"
-  riverctl map $mode $super+$alt Backspace spawn "makoctl dismiss"
-  riverctl map $mode $super+$alt Return    spawn "makoctl invoke"
+  riverctl map $mode Control+Shift Escape    spawn "makoctl dismiss --all"
+  riverctl map $mode Control+Shift Space     spawn "makoctl dismiss --all"
+  riverctl map $mode Control+Shift Backspace spawn "makoctl dismiss"
+  riverctl map $mode Control+Shift Return    spawn "makoctl invoke"
 
   # Volume.
   riverctl map $mode None  XF86AudioRaiseVolume spawn "ponymix --output --max-volume=150 increase 10"
