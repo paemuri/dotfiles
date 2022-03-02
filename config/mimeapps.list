@@ -105,7 +105,10 @@ image/x-xbitmap=imv.desktop
 
 # nvim.desktop
 application/x-shellscript=nvim.desktop
+text/css=nvim.desktop
+text/csv=nvim.desktop
 text/english=nvim.desktop
+text/javascript=nvim.desktop
 text/plain=nvim.desktop
 text/x-c++=nvim.desktop
 text/x-c++hdr=nvim.desktop
@@ -119,6 +122,7 @@ text/x-moc=nvim.desktop
 text/x-pascal=nvim.desktop
 text/x-tcl=nvim.desktop
 text/x-tex=nvim.desktop
+text/xml=nvim.desktop
 
 [Added Associations]
 
