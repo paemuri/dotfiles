@@ -113,7 +113,6 @@ do
 
   # Notification control.
   riverctl map $mode Control+Shift Escape    spawn "makoctl dismiss --all"
-  riverctl map $mode Control+Shift Space     spawn "makoctl dismiss --all"
   riverctl map $mode Control+Shift Backspace spawn "makoctl dismiss"
   riverctl map $mode Control+Shift Return    spawn "makoctl invoke"
 
