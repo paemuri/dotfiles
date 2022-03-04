@@ -76,6 +76,10 @@ export PSQL_HISTORY=$XDG_DATA_HOME/psql/history
 
 export SANE_DEFAULT_DEVICE=pixma:04A9183D_216141
 
+export FZF_DEFAULT_COMMAND="fd"
+export FZF_CTRL_T_COMMAND="fd"
+export FZF_ALT_C_COMMAND="fd --type=d"
+
 export BEMENU_OPTS="\
   --ignorecase \
   --list=10 \

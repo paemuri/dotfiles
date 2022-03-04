@@ -19,3 +19,7 @@ alias scanimage="
     --progress \
 "
 
+gdiff() {
+  git diff $@ --name-only |
+    fzf -m --ansi --preview "git diff $@ --color=always -- {-1}"
+}

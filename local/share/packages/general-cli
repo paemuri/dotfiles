@@ -3,6 +3,7 @@ amfora
 bash
 bash-completion
 bitwarden-cli
+fzf
 htop
 jq
 lf-bin
