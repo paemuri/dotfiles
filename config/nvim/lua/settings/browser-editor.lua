@@ -10,3 +10,10 @@ opt.laststatus = 0
 opt.showtabline = 0
 opt.colorcolumn = ''
 
+g.firenvim_config = {
+  localSettings = {
+    [ '.*' ] = {
+      takeover = 'never',
+    },
+  },
+}
