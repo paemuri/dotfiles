@@ -15,7 +15,6 @@ require 'packer'.startup(function()
 
   -- Debugging.
   use 'mfussenegger/nvim-dap'
-  use 'leoluz/nvim-dap-go'
 
   -- File tree.
   use 'scrooloose/nerdtree'

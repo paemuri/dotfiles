@@ -29,11 +29,9 @@ local flags = {
 }
 
 local servers = {
-  'gopls',
   'rust_analyzer',
   'tsserver',
   'zls',
-  'graphql',
 }
 
 local lspconfig = require 'lspconfig'

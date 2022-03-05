@@ -4,7 +4,6 @@ end
 
 dap = require 'dap'
 local dap_utils = require 'dap.utils'
-require 'dap-go'.setup()
 
 -- Rust.
 dap.adapters.lldb = {

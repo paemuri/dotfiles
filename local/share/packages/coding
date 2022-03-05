@@ -1,9 +1,5 @@
-delve
 docker
 docker-compose
-gopls
-graphql-lsp
-gvm
 kafkactl
 lldb
 nvm
