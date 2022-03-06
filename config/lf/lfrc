@@ -8,7 +8,7 @@ cmd trash %trash-put $fx
 map <delete> trash
 
 # Bulk rename.
-cmd bulkrename %massren $fx
+cmd bulkrename $vimv $fx
 map R bulkrename
 
 # Extract.
