@@ -21,7 +21,7 @@ CLI, the password manager I use.
 
 ### `extract`
 
-TODO
+Utility to extract files.
 
 ### `embrace`
 

@@ -12,4 +12,4 @@ cmd bulkrename $vimv $fx
 map R bulkrename
 
 # Extract.
-cmd extract %extract $f
+cmd extract %extract $fx
