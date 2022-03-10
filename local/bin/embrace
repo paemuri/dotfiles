@@ -1,0 +1,61 @@
+#!/bin/sh
+
+# Args.
+
+output=sql
+file=/dev/stdin
+
+while test "$#" -gt 0
+do
+
+  opt="$1"
+  shift
+
+  case $opt in
+    --sql)
+      output=sql
+      ;;
+    --json)
+      output=json
+      ;;
+    -*)
+      echo    "Invalid argument: $opt." >&2
+      echo    "Command should be:" >&2
+      echo -e "\tembrace [--sql] [--json] [<file>]" >&2
+      exit 1
+      ;;
+    *)
+      if ! test -f "$opt"
+      then
+        echo    "Invalid file: $opt." >&2
+        echo    "Command should be:" >&2
+        echo -e "\tscreen <command> [-c|--crop] [-C|--copy]" >&2
+        exit 1
+      fi
+      file=$opt
+      ;;
+  esac
+done
+
+open=
+close=
+quote=
+case $output in
+  sql)
+    open='('
+    close=')'
+    quote="'"
+    ;;
+  json)
+    open='['
+    close=']'
+    quote='"'
+    ;;
+esac
+
+# Main.
+
+sed "s|$|$quote,$quote|" < $file |
+  tr -d "\n" |
+  sed "s|,$quote$|$close|" |
+  sed "s|^|$open$quote|"

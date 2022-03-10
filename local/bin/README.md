@@ -19,6 +19,15 @@ CLI, the password manager I use.
 
 ~Gambiarra~ *Workaround* script to make VS Codium pseudo-XDG-compliant.
 
+### `extract`
+
+TODO
+
+### `embrace`
+
+Script that takes a file and turns every line into an array (SQL or
+JSON).
+
 ### `fix-files-names`
 
 Script to organize my media files. I have to many images and videos
