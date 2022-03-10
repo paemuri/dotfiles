@@ -93,6 +93,7 @@ riverctl map normal $super       B     spawn librewolf-personal
 riverctl map normal $super+Shift B     spawn librewolf-work
 riverctl map normal $super       T     spawn "$TERMINAL"
 riverctl map normal $super       E     spawn "$TERMINAL -e lf"
+riverctl map normal $super       C     spawn "$TERMINAL -e qalc"
 
 #######################
 # Software: secondary #
