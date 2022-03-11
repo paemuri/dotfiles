@@ -63,24 +63,24 @@ image/x-tga=imv.desktop
 image/x-tiff=imv.desktop
 image/x-xbitmap=imv.desktop
 
-# inkscape.desktop?
-# application/illustrator=inkscape.desktop
-# application/visio.drawing=inkscape.desktop
-# application/visio=inkscape.desktop
-# application/vnd.corel-draw=inkscape.desktop
-# application/vnd.visio=inkscape.desktop
-# application/vsd=inkscape.desktop
-# application/x-visio=inkscape.desktop
-# application/x-vsd=inkscape.desktop
-# application/x-xccx=inkscape.desktop
-# application/x-xcdt=inkscape.desktop
-# application/x-xcgm=inkscape.desktop
-# application/x-xcmx=inkscape.desktop
-# application/x-xsk1=inkscape.desktop
-# image/cgm=inkscape.desktop
-# image/x-vsd=inkscape.desktop
-# image/x-wmf=inkscape.desktop
-# image/x-xcdr=inkscape.desktop
+# inkscape.desktop
+application/illustrator=inkscape.desktop
+application/visio.drawing=inkscape.desktop
+application/visio=inkscape.desktop
+application/vnd.corel-draw=inkscape.desktop
+application/vnd.visio=inkscape.desktop
+application/vsd=inkscape.desktop
+application/x-visio=inkscape.desktop
+application/x-vsd=inkscape.desktop
+application/x-xccx=inkscape.desktop
+application/x-xcdt=inkscape.desktop
+application/x-xcgm=inkscape.desktop
+application/x-xcmx=inkscape.desktop
+application/x-xsk1=inkscape.desktop
+image/cgm=inkscape.desktop
+image/x-vsd=inkscape.desktop
+image/x-wmf=inkscape.desktop
+image/x-xcdr=inkscape.desktop
 
 # lf.desktop
 application/x-gnome-saved-search=lf.desktop

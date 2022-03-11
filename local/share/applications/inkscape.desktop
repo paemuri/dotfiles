@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Inkscape vector image editor
+GenericName=Vector image editor
+TryExec=inkscape
+Exec=inkscape %F
+MimeType=application/illustrator;application/visio;application/visio.drawing;application/vnd.corel-draw;application/vnd.visio;application/vsd;application/x-visio;application/x-vsd;application/x-xccx;application/x-xcdt;application/x-xcgm;application/x-xcmx;application/x-xsk1;image/cgm;image/x-eps;image/x-vsd;image/x-wmf;image/x-xcdr;
