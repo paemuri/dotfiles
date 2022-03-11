@@ -3,5 +3,5 @@ Type=Application
 Name=Librewolf web browser - work profile
 GenericName=Web browser
 TryExec=librewolf-work
-Exec=librewolf-work %u
+Exec=librewolf-work %U
 MimeType=text/html;text/xml;application/xhtml+xml;application/xml;application/rdf+xml;image/gif;image/jpeg;image/png;x-scheme-handler/http;x-scheme-handler/https;x-scheme-handler/chrome;

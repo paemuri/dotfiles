@@ -3,5 +3,5 @@ Type=Application
 Name=Neovim text editor
 GenericName=Text editor
 TryExec=nvim
-Exec=foot -e nvim %u
-MimeType=application/x-shellscript;text/css;text/csv;text/english;text/javascript;text/plain;text/x-c++;text/x-c++hdr;text/x-c++src;text/x-c;text/x-chdr;text/x-csrc;text/x-java;text/x-makefile;text/x-moc;text/x-pascal;text/x-tcl;text/x-tex;text/xml;
+Exec=foot -e nvim %U
+MimeType=application/json;application/csv;application/tab-separated-values;application/x-shellscript;text/comma-separated-values;text/css;text/csv;text/english;text/javascript;text/plain;text/spreadsheet;text/tab-separated-values;text/x-c++;text/x-c++hdr;text/x-c++src;text/x-c;text/x-chdr;text/x-comma-separated-values;text/x-csrc;text/x-csv;text/x-java;text/x-makefile;text/x-moc;text/x-pascal;text/x-tcl;text/x-tex;text/xml;

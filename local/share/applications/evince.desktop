@@ -3,5 +3,5 @@ Type=Application
 Name=Evince document reader
 GenericName=Document reader
 TryExec=evince
-Exec=evince %u
-MimeType=application/oxps=evince.desktop;application/pdf=evince.desktop;application/postscript=evince.desktop;application/vnd.comicbook+zip=evince.desktop;application/vnd.comicbook-rar=evince.desktop;application/vnd.ms-xpsdocument=evince.desktop;application/x-cbr=evince.desktop;application/x-dvi=evince.desktop;image/tiff=evince.desktop;image/vnd.djvu=evince.desktop;image/x-djvu=evince.desktop;image/x-tiff=evince.desktop;
+Exec=evince %U
+MimeType=application/oxps;application/pdf;application/postscript;application/vnd.comicbook+zip;application/vnd.comicbook-rar;application/vnd.ms-xpsdocument;application/x-bzdvi;application/x-bzpdf;application/x-bzpostscript;application/x-cb7;application/x-cbr;application/x-cbt;application/x-cbz;application/x-dvi;application/x-ext-cb7;application/x-ext-cbr;application/x-ext-cbt;application/x-ext-cbz;application/x-ext-djv;application/x-ext-djvu;application/x-ext-dvi;application/x-ext-eps;application/x-ext-pdf;application/x-ext-ps;application/x-gzdvi;application/x-gzpdf;application/x-gzpostscript;application/x-xzpdf;image/vnd.djvu+multipage;image/vnd.djvu;image/x-bzeps;image/x-djvu;image/x-eps;image/x-gzeps;
