@@ -16,6 +16,9 @@ do
   done
 done
 
+# Exceptions.
+ln -snfv "$XDG_CONFIG_HOME/librewolf" ~/.librewolf
+
 if test "$1" = "-i" || test "$1" = "--install"
 then
     ${dotfiles}/local/bin/pkg-install

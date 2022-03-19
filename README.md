@@ -51,6 +51,8 @@ Simply run `./bootstrap -i`.
 
 This project code is in the public domain. See the [LICENSE file][1].
 
+Exceptions may contain specific licenses inside the files.
+
 ### Contribution
 
 Unless you explicitly state otherwise, any contribution intentionally

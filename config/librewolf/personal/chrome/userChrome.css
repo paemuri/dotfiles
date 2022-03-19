@@ -1,0 +1,372 @@
+/*==============================================================================================*
+
+  +-----+-----+-----+-----+-----+-----+-----+
+  | █▀▀ | ▄▀█ | █▀▀ | █▀▀ | ▄▀█ | █▀▄ | █▀▀ |
+  | █▄▄ | █▀█ | ▄▄█ | █▄▄ | █▀█ | █▄▀ | ██▄ |
+  +-----+-----+-----+-----+-----+-----+-----+
+
+  Description:    Minimalist, Simple, Keyboard Centered and based on SimpleFox. 🦊
+                  What you get is a really simple responsive one-line layout using the new Proton UI.
+
+                  > SimpleFox: https://github.com/migueravila/SimpleFox
+
+                  
+  Author:         Andreas Grafen
+                  (https://andreas.grafen.info)
+
+                  
+  Repository:     https://github.com/andreasgrafen/ag.proton
+
+
+                  Thank you Nick, Abdallah and Benyamin for all the great suggestions for improvements! ♡
+                  Nick:     https://github.com/nicksundermeyer)
+                  Abdallah: https://github.com/HeiWiper)
+                  Benyamin: https://github.com/benyaminl)
+
+                  If you're looking for a **mouse-friendly** clone please check out Waterfall.
+                  https://github.com/crambaud/waterfall
+
+                  
+  License:        MIT License
+
+Copyright (c) 2021 Andreas Grafen
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+*==============================================================================================*/
+:root {
+
+  /* Theme colors */
+  --window-colour: #1E2021;
+  --secondary-colour: #191B1C;
+  --inverted-colour: #FAFAFC;
+
+  /* URL color in URL bar suggestions */
+  --urlbar-popup-url-color: #786FA6 !important;
+
+  /* Global border radius */
+  --uc-border-radius: 0;
+     
+  /* Dynamic URL bar width settings */
+  --uc-urlbar-width: clamp(200px, 40vw, 500px);
+
+  /* Dynamic tab width settings */
+  --uc-active-tab-width: clamp(100px, 20vw, 300px);
+  --uc-inactive-tab-width: clamp(50px, 15vw, 200px);
+
+  /* Close button */
+  --show-tab-close-button: none;
+  --show-tab-close-button-hover: none;
+}
+
+#back-button
+, #forward-button
+, #reload-button
+, #scrollbutton-down
+, #scrollbutton-up {
+  display: none !important;
+}
+
+#urlbar-zoom-button { display: none !important; }
+
+.tab-secondary-label { display: none !important; }
+#pageActionButton { display: none !important; }
+#page-action-buttons { display: none !important; }
+#urlbar-go-button { display: none !important; }
+
+
+/*=============================================================================================*/
+
+
+/*---+---+---+---+---+---+
+ | L | A | Y | O | U | T |
+ +---+---+---+---+---+---*/
+
+/* No need to change anything below this comment.
+ * Just tweak it if you want to tweak the overall layout. c: */
+
+:root {
+    
+    --uc-theme-colour:                          var(--window-colour,    var(--toolbar-bgcolor));
+    --uc-hover-colour:                          var(--secondary-colour, rgba(0, 0, 0, 0.2));
+    --uc-inverted-colour:                       var(--inverted-colour,  var(--toolbar-color));
+
+    --button-bgcolor:                           var(--uc-theme-colour)    !important;
+    --button-hover-bgcolor:                     var(--uc-hover-colour)    !important;
+    --button-active-bgcolor:                    var(--uc-hover-colour)    !important;
+    
+    --toolbarbutton-border-radius:              var(--uc-border-radius)   !important;
+    
+    --tab-border-radius:                        var(--uc-border-radius)   !important;
+    --lwt-text-color:                           var(--uc-inverted-colour) !important;
+    --lwt-tab-text:                             var(--uc-inverted-colour) !important;
+
+    --arrowpanel-border-radius:                 var(--uc-border-radius)   !important;
+    
+    --tab-block-margin: 2px !important;
+    
+}
+
+
+
+
+
+window,
+#main-window,
+#toolbar-menubar,
+#TabsToolbar,
+#PersonalToolbar,
+#navigator-toolbox,
+#sidebar-box,
+#nav-bar {
+
+    -moz-appearance: none !important;
+    
+    border: none !important;
+    box-shadow: none !important;
+    background: var(--uc-theme-colour) !important;
+
+}
+
+
+
+
+
+/* grey out ccons inside the toolbar to make it
+ * more aligned with the Black & White colour look */
+#PersonalToolbar toolbarbutton:not(:hover),
+#bookmarks-toolbar-button:not(:hover) { filter: grayscale(1) !important; }
+
+
+/* remove window control buttons */
+.titlebar-buttonbox-container { display: none !important; }
+
+
+/* remove "padding" left and right from tabs */
+.titlebar-spacer { display: none !important; }
+
+
+
+
+
+/* remove gap after pinned tabs */
+#tabbrowser-tabs[haspinnedtabs]:not([positionpinnedtabs])
+    > #tabbrowser-arrowscrollbox
+    > .tabbrowser-tab[first-visible-unpinned-tab] { margin-inline-start: 0 !important; }
+
+
+/* remove tab shadow */
+.tabbrowser-tab
+    >.tab-stack
+    > .tab-background { box-shadow: none !important;  }
+
+
+/* tab background */
+.tabbrowser-tab
+    > .tab-stack
+    > .tab-background { background: var(--uc-theme-colour) !important; }
+
+
+/* active tab background */
+.tabbrowser-tab[selected]
+    > .tab-stack
+    > .tab-background { background: var(--uc-hover-colour) !important; }
+
+
+/* multi tab selection */
+#tabbrowser-tabs:not([noshadowfortests]) .tabbrowser-tab:is([visuallyselected=true], [multiselected]) > .tab-stack > .tab-background:-moz-lwtheme { background: var(--uc-hover-colour) !important; }
+
+
+/* tab close button options */
+.tabbrowser-tab:not([pinned]) .tab-close-button { display: var(--show-tab-close-button) !important; }
+.tabbrowser-tab:not([pinned]):hover .tab-close-button { display: var(--show-tab-close-button-hover) !important }
+
+
+/* adaptive tab width */
+.tabbrowser-tab[selected][fadein]:not([pinned]) { max-width: var(--uc-active-tab-width) !important; }
+.tabbrowser-tab[fadein]:not([selected]):not([pinned]) { max-width: var(--uc-inactive-tab-width) !important; }
+
+
+/* container tabs indicator */
+.tabbrowser-tab[usercontextid]
+    > .tab-stack
+    > .tab-background
+    > .tab-context-line {
+    
+        margin: -1px var(--container-tabs-indicator-margin) 0 var(--container-tabs-indicator-margin) !important;
+
+        border-radius: var(--tab-border-radius) !important;
+
+}
+
+
+/* show favicon when media is playing but tab is hovered */
+.tab-icon-image:not([pinned]) { opacity: 1 !important; }
+
+
+/* Makes the speaker icon to always appear if the tab is playing (not only on hover) */
+.tab-icon-overlay:not([crashed]),
+.tab-icon-overlay[pinned][crashed][selected] {
+
+  top: 5px !important;
+  z-index: 1 !important;
+
+  padding: 1.5px !important;
+  inset-inline-end: -8px !important;
+  width: 16px !important; height: 16px !important;
+
+  border-radius: 10px !important;
+
+}
+
+
+/* style and position speaker icon */
+.tab-icon-overlay:not([sharing], [crashed]):is([soundplaying], [muted], [activemedia-blocked]) {
+
+  stroke: transparent !important;
+  background: transparent !important;
+  opacity: 1 !important; fill-opacity: 0.8 !important;
+
+  color: currentColor !important;
+    
+  stroke: var(--uc-theme-colour) !important;
+  background-color: var(--uc-theme-colour) !important;
+
+}
+
+
+/* change the colours of the speaker icon on active tab to match tab colours */
+.tabbrowser-tab[selected] .tab-icon-overlay:not([sharing], [crashed]):is([soundplaying], [muted], [activemedia-blocked]) {
+        
+  stroke: var(--uc-hover-colour) !important;
+  background-color: var(--uc-hover-colour) !important;
+
+}
+
+
+.tab-icon-overlay:not([pinned], [sharing], [crashed]):is([soundplaying], [muted], [activemedia-blocked]) { margin-inline-end: 9.5px !important; }
+
+
+.tabbrowser-tab:not([image]) .tab-icon-overlay:not([pinned], [sharing], [crashed]) {
+
+  top: 0 !important;
+
+  padding: 0 !important;
+  margin-inline-end: 5.5px !important; 
+  inset-inline-end: 0 !important;
+
+}
+
+
+.tab-icon-overlay:not([crashed])[soundplaying]:hover,
+.tab-icon-overlay:not([crashed])[muted]:hover,
+.tab-icon-overlay:not([crashed])[activemedia-blocked]:hover {
+    
+    color: currentColor !important;
+    stroke: var(--uc-inverted-colour) !important;
+    background-color: var(--uc-inverted-colour) !important;
+    fill-opacity: 0.95 !important;
+    
+}
+
+
+.tabbrowser-tab[selected] .tab-icon-overlay:not([crashed])[soundplaying]:hover,
+.tabbrowser-tab[selected] .tab-icon-overlay:not([crashed])[muted]:hover,
+.tabbrowser-tab[selected] .tab-icon-overlay:not([crashed])[activemedia-blocked]:hover {
+    
+    color: currentColor !important;
+    stroke: var(--uc-inverted-colour) !important;
+    background-color: var(--uc-inverted-colour) !important;
+    fill-opacity: 0.95 !important;
+    
+}
+
+
+/* speaker icon colour fix */
+#TabsToolbar .tab-icon-overlay:not([crashed])[soundplaying],
+#TabsToolbar .tab-icon-overlay:not([crashed])[muted],
+#TabsToolbar .tab-icon-overlay:not([crashed])[activemedia-blocked] { color: var(--uc-inverted-colour) !important; }
+
+
+/* speaker icon colour fix on hover */
+#TabsToolbar .tab-icon-overlay:not([crashed])[soundplaying]:hover,
+#TabsToolbar .tab-icon-overlay:not([crashed])[muted]:hover,
+#TabsToolbar .tab-icon-overlay:not([crashed])[activemedia-blocked]:hover { color: var(--uc-theme-colour) !important; }
+
+
+
+
+
+#nav-bar {
+
+    border:     none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+
+}
+
+
+/* remove border below whole nav */
+#navigator-toolbox { border-bottom: none !important; }
+
+
+#urlbar,
+#urlbar * {
+
+    outline: none !important;
+    box-shadow: none !important;
+
+}
+
+
+#urlbar-background { border: var(--uc-hover-colour) !important; }
+
+
+#urlbar[focused="true"]
+    > #urlbar-background,
+#urlbar:not([open])
+    > #urlbar-background { background: transparent !important; }
+
+
+#urlbar[open]
+    > #urlbar-background { background: var(--uc-theme-colour) !important; }
+
+
+.urlbarView-row:hover
+    > .urlbarView-row-inner,
+.urlbarView-row[selected]
+    > .urlbarView-row-inner { background: var(--uc-hover-colour) !important; }
+    
+
+
+
+
+/* transition to oneline */
+@media (min-width: 1000px) { 
+    
+
+    /* move tabs bar over */
+    #TabsToolbar { margin-left: var(--uc-urlbar-width) !important; }
+
+
+    /* move entire nav bar  */
+    #nav-bar { margin: calc((var(--urlbar-min-height) * -1) - 8px) calc(100vw - var(--uc-urlbar-width)) 0 0 !important; }
+
+
+} /* end media query */
