@@ -27,8 +27,11 @@ map('n', '<esc>', ':noh<return><esc>')
 map('n', '<esc>^[', '<esc>^[')
 
 
+-- cmd [[
+--   set list listchars=tab:\›\ ,trail:-,extends:>,precedes:<,eol:¬,space:·
+-- ]]
 cmd [[
-  set list listchars=tab:\›\ ,trail:-,extends:>,precedes:<,eol:¬,space:·
+  set list listchars=trail:-
 ]]
 
 cmd [[
