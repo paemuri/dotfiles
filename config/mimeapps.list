@@ -242,15 +242,17 @@ x-content/video-svcd=mpv.desktop
 x-content/video-vcd=mpv.desktop
 
 # nvim.desktop
-application/json=nvim.desktop
 application/csv=nvim.desktop
+application/json=nvim.desktop
 application/tab-separated-values=nvim.desktop
 application/x-shellscript=nvim.desktop
+inode/x-empty=nvim.desktop
 text/comma-separated-values=nvim.desktop
 text/css=nvim.desktop
 text/csv=nvim.desktop
 text/english=nvim.desktop
 text/javascript=nvim.desktop
+text/markdown=nvim.desktop
 text/plain=nvim.desktop
 text/spreadsheet=nvim.desktop
 text/tab-separated-values=nvim.desktop
@@ -264,6 +266,7 @@ text/x-csrc=nvim.desktop
 text/x-csv=nvim.desktop
 text/x-java=nvim.desktop
 text/x-makefile=nvim.desktop
+text/x-markdown=nvim.desktop
 text/x-moc=nvim.desktop
 text/x-pascal=nvim.desktop
 text/x-tcl=nvim.desktop
