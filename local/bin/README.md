@@ -74,10 +74,15 @@ XWayland, and also skip the launcher window.
 
 [See this thread for more info.][2]
 
+### `weather`
+
+Opens terminal with weather info from [wttr.in][3].
+
 ### `yambar-mod-*`
 
-Personal modules (scripts) for my [yambar][3] config.
+Personal modules (scripts) for my [yambar][4] config.
 
 [1]: https://github.com/pltanton/bitwarden-dmenu
 [2]: https://www.reddit.com/r/Veloren/comments/qtxjdq/arch_linux_cant_play_it_graphics_error/
-[3]: https://codeberg.org/dnkl/yambar
+[3]: https://wttr.in
+[4]: https://codeberg.org/dnkl/yambar
