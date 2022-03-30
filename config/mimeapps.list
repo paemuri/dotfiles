@@ -86,17 +86,17 @@ image/x-xcdr=inkscape.desktop
 application/x-gnome-saved-search=lf.desktop
 inode/directory=lf.desktop
 
-# librewolf-personal.desktop
-application/x-extension-htm=librewolf-personal.desktop
-application/x-extension-html=librewolf-personal.desktop
-application/x-extension-shtml=librewolf-personal.desktop
-application/x-extension-xht=librewolf-personal.desktop
-application/x-extension-xhtml=librewolf-personal.desktop
-application/xhtml+xml=librewolf-personal.desktop
-text/html=librewolf-personal.desktop
-x-scheme-handler/chrome=librewolf-personal.desktop
-x-scheme-handler/http=librewolf-personal.desktop
-x-scheme-handler/https=librewolf-personal.desktop
+# librewolf.desktop
+application/x-extension-htm=librewolf.desktop
+application/x-extension-html=librewolf.desktop
+application/x-extension-shtml=librewolf.desktop
+application/x-extension-xht=librewolf.desktop
+application/x-extension-xhtml=librewolf.desktop
+application/xhtml+xml=librewolf.desktop
+text/html=librewolf.desktop
+x-scheme-handler/chrome=librewolf.desktop
+x-scheme-handler/http=librewolf.desktop
+x-scheme-handler/https=librewolf.desktop
 
 # mpv.desktop
 application/mxf=mpv.desktop
@@ -272,18 +272,4 @@ text/x-pascal=nvim.desktop
 text/x-tcl=nvim.desktop
 text/x-tex=nvim.desktop
 text/xml=nvim.desktop
-
-[Added Associations]
-
-# librewolf-work.desktop
-application/x-extension-htm=librewolf-work.desktop
-application/x-extension-html=librewolf-work.desktop
-application/x-extension-shtml=librewolf-work.desktop
-application/x-extension-xht=librewolf-work.desktop
-application/x-extension-xhtml=librewolf-work.desktop
-application/xhtml+xml=librewolf-work.desktop
-text/html=librewolf-work.desktop
-x-scheme-handler/chrome=librewolf-work.desktop
-x-scheme-handler/http=librewolf-work.desktop
-x-scheme-handler/https=librewolf-work.desktop
 

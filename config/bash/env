@@ -15,7 +15,7 @@ export XDG_PUBLICSHARE_DIR
 export XDG_TEMPLATES_DIR
 export XDG_VIDEOS_DIR
 
-export BROWSER=$HOME/.local/bin/librewolf-personal
+export BROWSER=/usr/bin/librewolf
 export EDITOR=/usr/bin/nvim
 export VISUAL=/usr/bin/nvim
 export TERMINAL=/usr/bin/foot

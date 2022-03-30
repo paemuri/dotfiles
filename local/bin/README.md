@@ -38,10 +38,6 @@ to do it manually.
 Translate config values from `config/gtk-3.0/settings.ini` that GTK
 ignores into `gsettings` commands.
 
-### `librewolf-*`
-
-Wrapper script to call librewolf with specific profiles.
-
 ### `minecraft`
 
 ~Gambiarra~ *Workaround* script to make Minecraft pseudo-XDG-compliant.
