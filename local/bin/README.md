@@ -51,10 +51,6 @@ Simple `paru` wrapper that install all packages defined in
 
 Another `paru` wrapper. It updates all installed packages.
 
-### `pritunl-all`
-
-Run a command to all pritunl connections.
-
 ### `screen`
 
 Script to screenshot or screen record.
