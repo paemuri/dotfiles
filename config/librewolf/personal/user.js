@@ -1,0 +1,15 @@
+user_pref("browser.download.autohideButton", true);
+user_pref("browser.download.dir", "/home/paemuri/downloads");
+user_pref("browser.download.useDownloadDir", true);
+user_pref("browser.startup.page", 3);
+user_pref("intl.accept_languages", "en-US, en, pt-BR");
+user_pref("javascript.use_us_english_locale", true);
+user_pref("network.cookie.lifetimePolicy", 0);
+user_pref("privacy.donottrackheader.enabled", true);
+user_pref("privacy.history.custom", true);
+user_pref("privacy.sanitize.sanitizeOnShutdown", false);
+user_pref("privacy.trackingprotection.enabled", true);
+user_pref("privacy.trackingprotection.socialtracking.enabled", true);
+user_pref("signon.generation.enabled", false);
+user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
+user_pref("webgl.disabled", false);
