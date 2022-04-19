@@ -8,6 +8,6 @@ postgresql
 rustup
 texlive-core
 typescript
-typescript-language-server-bin
+typescript-language-server
 zig
 zls-bin
