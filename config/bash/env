@@ -24,9 +24,6 @@ export SCREEN_RECORDS_DIR=$XDG_VIDEOS_DIR/screen-records
 export PROJECTS_DIR=$HOME/projects
 export DOTFILES=$PROJECTS_DIR/paemuri/dotfiles
 
-export GOPATH=$XDG_DATA_HOME/go/global
-export GOROOT=$XDG_DATA_HOME/go/root
-
 export RUSTUP_HOME=$XDG_DATA_HOME/rustup
 export CARGO_HOME=$XDG_DATA_HOME/cargo
 export CARGO_NAME="Rafael Escobar"
