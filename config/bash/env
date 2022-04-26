@@ -33,7 +33,7 @@ export CARGO_NAME="Rafael Escobar"
 export CARGO_EMAIL=rescobar@pm.me
 
 export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/config
-export NVM_DIR=$XDG_DATA_HOME/nvm
+export VOLTA_HOME=$XDG_DATA_HOME/volta
 export NODE_REPL_HISTORY=$XDG_DATA_HOME/node/repl-history
 
 export INPUTRC=$XDG_CONFIG_HOME/readline/inputrc
@@ -96,9 +96,10 @@ export BEMENU_OPTS="\
 "
 
 export PATH=$HOME/.local/bin
+PATH+=:$CARGO_HOME/bin
+PATH+=:$VOLTA_HOME/bin
+PATH+=:/opt
 PATH+=:/usr/bin
 PATH+=:/usr/local/bin
 PATH+=:/usr/local/sbin
 PATH+=:/usr/bin/vendor_perl
-PATH+=:/opt
-PATH+=:$CARGO_HOME/bin

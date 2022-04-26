@@ -13,7 +13,6 @@ fi
 source $XDG_CONFIG_HOME/bash/prompt
 source $XDG_CONFIG_HOME/bash/utils
 source /usr/share/bash-completion/bash_completion
-source /usr/share/nvm/init-nvm.sh
 
 shopt -s \
   checkwinsize \
