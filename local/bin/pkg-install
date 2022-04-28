@@ -1,5 +1,7 @@
 #!/bin/sh
 
 cat $XDG_DATA_HOME/packages/* |
-  paru -Syu --needed --noconfirm -
+  paru -Sy --needed --noconfirm -
+
+pkg-update
 

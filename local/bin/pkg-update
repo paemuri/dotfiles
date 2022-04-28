@@ -1,5 +1,6 @@
 #!/bin/sh
 
+paru -Sy --needed archlinux-keyring
 paru -Syu --noconfirm
 
 orphans="$(paru -Qtdq)"
