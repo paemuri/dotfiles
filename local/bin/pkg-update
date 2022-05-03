@@ -1,7 +1,7 @@
 #!/bin/sh
 
 paru -Sy --needed archlinux-keyring
-paru -Syu --noconfirm
+paru -Su --noconfirm
 
 orphans="$(paru -Qtdq)"
 if test -n "$orphans"
