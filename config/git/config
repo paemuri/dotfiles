@@ -1,22 +1,25 @@
 [user]
-	name  = Rafael Escobar
-	email = rescobar@pm.me
+name = Rafael Escobar
+email = rescobar@pm.me
 [tag]
-	sort = version:refname
+sort = version:refname
 [rebase]
-	autosquash = true
+autosquash = true
 [url "git@github.com:paemuri"]
-	insteadOf = https://github.com/paemuri
-	insteadOf = https://github.com/Nhanderu
-	insteadOf = git@github.com:Nhanderu
+insteadOf = https://github.com/paemuri
+insteadOf = https://github.com/Nhanderu
+insteadOf = git@github.com:Nhanderu
 [url "git@github.com:devsbb"]
-	insteadOf = https://github.com/devsbb
+insteadOf = https://github.com/devsbb
 [push]
-	default = current
+default = current
 [init]
-	defaultBranch = main
+defaultBranch = main
 [filter "lfs"]
-	required = true
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
+required = true
+clean = git-lfs clean -- %f
+smudge = git-lfs smudge -- %f
+process = git-lfs filter-process
+[sendemail]
+verify = off
+annotate = yes
