@@ -3,6 +3,7 @@ amfora
 bash
 bash-completion
 bitwarden-cli
+fd
 fzf
 htop
 jq
@@ -11,6 +12,7 @@ libqalculate
 libsixel
 man-db
 man-pages
+neomutt
 neovim
 opendoas
 openssh
