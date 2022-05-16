@@ -62,6 +62,10 @@ XWayland, and also skip the launcher window.
 
 [See this thread for more info.][2]
 
+### `vpn`
+
+Wrapper for pritunl-client and resolvectl to manage your VPN with ease.
+
 ### `weather`
 
 Opens terminal with weather info from [wttr.in][3].

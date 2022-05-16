@@ -1,0 +1,65 @@
+#!/bin/sh
+
+regex() {
+  echo "$1" | pcre2grep "$2" >/dev/null
+}
+
+conns_states() {
+  pritunl-client list 2>/dev/null | tail -n+4 | head -n-1 | awk -F'|' '{ print $6 }'
+}
+
+case "$1" in
+  start|stop) action="$1";;
+  '')
+    echo    "Missing action." >&2
+    echo    "Command should be:" >&2
+    echo -e "\tvpn (start|stop)" >&2
+    exit 1
+  ;;
+  *)
+    echo    "Invalid action: $1." >&2
+    echo    "Command should be:" >&2
+    echo -e "\tvpn (start|stop)" >&2
+    exit 1
+  ;;
+esac
+shift
+
+if test -n "$(echo "$@")"
+then
+  echo    "Invalid args: $@." >&2
+  echo    "Command should be:" >&2
+  echo -e "\tvpn (start|stop)" >&2
+  exit 1
+fi
+
+service_state="$(systemctl show pritunl-client | grep ActiveState | sed 's|.*=||')"
+if (test $action = "start" && test "$service_state" = "active") || \
+  (test $action = "stop" && test "$service_state" = "inactive")
+then
+  echo "Already $service_state."
+  exit 0
+fi
+
+doas systemctl $action pritunl-client
+
+if test $action = "start"
+then
+
+  while regex "$(conns_states)" '(Connecting|Disconnected|^$)'
+  do
+    if regex "$(conns_states)" 'Connecting'
+    then
+      echo -n 'Connecting.'
+    else regex "$(conns_states)" '(Disconnected|^$)'
+      echo -n 'Disconnected.'
+    fi
+    sleep .5s
+    echo -ne "\r\033[2K" # Clear line.
+  done
+  echo 'Connected.'
+
+  doas resolvectl dns tun0 $VPN_DNS
+  doas resolvectl domain tun0 $VPN_DOMAIN
+fi
+

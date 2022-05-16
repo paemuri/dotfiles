@@ -12,6 +12,7 @@ fi
 
 source $XDG_CONFIG_HOME/bash/prompt
 source $XDG_CONFIG_HOME/bash/utils
+source $XDG_CONFIG_HOME/bash/hidden
 source /usr/share/bash-completion/bash_completion
 
 shopt -s \
