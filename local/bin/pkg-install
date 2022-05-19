@@ -1,5 +1,7 @@
 #!/bin/sh
 
+set -e
+
 cat $XDG_DATA_HOME/packages/* |
   paru -Sy --needed --noconfirm -
 
