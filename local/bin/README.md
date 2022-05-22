@@ -47,6 +47,10 @@ Simple `paru` wrapper that install all packages defined in
 
 Another `paru` wrapper. It updates all installed packages.
 
+### `pw-gen`
+
+Password generator.
+
 ### `screen`
 
 Script to screenshot or screen record.

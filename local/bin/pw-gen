@@ -1,0 +1,5 @@
+#!/bin/sh
+
+tr -dc 'a-hjkm-zA-HJ-NP-Z1-9\-+=_@$%&*#?!~^:;<>,.\\/' \
+  < /dev/random \
+  | head -c 32
