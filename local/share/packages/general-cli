@@ -19,6 +19,7 @@ openssh
 openssl
 perl-image-exiftool
 rbw
+ripgrep
 rsync
 sl
 streamlink
