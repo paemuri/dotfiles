@@ -1,0 +1,40 @@
+#!/bin/sh
+
+# Should be in a Git project.
+git_work_tree=$(git rev-parse --is-inside-work-tree 2> /dev/null)
+if test "$git_work_tree" != "true"
+then
+  exit 1
+fi
+
+# Should have a current branch.
+current_branch=$( \
+  git symbolic-ref --quiet --short HEAD 2> /dev/null || \
+  git rev-parse --short HEAD 2> /dev/null)
+if test -z "$current_branch"
+then
+  exit 1
+fi
+
+temp_branch=$(uuidgen)
+base_branch=$1
+if test -z "$base_branch"
+then
+  echo    "Missing base branch." >&2
+  echo    "Command should be:" >&2
+  echo -e "\tgit self-cherry-pick [base_branch]" >&2
+  exit 1
+fi
+if test "$current_branch" = "$base_branch"
+then
+  echo "Invalid base branch: $base_branch."
+  echo "It should not be the same as the current branch." >&2
+  exit 1
+fi
+
+git checkout -b $temp_branch
+git branch -D $current_branch
+git checkout $base_branch
+git checkout -b $current_branch
+git cherry-pick $temp_branch
+git branch -D $temp_branch

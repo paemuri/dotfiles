@@ -9,63 +9,67 @@ light_yellow="\033[38;2;250;189;47m" # fabd2f
 
 prompt1() {
 
-  echo -en "$green$(whoami)"
-  echo -en "$white in "
-  echo -en "$light_green$(pwd | sed "s|^$HOME|~|")"
+  path=$(pwd | sed "s|^$HOME|~|")
+  echo -en "$green$(whoami)$white in $light_green$path$white"
 
+  # Should be in a Git project.
   git_work_tree=$(git rev-parse --is-inside-work-tree 2> /dev/null)
-  if test "$git_work_tree" = "true"
+  if test "$git_work_tree" != "true"
   then
+    echo -en "$reset"
+    return
+  fi
 
-    git_branch=$( \
-      git symbolic-ref --quiet --short HEAD 2> /dev/null || \
-      git rev-parse --short HEAD 2> /dev/null)
+  # Should have a current branch.
+  git_branch=$( \
+    git symbolic-ref --quiet --short HEAD 2> /dev/null || \
+    git rev-parse --short HEAD 2> /dev/null)
+  if test -z "$git_branch"
+  then
+    echo -en "$reset"
+    return
+  fi
 
-    if test -n "$git_branch"
-    then
+  echo -en "$white on $light_yellow$git_branch$white"
 
-      echo -en "$white on "
-      echo -en "$light_yellow$git_branch"
+  # Should not be in .git.
+  git_dir=$(git rev-parse --is-inside-git-dir 2> /dev/null)
+  if test "$git_dir" != "false"
+  then
+    echo -en "$reset"
+    return
+  fi
 
-      git_dir=$(git rev-parse --is-inside-git-dir 2> /dev/null)
-      if test "$git_dir" = "false"
-      then
-      
-        git update-index --really-refresh -q &> /dev/null
-        git_status=''
+  git update-index --really-refresh -q &> /dev/null
+  git_status=''
 
-        if ! git diff --quiet --ignore-submodules --cached
-        then
-          git_status+="${yellow}stage"
-        fi
+  if ! git diff --quiet --ignore-submodules --cached
+  then
+    git_status+="${yellow}stage"
+  fi
 
-        if ! git diff-files --quiet --ignore-submodules --
-        then
-          test -n "$git_status" && git_status+="$white and "
-          git_status+="${yellow}changes"
-        fi
+  if ! git diff-files --quiet --ignore-submodules --
+  then
+    test -n "$git_status" && git_status+="$white and "
+    git_status+="${yellow}changes"
+  fi
 
-        git_new_files=$(git ls-files --others --exclude-standard)
-        if test -n "$git_new_files"
-        then
-          test -n "$git_status" && git_status+="$white and "
-          git_status+="${yellow}new"
-        fi
+  git_new_files=$(git ls-files --others --exclude-standard)
+  if test -n "$git_new_files"
+  then
+    test -n "$git_status" && git_status+="$white and "
+    git_status+="${yellow}new"
+  fi
 
-        if git rev-parse --verify refs/stash &> /dev/null
-        then
-          test -n "$git_status" && git_status+="$white and "
-          git_status+="${yellow}stash"
-        fi
+  if git rev-parse --verify refs/stash &> /dev/null
+  then
+    test -n "$git_status" && git_status+="$white and "
+    git_status+="${yellow}stash"
+  fi
 
-        if test -n "$git_status"
-        then
-          echo -en "$white with "
-          echo -en "$git_status"
-        fi
-
-      fi
-    fi
+  if test -n "$git_status"
+  then
+    echo -en " with $git_status$white"
   fi
 
   echo -en "$reset"

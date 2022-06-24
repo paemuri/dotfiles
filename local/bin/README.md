@@ -38,6 +38,11 @@ to do it manually.
 Translate config values from `config/gtk-3.0/settings.ini` that GTK
 ignores into `gsettings` commands.
 
+### `git-self-cherry-pick`
+
+Git helper: rebases the current branch from base branch and maintains
+only the last commit (cherry-pick).
+
 ### `pkg-install`
 
 Simple `paru` wrapper that install all packages defined in
