@@ -1,13 +1,7 @@
-docker
-docker-compose
-kafkactl
 lldb
 pgcli
 postgresql
 rustup
 texlive-core
-typescript
-typescript-language-server
-volta-bin
 zig
 zls-bin

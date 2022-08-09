@@ -15,10 +15,6 @@ probably not the best place, but it's there).
 Wrapper around [bwmenu][1], which is a menu wrapper around Bitwarden
 CLI, the password manager I use. 
 
-### `code`
-
-~Gambiarra~ *Workaround* script to make VS Codium pseudo-XDG-compliant.
-
 ### `extract`
 
 Utility to extract files.
@@ -70,10 +66,6 @@ Script to screenshot or screen record.
 XWayland, and also skip the launcher window.
 
 [See this thread for more info.][2]
-
-### `vpn`
-
-Wrapper for pritunl-client and resolvectl to manage your VPN with ease.
 
 ### `weather`
 
