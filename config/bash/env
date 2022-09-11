@@ -41,8 +41,7 @@ export HISTFILESIZE=99999
 export HISTSIZE=99999
 export PROMPT_COMMAND="history -a"
 
-export GREP_COLOR="38;2;181;118;20"
-export GREP_COLORS="ms=$GREP_COLOR"
+export GREP_COLORS="mt=$GREP_COLOR"
 
 export XKB_DEFAULT_LAYOUT=br
 export XKB_DEFAULT_OPTIONS=caps:escape
