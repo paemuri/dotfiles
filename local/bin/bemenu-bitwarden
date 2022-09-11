@@ -5,6 +5,6 @@ which bwmenu >/dev/null 2>&1 || \
 
 menu_path=$(which bemenu)
 bwmenu \
-  --clear 15 \
+  --no-clear \
   --search-command "$menu_path --prompt 'item'" \
   --ask-password-command "$menu_path --password --prompt 'pass'"
