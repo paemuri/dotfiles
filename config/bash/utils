@@ -8,6 +8,7 @@ alias fgrep="fgrep --color=auto"
 alias pacman="pacman --color=auto"
 alias open=xdg-open
 alias rm=trash
+alias unrar=unrar-free
 alias streamlink="streamlink --player=mpv"
 alias scanimage=" \
   doas scanimage \
