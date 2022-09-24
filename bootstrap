@@ -18,7 +18,6 @@ done
 
 # Exceptions.
 ln -snfv "$XDG_CONFIG_HOME/firefox" ~/.librewolf
-ln -snfv "$XDG_CONFIG_HOME/firefox" ~/.mozilla/firefox
 
 if test "$1" = "-i" || test "$1" = "--install"
 then
