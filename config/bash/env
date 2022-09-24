@@ -72,6 +72,8 @@ export FZF_ALT_C_COMMAND="fd --type=d"
 
 export WINEPREFIX=$XDG_DATA_HOME/wine
 
+export MANGOHUD=1
+
 export BEMENU_OPTS="\
   --ignorecase \
   --list=10 \
