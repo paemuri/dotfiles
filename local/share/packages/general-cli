@@ -1,5 +1,6 @@
 acpi
 amfora
+auto-cpufreq
 bash
 bash-completion
 bitwarden-cli
