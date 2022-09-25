@@ -4,9 +4,10 @@
 $XDG_CONFIG_HOME/river/config
 
 # Desktop services.
-mako &
-yambar &
 wbg ~/images/wallpaper.jpg &
+yambar &
+mako &
+wob-listen &
 mpv /usr/share/sounds/freedesktop/stereo/service-login.oga &
 
 # Commands to run at startup.

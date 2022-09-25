@@ -119,16 +119,24 @@ do
   riverctl map $mode Control+Shift Return    spawn "makoctl invoke"
 
   # Volume.
-  riverctl map $mode None  XF86AudioRaiseVolume spawn "ponymix --output --max-volume=150 increase 10"
-  riverctl map $mode None  XF86AudioLowerVolume spawn "ponymix --output decrease 10"
-  riverctl map $mode None  XF86AudioMute        spawn "ponymix --output toggle"
-  riverctl map $mode Shift XF86AudioRaiseVolume spawn "ponymix --input --max-volume=25 increase 5"
-  riverctl map $mode Shift XF86AudioLowerVolume spawn "ponymix --input decrease 5"
-  riverctl map $mode Shift XF86AudioMute        spawn "ponymix --input toggle"
+  riverctl map $mode None  XF86AudioRaiseVolume spawn \
+    "ponymix --output --max-volume=150 increase 10 > $WOBSOCK"
+  riverctl map $mode None  XF86AudioLowerVolume spawn \
+    "ponymix --output decrease 10 > $WOBSOCK"
+  riverctl map $mode None  XF86AudioMute        spawn \
+    "ponymix --output toggle"
+  riverctl map $mode Shift XF86AudioRaiseVolume spawn \
+    "ponymix --input --max-volume=25 increase 5 > $WOBSOCK"
+  riverctl map $mode Shift XF86AudioLowerVolume spawn \
+    "ponymix --input decrease 5 > $WOBSOCK"
+  riverctl map $mode Shift XF86AudioMute        spawn \
+    "ponymix --input toggle"
 
   # Brightness.
-  riverctl map $mode None XF86MonBrightnessUp   spawn "brightnessctl set 10%+"
-  riverctl map $mode None XF86MonBrightnessDown spawn "brightnessctl set 10%-"
+  riverctl map $mode None XF86MonBrightnessUp   spawn \
+    "brightnessctl set 10%+ -m | awk -F, '{print \$4}' | tr -d '%' > $WOBSOCK"
+  riverctl map $mode None XF86MonBrightnessDown spawn \
+    "brightnessctl set 10%- -m | awk -F, '{print \$4}' | tr -d '%' > $WOBSOCK"
 done
 
 ########

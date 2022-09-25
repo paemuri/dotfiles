@@ -71,6 +71,10 @@ XWayland, and also skip the launcher window.
 
 Opens terminal with weather info from [wttr.in][3].
 
+### `wob-listen`
+
+Configures and run wob.
+
 ### `yambar-mod-*`
 
 Personal modules (scripts) for my [yambar][4] config.

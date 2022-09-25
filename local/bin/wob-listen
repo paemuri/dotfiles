@@ -1,0 +1,19 @@
+#!/bin/sh
+
+rm -f $WOBSOCK
+mkfifo $WOBSOCK
+# Add config in flags. INI file will only be valid in next version.
+tail -f $WOBSOCK | wob \
+  --width=300 \
+  --height=35 \
+  --offset=3 \
+  --border=3 \
+  --padding=3 \
+  --anchor=top \
+  --margin=10 \
+  --border-color=\#79740eff \
+  --bar-color=\#79740eff \
+  --background-color=\#282828ee \
+  --overflow-border-color=\#9d0006ff \
+  --overflow-bar-color=\#9d0006ff \
+  --overflow-background-color=\#282828ee
