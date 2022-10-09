@@ -120,17 +120,41 @@ do
 
   # Volume.
   riverctl map $mode None  XF86AudioRaiseVolume spawn \
-    "ponymix --output --max-volume=150 increase 10 > $WOBSOCK"
+    " \
+      val=\$(ponymix --output --max-volume=150 increase 10); \
+      col=\$(ponymix --input is-muted && echo \$WOB_ERR || echo \$WOB_OK); \
+      echo \$val \$col > $WOBSOCK; \
+    "
   riverctl map $mode None  XF86AudioLowerVolume spawn \
-    "ponymix --output decrease 10 > $WOBSOCK"
+    " \
+      val=\$(ponymix --output decrease 10); \
+      col=\$(ponymix --input is-muted && echo \$WOB_ERR || echo \$WOB_OK); \
+      echo \$val \$col > $WOBSOCK; \
+    "
   riverctl map $mode None  XF86AudioMute        spawn \
-    "ponymix --output toggle"
+    " \
+      val=\$(ponymix --output toggle); \
+      col=\$(ponymix --input is-muted && echo \$WOB_ERR || echo \$WOB_OK); \
+      echo \$val \$col > $WOBSOCK; \
+    "
   riverctl map $mode Shift XF86AudioRaiseVolume spawn \
-    "ponymix --input --max-volume=25 increase 5 > $WOBSOCK"
+    " \
+      val=\$(ponymix --input --max-volume=150 increase 10); \
+      col=\$(ponymix --input is-muted && echo \$WOB_ERR || echo \$WOB_OK); \
+      echo \$val \$col > $WOBSOCK; \
+    "
   riverctl map $mode Shift XF86AudioLowerVolume spawn \
-    "ponymix --input decrease 5 > $WOBSOCK"
+    " \
+      val=\$(ponymix --input decrease 10); \
+      col=\$(ponymix --input is-muted && echo \$WOB_ERR || echo \$WOB_OK); \
+      echo \$val \$col > $WOBSOCK; \
+    "
   riverctl map $mode Shift XF86AudioMute        spawn \
-    "ponymix --input toggle"
+    " \
+      val=\$(ponymix --input toggle); \
+      col=\$(ponymix --input is-muted && echo \$WOB_ERR || echo \$WOB_OK); \
+      echo \$val \$col > $WOBSOCK; \
+    "
 
   # Brightness.
   riverctl map $mode None XF86MonBrightnessUp   spawn \

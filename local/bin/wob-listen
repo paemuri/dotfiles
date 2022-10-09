@@ -14,6 +14,6 @@ tail -f $WOBSOCK | wob \
   --border-color=\#79740eff \
   --bar-color=\#79740eff \
   --background-color=\#282828ee \
-  --overflow-border-color=\#9d0006ff \
-  --overflow-bar-color=\#9d0006ff \
+  --overflow-border-color=\#b57614ff \
+  --overflow-bar-color=\#b57614ff \
   --overflow-background-color=\#282828ee
