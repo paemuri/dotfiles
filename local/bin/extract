@@ -4,9 +4,10 @@ for file in $@
 do
   echo "Extracting $file."
   case "$file" in
-    *.tar.bz|*.tar.bz2|*.tbz|*.tbz2) tar xjvf "$file";;
-    *.tar.gz|*.tgz) tar xzvf "$file";;
-    *.tar.xz|*.txz) tar xJvf "$file";;
+    *.tar.bz|*.tar.bz2|*.tbz|*.tbz2) tar -xjvf "$file";;
+    *.tar.gz|*.tgz) tar -xzvf "$file";;
+    *.tar.xz|*.txz) tar -xJvf "$file";;
+    *.tar.zst) tar --zstd -xvf "$file";;
     *.zip) unzip "$file";;
     *.rar) unrar x "$file";;
     *.7z) 7z x "$file";;
