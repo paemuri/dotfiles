@@ -203,6 +203,11 @@ do
   rename "$filepath" png img
 done
 
+for filepath in $(find $@ -iname  '*.webp')
+do
+  rename "$filepath" webp img
+done
+
 for filepath in $(find $@ -iname  '*.mp4')
 do
   rename "$filepath" mp4 vid
