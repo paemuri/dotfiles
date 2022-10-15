@@ -121,15 +121,6 @@ get_timestamp() {
         tr -d '.-' \
       )
 
-    elif regex "$fname" '^IMG_\d{8}_\d{6}_\d{3}$'
-    then
-      timestamp=$( \
-        echo "$fname" | \
-        sed 's/^IMG_//' | \
-        sed 's/_\d{3}$//' | \
-        tr -d _ \
-      )
-
     fi
 
   fi
