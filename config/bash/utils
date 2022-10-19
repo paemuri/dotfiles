@@ -1,6 +1,7 @@
 #!/bin/sh
 
 alias cp="cp -v"
+alias mv="mv -v"
 alias less="less --RAW-CONTROL-CHARS"
 alias ls="ls --almost-all --classify --color=auto"
 alias grep="grep --color=auto"
