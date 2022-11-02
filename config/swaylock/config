@@ -3,7 +3,7 @@ ignore-empty-password
 indicator-idle-visible
 indicator-caps-lock
 datestr=%x
-image=~/images/wallpaper.jpg
+image=~/gallery/wallpaper.jpg
 font=FiraMono-Regular
 font-size=20
 indicator-radius=50
