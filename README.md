@@ -30,18 +30,18 @@ Linux.
 
 - Bash: shell
 - NeoVim: terminal editor
+- Firefox: browser
 - [foot][2]: lightweight Wayland terminal
-- [Librewolf][3]: privacy-focused Firefox fork
-- [River][4]: Wayland compositor / window manager
-- [Yambar][5]: Wayland panel with River integration
-- [Mako][6]: Wayland notification daemon
-- [swaylock-effects][7]: fork of swaylock with some 
-- [Bemenu][8]: Wayland application menu and program runner
-- [imv][9]: Wayland image viewer
-- [lf][10]: terminal file manager
+- [River][3]: Wayland compositor / window manager
+- [Yambar][4]: Wayland panel with River integration
+- [Mako][5]: Wayland notification daemon
+- [swaylock-effects][6]: fork of swaylock with some 
+- [Bemenu][7]: Wayland application menu and program runner
+- [imv][8]: Wayland image viewer
+- [lf][9]: terminal file manager
 - Evince: PDF reader
-- [mpv][11]: video player
-- [wbg][12]: Wayland background
+- [mpv][10]: video player
+- [wbg][11]: Wayland background
 
 ## Bootstrap
 
@@ -61,16 +61,15 @@ domain, without any additional terms or conditions.
 
 [1]: ./LICENSE
 [2]: https://codeberg.org/dnkl/foot
-[3]: https://librewolf.net
-[4]: https://github.com/riverwm/river
-[5]: https://codeberg.org/dnkl/yambar
-[6]: https://github.com/emersion/mako
-[7]: https://github.com/mortie/swaylock-effects
-[8]: https://github.com/Cloudef/bemenu
-[9]: https://github.com/eXeC64/imv
-[10]: https://github.com/gokcehan/lf
-[11]: https://github.com/mpv-player/mpv
-[12]: https://codeberg.org/dnkl/wbg
+[3]: https://github.com/riverwm/river
+[4]: https://codeberg.org/dnkl/yambar
+[5]: https://github.com/emersion/mako
+[6]: https://github.com/mortie/swaylock-effects
+[7]: https://github.com/Cloudef/bemenu
+[8]: https://github.com/eXeC64/imv
+[9]: https://github.com/gokcehan/lf
+[10]: https://github.com/mpv-player/mpv
+[11]: https://codeberg.org/dnkl/wbg
 
 [badge-1-img]: https://img.shields.io/badge/license-Unlicense-green?style=flat-square
 [badge-1-link]: ./LICENSE

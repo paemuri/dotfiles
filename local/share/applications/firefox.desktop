@@ -1,7 +1,7 @@
 [Desktop Entry]
 Type=Application
-Name=Librewolf web browser - personal profile
+Name=Firefox web browser - personal profile
 GenericName=Web browser
-TryExec=librewolf
-Exec=librewolf %U
+TryExec=firefox
+Exec=firefox %U
 MimeType=text/html;text/xml;application/xhtml+xml;application/xml;application/rdf+xml;image/gif;image/jpeg;image/png;x-scheme-handler/http;x-scheme-handler/https;x-scheme-handler/chrome;
