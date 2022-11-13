@@ -15,7 +15,6 @@ dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
 fix-gtk-settings
 ponymix --output --max-volume=150 set-volume 100
 ponymix --input  --max-volume=25  set-volume 25
-pritunl-all stop
 
 exec rivertile
 
