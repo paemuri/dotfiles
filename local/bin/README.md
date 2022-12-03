@@ -67,6 +67,11 @@ XWayland, and also skip the launcher window.
 
 [See this thread for more info.][2]
 
+### `volume`
+
+Script to handle mic/audio volume and mute, and also send the correct
+to wob.
+
 ### `weather`
 
 Opens terminal with weather info from [wttr.in][3].
