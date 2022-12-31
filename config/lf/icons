@@ -1,0 +1,65 @@
+# General
+di 
+ex *
+fi 
+li 
+or 
+
+# Documents
+*.pdf 
+*.djvu 
+*.epub 
+
+# Images/pics
+*.png 
+*.webp 
+*.ico 
+*.jpg 
+*.jpe 
+*.jpeg 
+*.gif 
+*.svg 
+*.tif 
+*.tiff 
+
+# Video
+*.mkv 
+*.mp4 
+*.webm 
+*.mpeg 
+*.avi 
+*.mov 
+*.mpg 
+*.wmv 
+*.m4b 
+*.flv 
+
+# Audio/music
+*.mp3 
+*.opus 
+*.ogg 
+*.m4a 
+*.flac 
+*.wav 
+
+# Archives
+*.zip 
+*.rar 
+*.7z 
+*.tar 
+
+# Games
+*.z64 
+*.v64 
+*.n64 
+*.gba 
+*.nes 
+*.gdi 
+
+# Others
+*.1 
+*.nfo 
+*.info 
+*.img 
+*.iso 
+*.srt 

@@ -2,6 +2,7 @@ set shell sh
 set shellopts "-ef"
 set ifs "\n"
 set filesep "\n"
+set icons
 
 # Trash.
 cmd trash %trash-put $fx
