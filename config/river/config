@@ -52,11 +52,7 @@ riverctl map-pointer normal $super       BTN_RIGHT resize-view
 riverctl set-repeat 50 300
 
 # Pointers.
-pointer_inputs=$(
-  riverctl list-inputs |
-  grep --no-group-separator -B1 "type: pointer" |
-  grep -v "type: pointer"
-)
+pointer_inputs=$(riverctl list-inputs | grep "pointer")
 for input in $pointer_inputs
 do
   riverctl input $input click-method         clickfinger
