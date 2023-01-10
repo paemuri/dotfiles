@@ -3,6 +3,7 @@ set shellopts "-ef"
 set ifs "\n"
 set filesep "\n"
 set icons
+set previewer '~/.config/lf/previewer'
 
 # Trash.
 cmd trash %trash-put $fx

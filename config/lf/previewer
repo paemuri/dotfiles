@@ -1,0 +1,42 @@
+#!/bin/sh
+
+# File preview handler for lf.
+
+set -C -f
+IFS="$(printf '%b_' '\n')"; IFS="${IFS%_}"
+
+# Note that the cache file name is a function of file information, meaning if
+# an image appears in multiple places across the machine, it will not have to
+# be regenerated once seen.
+cache_path="${XDG_CACHE_HOME:-$HOME/.cache}/lf"
+
+make_thumb_path() {
+  printf "$cache_path/thumb-%s" "$(stat --printf '%n\0%i\0%F\0%s\0%W\0%Y' -- "$(readlink -f "$1")" | sha256sum | cut -d' ' -f1)"
+}
+
+case "$(file --dereference --brief --mime-type -- "$1")" in
+  image/*) img2sixel -w "$2" -h "$3" "$1" ;;
+  text/html) lynx -width="$2" -display_charset=utf-8 -dump "$1" ;;
+  text/troff) man ./ "$1" | col -b ;;
+  text/* | */xml | application/json) bat --terminal-width "$(($2-2))" -f "$1" ;;
+  audio/* | application/octet-stream) mediainfo "$1" || exit 1 ;;
+  video/* )
+    thumb="$(make_thumb_path "$1")"
+    [ ! -f "$thumb" ] && ffmpegthumbnailer -i "$1" -o "$thumb" -s 0
+    img2sixel -w "$2" -h "$3" "$thumb"
+    ;;
+  */pdf)
+    thumb="$(make_thumb_path "$1")"
+    [ ! -f "$thumb.jpg" ] && pdftoppm -jpeg -f 1 -singlefile "$1" "$thumb"
+    img2sixel -w "$2" -h "$3" "$thumb"
+    ;;
+  */epub+zip|*/mobi*)
+    thumb="$(make_thumb_path "$1")"
+    [ ! -f "$thumb.jpg" ] && gnome-epub-thumbnailer "$1" "$thumb.jpg"
+    img2sixel -w "$2" -h "$3" "$thumb"
+    ;;
+  # application/*zip) atool --list -- "$1" ;;
+  *opendocument*) odt2txt "$1" ;;
+  application/pgp-encrypted) gpg -d -- "$1" ;;
+esac
+exit 1
