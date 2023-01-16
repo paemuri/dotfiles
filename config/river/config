@@ -71,7 +71,8 @@ done
 ##################
 
 # System control.
-riverctl map normal $super+Control L spawn swaylock
+riverctl map normal $super+Control L spawn \
+  "waylock -init-color 0x79740e -input-color 0xb57614 -fail-color 0x9d0006"
 riverctl map normal $super+Control Z spawn $XDG_CONFIG_HOME/river/config
 riverctl map normal $super+Control R spawn reboot
 riverctl map normal $super+Control Q spawn poweroff

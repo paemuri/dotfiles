@@ -35,7 +35,7 @@ Linux.
 - [River][3]: Wayland compositor / window manager
 - [Yambar][4]: Wayland panel with River integration
 - [Mako][5]: Wayland notification daemon
-- [swaylock-effects][6]: fork of swaylock with some 
+- [waylock][6]: simple Wayland locker
 - [Bemenu][7]: Wayland application menu and program runner
 - [imv][8]: Wayland image viewer
 - [lf][9]: terminal file manager
@@ -64,7 +64,7 @@ domain, without any additional terms or conditions.
 [3]: https://github.com/riverwm/river
 [4]: https://codeberg.org/dnkl/yambar
 [5]: https://github.com/emersion/mako
-[6]: https://github.com/mortie/swaylock-effects
+[6]: https://github.com/ifreund/waylock
 [7]: https://github.com/Cloudef/bemenu
 [8]: https://github.com/eXeC64/imv
 [9]: https://github.com/gokcehan/lf

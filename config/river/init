@@ -13,8 +13,8 @@ mpv /usr/share/sounds/freedesktop/stereo/service-login.oga &
 # Commands to run at startup.
 dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
 fix-gtk-settings
-ponymix --output --max-volume=150 set-volume 100
-ponymix --input  --max-volume=25  set-volume 25
+ponymix --output set-volume 100
+ponymix --input  set-volume 25
 
 exec rivertile
 
