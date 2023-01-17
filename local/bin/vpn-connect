@@ -1,0 +1,3 @@
+mullvad connect
+mullvad always-require-vpn set on
+systemctl enable --now transmission.service

@@ -72,6 +72,14 @@ XWayland, and also skip the launcher window.
 Script to handle mic/audio volume and mute, and also send the correct
 to wob.
 
+### `vpn-connect`
+
+Connects to Mullvad and starts Transmission.
+
+### `vpn-disconnect`
+
+Stops Transmission and disconnects from Mullvad.
+
 ### `weather`
 
 Opens terminal with weather info from [wttr.in][3].

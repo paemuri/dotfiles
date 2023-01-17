@@ -1,0 +1,3 @@
+systemctl disable --now transmission.service
+mullvad always-require-vpn set off
+mullvad disconnect
