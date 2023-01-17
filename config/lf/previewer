@@ -1,42 +1,48 @@
 #!/bin/sh
 
-# File preview handler for lf.
+file_path="$1"
+width="$2"
+height="$3"
+pos_x="$4"
+pos_y="$5"
 
-set -C -f
-IFS="$(printf '%b_' '\n')"; IFS="${IFS%_}"
-
-# Note that the cache file name is a function of file information, meaning if
-# an image appears in multiple places across the machine, it will not have to
-# be regenerated once seen.
-cache_path="${XDG_CACHE_HOME:-$HOME/.cache}/lf"
-
-make_thumb_path() {
-  printf "$cache_path/thumb-%s" "$(stat --printf '%n\0%i\0%F\0%s\0%W\0%Y' -- "$(readlink -f "$1")" | sha256sum | cut -d' ' -f1)"
+show_image () {
+  chafa -f sixel -s "$(($width-2))x$height" "$file_path" | sed 's/#/\n#/g'
 }
 
-case "$(file --dereference --brief --mime-type -- "$1")" in
-  image/*) img2sixel -w "$2" -h "$3" "$1" ;;
-  text/html) lynx -width="$2" -display_charset=utf-8 -dump "$1" ;;
-  text/troff) man ./ "$1" | col -b ;;
-  text/* | */xml | application/json) bat --terminal-width "$(($2-2))" -f "$1" ;;
-  audio/* | application/octet-stream) mediainfo "$1" || exit 1 ;;
-  video/* )
-    thumb="$(make_thumb_path "$1")"
-    [ ! -f "$thumb" ] && ffmpegthumbnailer -i "$1" -o "$thumb" -s 0
-    img2sixel -w "$2" -h "$3" "$thumb"
+cache_path="${XDG_CACHE_HOME:-$HOME/.cache}/lf"
+[ ! -d $cache_path ] && mkdir --parents $cache_path
+
+thumb_path=$( \
+  printf "$cache_path/thumb-%s" "$( \
+    stat --printf '%n\0%i\0%F\0%s\0%W\0%Y' -- "$(readlink -f "$file_path")" | \
+      sha256sum | \
+      cut -d' ' -f1 \
+  )" \
+)
+
+case "$(file --dereference --brief --mime-type -- "$file_path")" in
+  image/*) show_image ;;
+  text/* | */xml | application/json) bat --terminal-width "$(($width-2))" -f "$file_path" ;;
+  audio/* | application/octet-stream) mediainfo "$file_path" ;;
+  video/*)
+    [ ! -f "$thumb_path" ] && ffmpegthumbnailer -i "$file_path" -o "$thumb_path" -s 0
+    show_image
     ;;
   */pdf)
-    thumb="$(make_thumb_path "$1")"
-    [ ! -f "$thumb.jpg" ] && pdftoppm -jpeg -f 1 -singlefile "$1" "$thumb"
-    img2sixel -w "$2" -h "$3" "$thumb"
+    [ ! -f "$thumb_path.jpg" ] && pdftoppm -jpeg -f 1 -singlefile "$file_path" "$thumb_path"
+    show_image
     ;;
-  */epub+zip|*/mobi*)
-    thumb="$(make_thumb_path "$1")"
-    [ ! -f "$thumb.jpg" ] && gnome-epub-thumbnailer "$1" "$thumb.jpg"
-    img2sixel -w "$2" -h "$3" "$thumb"
+  */epub+zip | */mobi*)
+    [ ! -f "$thumb_path.jpg" ] && gnome-epub-thumbnailer "$file_path" "$thumb_path.jpg"
+    show_image
     ;;
-  # application/*zip) atool --list -- "$1" ;;
-  *opendocument*) odt2txt "$1" ;;
-  application/pgp-encrypted) gpg -d -- "$1" ;;
+  *opendocument*) odt2txt "$file_path" ;;
+  # Currently not used:
+  # text/troff) man ./ "$file_path" | col -b ;;
+  # application/pgp-encrypted) gpg -d -- "$file_path" ;;
+  # text/html) lynx -width="$width" -display_charset=utf-8 -dump "$file_path" ;;
+  # application/*zip) atool --list -- "$file_path" ;;
 esac
-exit 1
+
+exit 0

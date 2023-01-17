@@ -5,13 +5,14 @@ bash
 bash-completion
 bat
 bitwarden-cli
+chafa
 fd
 ffmpegthumbnailer
 fzf
 gnome-epub-thumbnailer
 htop
 jq
-lf-bin
+lf-sixel-git
 libqalculate
 libsixel
 lynx

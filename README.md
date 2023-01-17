@@ -38,7 +38,7 @@ Linux.
 - [waylock][6]: simple Wayland locker
 - [Bemenu][7]: Wayland application menu and program runner
 - [imv][8]: Wayland image viewer
-- [lf][9]: terminal file manager
+- [lf-sixel][9]: terminal file manager, lf fork to work with images
 - Evince: PDF reader
 - [mpv][10]: video player
 - [wbg][11]: Wayland background
@@ -67,7 +67,7 @@ domain, without any additional terms or conditions.
 [6]: https://github.com/ifreund/waylock
 [7]: https://github.com/Cloudef/bemenu
 [8]: https://github.com/eXeC64/imv
-[9]: https://github.com/gokcehan/lf
+[9]: https://github.com/horriblename/lf
 [10]: https://github.com/mpv-player/mpv
 [11]: https://codeberg.org/dnkl/wbg
 
