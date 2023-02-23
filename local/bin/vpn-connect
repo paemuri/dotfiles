@@ -1,3 +1,4 @@
 mullvad connect
-mullvad always-require-vpn set on
+mullvad auto-connect set on
+mullvad lockdown-mode set on
 systemctl enable --now transmission.service

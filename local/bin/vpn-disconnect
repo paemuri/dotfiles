@@ -1,3 +1,4 @@
 systemctl disable --now transmission.service
-mullvad always-require-vpn set off
+mullvad lockdown-mode set off
+mullvad auto-connect set off
 mullvad disconnect
