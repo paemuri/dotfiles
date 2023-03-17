@@ -15,9 +15,8 @@ bar:
     - river:
         content:
           map:
-            tag: "state"
-            values:
-              focused:
+            conditions:
+              state == focused:
                 string:
                   margin: 5
                   text: "{id}"
@@ -25,17 +24,16 @@ bar:
                     underline:
                       size: 2
                       color: "79740eff"
-              unfocused:
+              state == unfocused:
                 string:
                   margin: 5
                   text: "{id}"
-              invisible:
+              state == invisible:
                 map:
-                  tag: "occupied"
-                  values:
-                    false:
+                  conditions:
+                    ~occupied:
                       empty: {}
-                    true:
+                    occupied:
                       string:
                         margin: 5
                         text: "{id}"
