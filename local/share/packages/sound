@@ -1,6 +1,10 @@
 alsa-firmware
 alsa-utils
+lib32-pipewire
 pavucontrol
+pipewire
+pipewire-alsa
+pipewire-audio
+pipewire-pulse
 ponymix
-pulseaudio
-pulseaudio-alsa
+wireplumber
