@@ -92,7 +92,7 @@ user_pref("permissions.delegation.enabled", false);
 user_pref("permissions.manager.defaultsUrl", "");
 user_pref("privacy.donottrackheader.enabled", true);
 user_pref("privacy.firstparty.isolate", false);
-user_pref("privacy.resistFingerprinting", true);
+user_pref("privacy.resistFingerprinting", false);
 user_pref("privacy.trackingprotection.enabled", true);
 user_pref("privacy.trackingprotection.socialtracking.enabled", true);
 user_pref("privacy.window.name.update.enabled", true);
