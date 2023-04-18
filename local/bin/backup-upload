@@ -1,0 +1,11 @@
+#!/bin/sh
+
+for dir in \
+  documents \
+  miscellaneous \
+  gallery \
+  audios \
+  .ssh
+do
+  rclone sync -vv ~/$dir/ crypt:/$dir/
+done

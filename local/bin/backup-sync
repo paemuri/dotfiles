@@ -1,0 +1,5 @@
+#!/bin/sh
+
+backup-download
+fix-files-names ~/gallery/events/ ~/gallery/albums/
+backup-upload

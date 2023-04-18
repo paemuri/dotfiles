@@ -4,6 +4,19 @@ Personal executables.
 
 ## Files and subfolders
 
+### `backup-download`
+
+Downloads changes from `crypt` rclone remote.
+
+### `backup-sync`
+
+Downloads changes from `crypt` rclone remote, fixes files' names, and
+then uploads those fixes.
+
+### `backup-upload`
+
+Uploads changes to `crypt` rclone remote.
+
 ### `battery-alert`
 
 Simple script that alerts that the battery is running out. *When*
