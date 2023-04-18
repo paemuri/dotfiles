@@ -44,13 +44,14 @@ image/x-gzeps=evince.desktop
 # imv.desktop
 image/bmp=imv.desktop
 image/gif=imv.desktop
+image/heic=imv.desktop
 image/heif=imv.desktop
 image/jpeg=imv.desktop
 image/jpg=imv.desktop
 image/pjpeg=imv.desktop
 image/png=imv.desktop
-image/svg+xml=imv.desktop
 image/svg+xml-compressed=imv.desktop
+image/svg+xml=imv.desktop
 image/tiff=imv.desktop
 image/x-bmp=imv.desktop
 image/x-pcx=imv.desktop

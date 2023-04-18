@@ -203,6 +203,11 @@ do
   rename "$filepath" png img
 done
 
+for filepath in $(find $@ -iname  '*.heic')
+do
+  rename "$filepath" heic img
+done
+
 for filepath in $(find $@ -iname  '*.webp')
 do
   rename "$filepath" webp img

@@ -4,4 +4,4 @@ Name=IMV image viewer
 GenericName=Image viewer
 TryExec=imv
 Exec=imv -bchecks %F
-MimeType=image/bmp;image/gif;image/heif;image/jpeg;image/jpg;image/pjpeg;image/png;image/svg+xml;image/svg+xml-compressed;image/tiff;image/x-bmp;image/x-pcx;image/x-png;image/x-portable-anymap;image/x-portable-bitmap;image/x-portable-graymap;image/x-portable-pixmap;image/x-tga;image/x-tiff;image/x-xbitmap;
+MimeType=image/bmp;image/gif;image/heic=imv.desktop;image/heif;image/jpeg;image/jpg;image/pjpeg;image/png;image/svg+xml;image/svg+xml-compressed;image/tiff;image/x-bmp;image/x-pcx;image/x-png;image/x-portable-anymap;image/x-portable-bitmap;image/x-portable-graymap;image/x-portable-pixmap;image/x-tga;image/x-tiff;image/x-xbitmap;
