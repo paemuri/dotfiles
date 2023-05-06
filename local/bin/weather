@@ -1,4 +1,4 @@
 #!/bin/sh
 
-curl wttr.in/berlin
+curl wttr.in/staaken
 read -n1
