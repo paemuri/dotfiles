@@ -1,4 +1,4 @@
-systemctl disable --now transmission.service
+systemctl --user disable --now transmission.service
 mullvad lockdown-mode set off
 mullvad auto-connect set off
 mullvad disconnect

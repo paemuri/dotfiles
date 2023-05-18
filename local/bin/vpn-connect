@@ -1,4 +1,4 @@
 mullvad connect
 mullvad auto-connect set on
 mullvad lockdown-mode set on
-systemctl enable --now transmission.service
+systemctl --user enable --now transmission.service
