@@ -47,6 +47,7 @@ get_timestamp() {
     timestamp=''
     local fname="${file%.*}" # Removes extension.
 
+    # Incomplete ones (still needed?)
     if regex "$fname" '^(img|vid)-\d{1,13}-\d{3}$'
     then
       timestamp=$( \
@@ -54,80 +55,40 @@ get_timestamp() {
         cut -d - -f 2 \
       )
 
-    elif regex "$fname" '^\d{8}_\d{6}_0( \(\d\))?$'
+    # 19990101_121212_0
+    # 19990101_121212_0 (0)
+    # XXX_19990101_121212
+    # photo_1999-01-01_12-12-12
+    # photo_1999-01-01_12-12-12 (000)
+    # signal-1999-01-01-121212
+    # signal-1999-01-01-12-12-12-000
+    # IMG_19990101_1212120
+    elif regex "$fname" '\d{4}-?\d{2}-?\d{2}[_-]\d{2}[.-]?\d{2}[.-]?\d{2}'
     then
       timestamp=$( \
         echo "$fname" | \
-        cut -d _ -f 1-2 | \
-        tr -d _ \
+        sed -r 's/^.*([0-9]{4}-?[0-9]{2}-?[0-9]{2}[_-][0-9]{2}[.-]?[0-9]{2}[.-]?[0-9]{2}).*$/\1/' | \
+        tr -d '._-'
       )
 
-    elif regex "$fname" '^\w{3}_\d{8}_\d{6}.*$'
+    # Whatsapp Image 1999-01-01 at 12.12.12
+    # Screen Shot 1999-01-01 at 12.12.12
+    elif regex "$fname" '\d{4}-\d{2}-\d{2} at \d{2}.\d{2}.\d{2}'
     then
       timestamp=$( \
         echo "$fname" | \
-        cut -d _ -f 2-3 | \
-        tr -d _ \
+        sed -r 's/^.*([0-9]{4}-[0-9]{2}-[0-9]{2} at [0-9]{2}.[0-9]{2}.[0-9]{2}).*$/\1/' | \
+        sed -r 's/ at //' | \
+        tr -d '._-'
       )
 
+    # ?
     elif regex "$fname" '^\w{3}-\d{8}-WA\d{4}.*$'
     then
       timestamp=$( \
         echo "$fname" | \
         cut -d - -f 2 | \
         tr -d _ \
-      )
-
-    elif regex "$fname" '^photo_\d{4}-\d{2}-\d{2}_\d{2}-\d{2}-\d{2}( \(\d+\))?$'
-    then
-      timestamp=$( \
-        echo "$fname" | \
-        cut -d _ -f 2- | \
-        cut -d ' ' -f 1 | \
-        tr -d '_-' \
-      )
-
-    elif regex "$fname" '^WhatsApp Image \d{4}-\d{2}-\d{2} at \d{2}.\d{2}.\d{2}( \(\d\))?$'
-    then
-      timestamp=$( \
-        echo "$fname" | \
-        cut -d ' ' -f 3,5 | \
-        tr -d '.- ' \
-      )
-
-    elif regex "$fname" '^signal-\d{4}-\d{2}-\d{2}-\d{6}( .*)?$'
-    then
-      timestamp=$( \
-        echo "$fname" | \
-        cut -d - -f 2- | \
-        cut -d ' ' -f 1 | \
-        tr -d - \
-      )
-
-    elif regex "$fname" '^signal-\d{4}-\d{2}-\d{2}-\d{2}-\d{2}-\d{2}-\d*$'
-    then
-      timestamp=$( \
-        echo "$fname" | \
-        cut -d - -f 2-7 | \
-        tr -d - \
-      )
-
-    elif regex "$fname" '^Screen Shot \d{4}-\d{2}-\d{2} at \d{2}.\d{2}.\d{2}$'
-    then
-      timestamp=$( \
-        echo "$fname" | \
-        sed 's/^Screen Shot //' | \
-        sed 's/ at //' | \
-        tr -d '.-' \
-      )
-
-    elif regex "$fname" '^IMG_\d{8}_\d{6}.?$'
-    then
-      timestamp=$( \
-        echo "$fname" | \
-        sed 's/^IMG_//' | \
-        tr -d _ | \
-        cut -c-14
       )
 
     fi
@@ -206,6 +167,11 @@ done
 for filepath in $(find $@ -iname  '*.heic')
 do
   rename "$filepath" heic img
+done
+
+for filepath in $(find $@ -iname  '*.gif')
+do
+  rename "$filepath" gif img
 done
 
 for filepath in $(find $@ -iname  '*.webp')
