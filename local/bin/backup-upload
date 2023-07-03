@@ -7,5 +7,5 @@ for dir in \
   audios \
   .ssh
 do
-  rclone sync -vv ~/$dir/ mega-crypt:/$dir/
+  rclone sync -v ~/$dir/ mega-crypt:/$dir/
 done
