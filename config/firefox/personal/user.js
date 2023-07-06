@@ -20,6 +20,7 @@ user_pref("signon.autofillForms", false);
 user_pref("signon.generation.enabled", false);
 user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
 user_pref("webgl.disabled", false);
+user_pref("extensions.quarantinedDomains.enabled", false);
 
 // Privacy.
 user_pref("accessibility.force_disabled", 1);
