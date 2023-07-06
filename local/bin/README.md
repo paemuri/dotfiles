@@ -52,6 +52,9 @@ ignores into `gsettings` commands.
 Git helper: rebases the current branch from base branch and maintains
 only the last commit (cherry-pick).
 
+### `killall-withfire`
+
+A better `killall`.
 ### `pkg-install`
 
 Simple `paru` wrapper that install all packages defined in
