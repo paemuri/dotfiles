@@ -1,3 +1,3 @@
 system:
   game_path: /home/paemuri/games
-  prefix_command: mangohud gamemoderun
+  prefix_command: mangohud
