@@ -38,7 +38,7 @@ cmd [[
   autocmd BufRead *.md set filetype=markdown
   autocmd BufRead *.tex set filetype=tex
   autocmd FileType gitcommit setlocal spell textwidth=72
-  autocmd FileType markdown setlocal colorcolumn=100
+  autocmd FileType markdown setlocal colorcolumn=80
   autocmd Filetype rust setlocal colorcolumn=100
   autocmd Filetype go setlocal colorcolumn=100
 ]]
