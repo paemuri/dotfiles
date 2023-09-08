@@ -28,17 +28,3 @@ local flags = {
   debounce_text_changes = 150,
 }
 
-local servers = {
-  'rust_analyzer',
-  'tsserver',
-  'zls',
-}
-
-local lspconfig = require 'lspconfig'
-for _, server in ipairs(servers) do
-  lspconfig[server].setup {
-    on_attach = on_attach,
-    flags = flags
-  }
-end
-

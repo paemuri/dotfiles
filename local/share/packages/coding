@@ -4,4 +4,3 @@ postgresql
 rustup
 texlive-core
 zig
-zls-bin

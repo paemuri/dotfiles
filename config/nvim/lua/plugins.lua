@@ -10,9 +10,6 @@ require 'packer'.startup(function()
   -- Packer itself.
   use 'wbthomason/packer.nvim'
 
-  -- LSP.
-  use 'neovim/nvim-lspconfig'
-
   -- Debugging.
   use 'mfussenegger/nvim-dap'
 
