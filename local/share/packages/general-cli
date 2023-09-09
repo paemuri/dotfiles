@@ -10,6 +10,8 @@ croc
 fd
 ffmpegthumbnailer
 fzf
+git
+git-secret
 gnome-epub-thumbnailer
 htop
 jq
@@ -20,6 +22,7 @@ lynx
 man-db
 man-pages
 mediainfo
+mullvad-vpn-git
 neomutt
 neovim
 odt2txt
@@ -32,6 +35,7 @@ rclone
 ripgrep
 rsync
 sl
+stig
 streamlink
 the_silver_searcher
 transmission-cli
