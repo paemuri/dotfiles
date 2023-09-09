@@ -1,8 +1,7 @@
 #!/bin/sh
 
-source config/bash/env
-
 dotfiles="$(dirname $0)"
+
 for dir in \
   "config" \
   "local/bin" \
@@ -17,11 +16,12 @@ do
 done
 
 # Exceptions.
-mkdir ~/.mozilla
+source config/bash/env
+mkdir -p ~/.mozilla
 ln -snfv "$XDG_CONFIG_HOME/firefox" ~/.mozilla/firefox
 
 if test "$1" = "-i" || test "$1" = "--install"
 then
-    ${dotfiles}/local/bin/pkg-install
+  ${dotfiles}/local/bin/pkg-install
 fi
 
