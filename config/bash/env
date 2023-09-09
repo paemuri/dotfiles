@@ -36,16 +36,18 @@ export CARGO_HOME=$XDG_DATA_HOME/cargo
 export CARGO_NAME="Rafael Escobar"
 export CARGO_EMAIL=rescobar@pm.me
 
+mkdir -p $XDG_DATA_HOME/node
+export NODE_REPL_HISTORY=$XDG_DATA_HOME/node/repl-history
 export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/config
 export VOLTA_HOME=$XDG_DATA_HOME/volta
-export NODE_REPL_HISTORY=$XDG_DATA_HOME/node/repl-history
 
-export INPUTRC=$XDG_CONFIG_HOME/readline/inputrc
-export HISTFILE=$XDG_CACHE_HOME/bash/history
+mkdir -p $XDG_DATA_HOME/bash
+export HISTFILE=$XDG_DATA_HOME/bash/history
 export HISTCONTROL=ignoreboth:erasedups
 export HISTFILESIZE=99999
 export HISTSIZE=99999
 export PROMPT_COMMAND="history -a"
+export INPUTRC=$XDG_CONFIG_HOME/readline/inputrc
 
 export GREP_COLORS="mt=$GREP_COLOR"
 
@@ -61,6 +63,7 @@ export XDG_SESSION_TYPE=wayland
 export XDG_CURRENT_DESKTOP=river
 export MOZ_ENABLE_WAYLAND=1
 
+mkdir -p $XDG_DATA_HOME/less
 export LESSHISTFILE=$XDG_DATA_HOME/less/history
 export LESSKEY=$XDG_CONFIG_HOME/less/keys
 
