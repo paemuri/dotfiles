@@ -24,3 +24,8 @@ then
   $dotfiles/local/bin/pkg-install
 fi
 
+if test -n "$MULLVAD_ACCOUNT_NUMBER" && \
+  test "$(mullvad account get)" = "Not logged in on any account"
+then
+  mullvad account login $MULLVAD_ACCOUNT_NUMBER
+fi
