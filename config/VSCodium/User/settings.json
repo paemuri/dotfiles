@@ -1,0 +1,12 @@
+{
+    "editor.fontSize": 12,
+    "editor.fontFamily": "'Fira Mono',  monospace",
+    "editor.renderWhitespace": "trailing",
+    "editor.autoClosingBrackets": "never",
+    "editor.autoClosingDelete": "never",
+    "editor.autoClosingOvertype": "never",
+    "editor.autoClosingQuotes": "never",
+    "editor.autoSurround": "never",
+    "editor.acceptSuggestionOnEnter": "off",
+    "workbench.startupEditor": "none"
+}
