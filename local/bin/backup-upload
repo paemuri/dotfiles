@@ -5,7 +5,8 @@ for dir in \
   miscellaneous \
   gallery \
   audios \
-  .ssh
+  keys \
+  .ssh # TODO Remove
 do
   rclone sync -v ~/$dir/ mega-crypt:/$dir/
 done
