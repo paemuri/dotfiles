@@ -12,6 +12,7 @@ alias pacman="pacman --color=auto"
 alias open=xdg-open
 alias rm=trash
 alias unrar=unrar-free
+alias ssh="ssh -F '$SSH_CONFIG'"
 alias streamlink="streamlink --player=mpv"
 alias scanimage=" \
   doas scanimage \

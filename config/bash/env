@@ -21,8 +21,15 @@ export VISUAL=/usr/bin/nvim
 export TERMINAL=/usr/bin/foot
 
 export SCREEN_RECORDS_DIR=$XDG_VIDEOS_DIR/screen-records
+export KEYS_DIR=$HOME/keys
 export PROJECTS_DIR=$HOME/projects
+
 export DOTFILES=$PROJECTS_DIR/paemuri/dotfiles
+
+export GRIM_DEFAULT_DIR="$XDG_SCREENSHOTS_DIR"
+
+export GNUPGHOME=$KEYS_DIR/gnupg
+export SSH_CONFIG=$KEYS_DIR/ssh/config
 
 export RUSTUP_HOME=$XDG_DATA_HOME/rustup
 export CARGO_HOME=$XDG_DATA_HOME/cargo
@@ -54,11 +61,8 @@ export XDG_SESSION_TYPE=wayland
 export XDG_CURRENT_DESKTOP=river
 export MOZ_ENABLE_WAYLAND=1
 
-export GNUPGHOME=$XDG_DATA_HOME/gnupg
 export LESSHISTFILE=$XDG_DATA_HOME/less/history
 export LESSKEY=$XDG_CONFIG_HOME/less/keys
-
-export GRIM_DEFAULT_DIR="$XDG_SCREENSHOTS_DIR"
 
 export PGSERVICEFILE=$XDG_CONFIG_HOME/postgresql/pg_service.conf
 export PSQL_HISTORY=$XDG_DATA_HOME/psql/history
