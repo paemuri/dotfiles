@@ -40,4 +40,5 @@ then
   mullvad account login $MULLVAD_ACCOUNT_NUMBER
   mullvad lockdown-mode set on
   mullvad auto-connect set on
+  mullvad relay set location de
 fi
