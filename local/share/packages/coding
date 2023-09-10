@@ -3,4 +3,5 @@ pgcli
 postgresql
 rustup
 texlive-core
+volta-bin
 zig

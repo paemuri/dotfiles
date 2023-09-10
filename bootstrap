@@ -32,6 +32,8 @@ ln -snfv $DOTFILES/config/firefox ~/.mozilla/firefox
 if test "$1" = "-i" || test "$1" = "--install"
 then
   pkg-install
+  rustup toolchain install stable
+  volta install node npm
 fi
 
 if test -n "$MULLVAD_ACCOUNT_NUMBER" && \
