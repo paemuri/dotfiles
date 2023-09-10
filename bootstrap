@@ -38,4 +38,6 @@ if test -n "$MULLVAD_ACCOUNT_NUMBER" && \
   test "$(mullvad account get)" = "Not logged in on any account"
 then
   mullvad account login $MULLVAD_ACCOUNT_NUMBER
+  mullvad lockdown-mode set on
+  mullvad auto-connect set on
 fi
