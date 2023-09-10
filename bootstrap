@@ -2,6 +2,13 @@
 
 dotfiles="$(dirname $0)"
 
+mkdir -p ~/.mozilla
+mkdir -p ~/downloads/torrents/results
+mkdir -p ~/downloads/torrents/in-progress
+mkdir -p $(dirname $NODE_REPL_HISTORY)
+mkdir -p $(dirname $HISTFILE)
+mkdir -p $(dirname $LESSHISTFILE)
+
 for dir in \
   "config" \
   "local/bin" \
@@ -16,7 +23,6 @@ do
 done
 
 # Exceptions.
-mkdir -p ~/.mozilla
 ln -snfv "$(realpath $dotfiles/config/firefox)" ~/.mozilla/firefox
 
 if test "$1" = "-i" || test "$1" = "--install"
