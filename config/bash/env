@@ -31,6 +31,8 @@ export GRIM_DEFAULT_DIR="$XDG_SCREENSHOTS_DIR"
 export GNUPGHOME=$KEYS_DIR/gnupg
 export SSH_CONFIG=$KEYS_DIR/ssh/config
 
+export GIT_SSH_COMMAND="ssh -F $SSH_CONFIG"
+
 export RUSTUP_HOME=$XDG_DATA_HOME/rustup
 export CARGO_HOME=$XDG_DATA_HOME/cargo
 export CARGO_NAME="Rafael Escobar"
