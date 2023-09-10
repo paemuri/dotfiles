@@ -1,13 +1,6 @@
 #!/bin/sh
 
-dotfiles="$(dirname $0)"
-
-mkdir -p ~/.mozilla
-mkdir -p ~/downloads/torrents/results
-mkdir -p ~/downloads/torrents/in-progress
-mkdir -p $(dirname $NODE_REPL_HISTORY)
-mkdir -p $(dirname $HISTFILE)
-mkdir -p $(dirname $LESSHISTFILE)
+here="$(realpath $(dirname $0))"
 
 for dir in \
   "config" \
@@ -16,18 +9,29 @@ for dir in \
   "local/share/packages"
 do
   mkdir -p ~/.$dir
-  for file in $dotfiles/$dir/*
+  for item in $here/$dir/*
   do
-    ln -snfv "$(realpath "$file")" ~/.$dir/
+    ln -snfv "$item" ~/.$dir/
   done
 done
 
+source $here/config/bash/env
+
+mkdir -p ~/downloads/torrents/results
+mkdir -p ~/downloads/torrents/in-progress
+mkdir -p $XDG_SCREENSHOTS_DIR
+mkdir -p $SCREEN_RECORDS_DIR
+mkdir -p ~/.mozilla
+mkdir -p $(dirname $NODE_REPL_HISTORY)
+mkdir -p $(dirname $HISTFILE)
+mkdir -p $(dirname $LESSHISTFILE)
+
 # Exceptions.
-ln -snfv "$(realpath $dotfiles/config/firefox)" ~/.mozilla/firefox
+ln -snfv $DOTFILES/config/firefox ~/.mozilla/firefox
 
 if test "$1" = "-i" || test "$1" = "--install"
 then
-  $dotfiles/local/bin/pkg-install
+  pkg-install
 fi
 
 if test -n "$MULLVAD_ACCOUNT_NUMBER" && \
