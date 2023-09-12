@@ -2,10 +2,10 @@
     "copyCmds": {
         "login": {
             ".login.username": [
-                "echo \"$value\" | wl-copy --primary"
+                "echo \"$value\" | wl-copy -n --primary"
             ],
             ".login.password": [
-                "echo \"$value\" | wl-copy"
+                "echo \"$value\" | wl-copy -n"
             ]
         },
         "securenote": {},
