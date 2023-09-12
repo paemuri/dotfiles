@@ -25,6 +25,7 @@ mkdir -p ~/.mozilla
 mkdir -p $(dirname $NODE_REPL_HISTORY)
 mkdir -p $(dirname $HISTFILE)
 mkdir -p $(dirname $LESSHISTFILE)
+mkdir -p $(dirname $BW_SESSION_FILE)
 
 # Exceptions.
 ln -snfv $DOTFILES/config/firefox ~/.mozilla/firefox

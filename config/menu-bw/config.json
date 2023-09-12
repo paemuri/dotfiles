@@ -1,0 +1,18 @@
+{
+    "copyCmds": {
+        "login": {
+            ".login.username": [
+                "echo \"$value\" | wl-copy --primary"
+            ],
+            ".login.password": [
+                "echo \"$value\" | wl-copy"
+            ]
+        },
+        "securenote": {},
+        "card": {},
+        "identity": {}
+    },
+    "menuCmd": "bemenu",
+    "editCmd": "$TERMINAL -e $EDITOR",
+    "sessionKeyFile": "$BW_SESSION_FILE"
+}

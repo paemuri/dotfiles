@@ -23,11 +23,6 @@ Simple script that alerts that the battery is running out. *When*
 it is alerted is defined inside the yambar modules/scripts (it's
 probably not the best place, but it's there).
 
-### `bemenu-bitwarden`
-
-Wrapper around [bwmenu][1], which is a menu wrapper around Bitwarden
-CLI, the password manager I use. 
-
 ### `extract`
 
 Utility to extract files.
