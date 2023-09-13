@@ -1,3 +1,4 @@
 #!/bin/sh
 HOME=$XDG_DATA_HOME/steam
+mkdir -p $HOME
 exec /usr/bin/steam $@
