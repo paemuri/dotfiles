@@ -13,7 +13,6 @@ fi
 source $XDG_CONFIG_HOME/bash/prompt
 source $XDG_CONFIG_HOME/bash/utils
 source /usr/share/bash-completion/bash_completion
-test -f "$BW_SESSION_FILE" && source $BW_SESSION_FILE
 
 shopt -s \
   checkwinsize \
