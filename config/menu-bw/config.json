@@ -1,18 +1,13 @@
 {
-    "copyCmds": {
-        "login": {
-            ".login.username": [
-                "echo \"$value\" | wl-copy -n --primary"
-            ],
-            ".login.password": [
-                "echo \"$value\" | wl-copy -n"
-            ]
-        },
-        "securenote": {},
-        "card": {},
-        "identity": {}
+    "menu": {
+        "cmd": "bemenu",
+        "args": {
+            "list": "--prompt item",
+            "email": "--prompt email",
+            "pass": "--password --prompt pass"
+        }
     },
-    "menuCmd": "bemenu",
+    "copyCmd": "wl-copy -n",
     "editCmd": "$TERMINAL -e $EDITOR",
     "sessionKeyFile": "$BW_SESSION_FILE"
 }
