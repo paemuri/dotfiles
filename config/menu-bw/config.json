@@ -9,5 +9,6 @@
     },
     "copyCmd": "wl-copy -n",
     "editCmd": "$TERMINAL -e $EDITOR",
+    "passwordGenCmd": "passgen",
     "sessionKeyFile": "$BW_SESSION_FILE"
 }

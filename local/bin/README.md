@@ -49,7 +49,12 @@ only the last commit (cherry-pick).
 
 ### `killall-withfire`
 
-A better `killall`.
+An enhanced `killall`.
+
+### `passgen`
+
+Personal password generator.
+
 ### `pkg-install`
 
 Simple `paru` wrapper that install all packages defined in
@@ -58,10 +63,6 @@ Simple `paru` wrapper that install all packages defined in
 ### `pkg-update`
 
 Another `paru` wrapper. It updates all installed packages.
-
-### `pw-gen`
-
-Password generator.
 
 ### `screen`
 
