@@ -85,8 +85,6 @@ export MANGOHUD=1
 export MANGOHUD_CONFIGFILE=$XDG_CONFIG_HOME/mangohud/mangohud.conf
 
 export WOBSOCK=$XDG_RUNTIME_DIR/wob.sock
-export WOB_OK='282828ee 79740eff 79740eff'
-export WOB_ERR='282828ee 9d0006ff 9d0006ff'
 
 export BEMENU_OPTS="\
   --ignorecase \

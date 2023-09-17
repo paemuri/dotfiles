@@ -41,5 +41,5 @@ else
 fi
 
 val=$(ponymix --$device $ponymix_args)
-col=$(ponymix --$device is-muted && echo $WOB_ERR || echo $WOB_OK)
+col=$(ponymix --$device is-muted && echo muted)
 echo $val $col > $WOBSOCK
