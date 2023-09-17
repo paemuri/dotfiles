@@ -15,9 +15,13 @@ gtk_theme="$(grep_setting gtk-theme-name)"
 icon_theme="$(grep_setting gtk-icon-theme-name)"
 cursor_theme="$(grep_setting gtk-cursor-theme-name)"
 font_name="$(grep_setting gtk-font-name)"
+prefer_dark="$(grep_setting gtk-application-prefer-dark-theme)"
+
+[ "$prefer_dark" = "true" ] && color_scheme=prefer-dark || color_scheme=default
 
 gnome_schema=org.gnome.desktop.interface
 gsettings set $gnome_schema gtk-theme "$gtk_theme"
 gsettings set $gnome_schema icon-theme "$icon_theme"
 gsettings set $gnome_schema cursor-theme "$cursor_theme"
 gsettings set $gnome_schema font-name "$font_name"
+gsettings set $gnome_schema color-scheme "$color_scheme"
