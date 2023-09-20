@@ -4,7 +4,7 @@ set -e
 
 doas rm -f /tmp/magick-*
 
-paru -Sy --needed archlinux-keyring
+paru -Sy --noconfirm --needed archlinux-keyring
 paru -Su --noconfirm
 
 orphans="$(paru -Qtdq)"
