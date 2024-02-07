@@ -87,6 +87,7 @@ riverctl map normal $super       Q close
 riverctl map normal $super       Space spawn bemenu-run
 riverctl map normal $super       P     spawn menu-bw
 riverctl map normal $super       B     spawn firefox
+riverctl map normal $super       M     spawn thunderbird
 riverctl map normal $super       T     spawn "$TERMINAL"
 riverctl map normal $super       E     spawn "$TERMINAL -e lf"
 riverctl map normal $super       C     spawn "$TERMINAL -e qalc"
