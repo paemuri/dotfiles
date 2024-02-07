@@ -4,8 +4,7 @@ for dir in \
   documents \
   miscellaneous \
   gallery \
-  audios \
-  keys
+  audios
 do
-  rclone sync -Pv ~/$dir/ mega-crypt:/$dir/
+  rclone sync -Pv ~/$dir/ mega:/$dir/
 done
