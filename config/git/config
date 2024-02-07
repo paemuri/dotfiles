@@ -1,6 +1,6 @@
 [user]
 name = Rafael Escobar
-email = rafael@paemuri.com
+email = rafael+git@paemuri.com
 [tag]
 sort = version:refname
 [push]
