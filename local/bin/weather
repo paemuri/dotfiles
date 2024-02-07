@@ -1,4 +1,4 @@
 #!/bin/sh
 
-curl wttr.in/staaken
+curl wttr.in/Sao_Paulo
 read -n1
