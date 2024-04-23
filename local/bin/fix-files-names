@@ -63,7 +63,7 @@ get_timestamp() {
     # signal-1999-01-01-121212
     # signal-1999-01-01-12-12-12-000
     # IMG_19990101_1212120
-    elif regex "$fname" '\d{4}-?\d{2}-?\d{2}[_-]\d{2}[.-]?\d{2}[.-]?\d{2}'
+    elif regex "$fname" '[^\d]\d{4}-?\d{2}-?\d{2}[_-]\d{2}[.-]?\d{2}[.-]?\d{2}'
     then
       timestamp=$( \
         echo "$fname" | \
