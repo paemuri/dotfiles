@@ -155,3 +155,8 @@ riverctl declare-mode passthrough
 riverctl map normal      $super F11 enter-mode passthrough
 riverctl map passthrough $super F11 enter-mode normal
 
+# Fix borders for GTK windows.
+# https://codeberg.org/river/wiki#some-windows-don-t-have-borders
+for app in firefox thunderbird evince; do
+  riverctl rule-add -app-id "$app" ssd
+done
