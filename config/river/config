@@ -135,7 +135,7 @@ done
 ########
 
 # Tags.
-all_tags=$(((1 << 9) - 1))
+all_tags=$((( 1 << 9 ) - 1))
 riverctl map normal $super       0 set-focused-tags $all_tags
 riverctl map normal $super+Shift 0 set-view-tags    $all_tags
 for i in $(seq 1 9)
@@ -157,6 +157,14 @@ riverctl map passthrough $super F11 enter-mode normal
 
 # Fix borders for GTK windows.
 # https://codeberg.org/river/wiki#some-windows-don-t-have-borders
-for app in firefox thunderbird evince imv steam; do
+for app in \
+  firefox \
+  thunderbird \
+  evince \
+  imv \
+  steam \
+  libreoffice-startcenter \
+  libreoffice-calc
+do
   riverctl rule-add -app-id "$app" ssd
 done
