@@ -39,9 +39,9 @@ Linux.
 - [Bemenu][8]: Wayland application menu and program runner
 - [imv][9]: Wayland image viewer
 - [lf-sixel][10]: terminal file manager, lf fork to work with images
-- Evince: PDF reader
-- [mpv][11]: video player
-- [wbg][12]: Wayland background
+- [xpdf][11]: PDF reader
+- [mpv][12]: video player
+- [wbg][13]: Wayland background
 
 ## Bootstrap
 
@@ -69,8 +69,9 @@ domain, without any additional terms or conditions.
 [8]: https://github.com/Cloudef/bemenu
 [9]: https://github.com/eXeC64/imv
 [10]: https://github.com/horriblename/lf
-[11]: https://github.com/mpv-player/mpv
-[12]: https://codeberg.org/dnkl/wbg
+[11]: https://www.xpdfreader.com
+[12]: https://github.com/mpv-player/mpv
+[13]: https://codeberg.org/dnkl/wbg
 
 [badge-1-img]: https://img.shields.io/badge/license-Unlicense-green?style=flat-square
 [badge-1-link]: ./LICENSE

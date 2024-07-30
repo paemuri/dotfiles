@@ -1,4 +1,3 @@
-evince-no-gnome
 firefox
 foot
 imv
@@ -8,3 +7,4 @@ thunderbird
 torbrowser-launcher
 ungoogled-chromium-xdg-bin
 wob
+xpdf

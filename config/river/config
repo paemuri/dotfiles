@@ -158,7 +158,6 @@ riverctl map passthrough $super F11 enter-mode normal
 # Fix borders for GTK windows.
 # https://codeberg.org/river/wiki#some-windows-don-t-have-borders
 for app in \
-  evince \
   firefox \
   imv \
   libreoffice-calc \

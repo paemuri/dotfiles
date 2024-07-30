@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=XPDF document reader
+GenericName=Document reader
+TryExec=xpdf
+Exec=xpdf %U
+MimeType=application/pdf
