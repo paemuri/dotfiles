@@ -16,8 +16,8 @@ export XDG_TEMPLATES_DIR
 export XDG_VIDEOS_DIR
 
 export BROWSER=/usr/bin/firefox
-export EDITOR=/usr/bin/nvim
-export VISUAL=/usr/bin/nvim
+export EDITOR=/usr/bin/helix
+export VISUAL=/usr/bin/helix
 export TERMINAL=/usr/bin/foot
 
 export SCREEN_RECORDS_DIR=$XDG_VIDEOS_DIR/screen-records

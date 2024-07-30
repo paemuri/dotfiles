@@ -1,8 +1,0 @@
-require 'utils'
-require 'plugins'
-require 'config'
-require 'settings/lsp'
-require 'settings/statusline'
-require 'settings/dap'
-require 'settings/finder'
-require 'settings/browser-editor'

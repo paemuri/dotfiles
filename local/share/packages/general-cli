@@ -13,6 +13,7 @@ fzf
 git
 git-secret
 gnome-epub-thumbnailer
+helix
 htop
 jq
 lf-sixel-git
@@ -24,7 +25,6 @@ man-db
 man-pages
 mediainfo
 mullvad-vpn-bin
-neovim
 odt2txt
 opendoas
 openssh
@@ -39,5 +39,6 @@ the_silver_searcher
 transg-tui-git
 transmission-cli
 trash-cli
+vim
 vimv-git
 xsv

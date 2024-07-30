@@ -29,19 +29,19 @@ Linux.
 ### Things that I use
 
 - Bash: shell
-- NeoVim: terminal editor
+- [helix][2]: terminal editor
 - Firefox: browser
-- [foot][2]: lightweight Wayland terminal
-- [River][3]: Wayland compositor / window manager
-- [Yambar][4]: Wayland panel with River integration
-- [Mako][5]: Wayland notification daemon
-- [waylock][6]: simple Wayland locker
-- [Bemenu][7]: Wayland application menu and program runner
-- [imv][8]: Wayland image viewer
-- [lf-sixel][9]: terminal file manager, lf fork to work with images
+- [foot][3]: lightweight Wayland terminal
+- [River][4]: Wayland compositor / window manager
+- [Yambar][5]: Wayland panel with River integration
+- [Mako][6]: Wayland notification daemon
+- [waylock][7]: simple Wayland locker
+- [Bemenu][8]: Wayland application menu and program runner
+- [imv][9]: Wayland image viewer
+- [lf-sixel][10]: terminal file manager, lf fork to work with images
 - Evince: PDF reader
-- [mpv][10]: video player
-- [wbg][11]: Wayland background
+- [mpv][11]: video player
+- [wbg][12]: Wayland background
 
 ## Bootstrap
 
@@ -60,16 +60,17 @@ submitted for inclusion in the work by you shall be in the public
 domain, without any additional terms or conditions.
 
 [1]: ./LICENSE
-[2]: https://codeberg.org/dnkl/foot
-[3]: https://github.com/riverwm/river
-[4]: https://codeberg.org/dnkl/yambar
-[5]: https://github.com/emersion/mako
-[6]: https://github.com/ifreund/waylock
-[7]: https://github.com/Cloudef/bemenu
-[8]: https://github.com/eXeC64/imv
-[9]: https://github.com/horriblename/lf
-[10]: https://github.com/mpv-player/mpv
-[11]: https://codeberg.org/dnkl/wbg
+[2]: https://helix-editor.com
+[3]: https://codeberg.org/dnkl/foot
+[4]: https://github.com/riverwm/river
+[5]: https://codeberg.org/dnkl/yambar
+[6]: https://github.com/emersion/mako
+[7]: https://github.com/ifreund/waylock
+[8]: https://github.com/Cloudef/bemenu
+[9]: https://github.com/eXeC64/imv
+[10]: https://github.com/horriblename/lf
+[11]: https://github.com/mpv-player/mpv
+[12]: https://codeberg.org/dnkl/wbg
 
 [badge-1-img]: https://img.shields.io/badge/license-Unlicense-green?style=flat-square
 [badge-1-link]: ./LICENSE
