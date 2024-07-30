@@ -1,0 +1,8 @@
+theme = "gruvbox_dark_hard"
+
+[editor]
+line-number = "relative"
+
+[editor.file-picker]
+hidden = false
+ignore = false
