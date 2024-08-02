@@ -5,4 +5,8 @@ line-number = "relative"
 
 [editor.file-picker]
 hidden = false
+parents = false
 ignore = false
+git-ignore = false
+git-global = false
+git-exclude = false
