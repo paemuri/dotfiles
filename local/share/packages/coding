@@ -6,5 +6,6 @@ postgresql
 rustup
 superhtml
 texlive-core
+typst
 volta-bin
 zig
