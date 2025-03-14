@@ -6,5 +6,5 @@ for dir in \
   gallery \
   audios
 do
-  rclone sync -Pv ~/$dir/ mega:/$dir/
+  rclone sync -Pv ~/$dir/ proton:/$dir/
 done
