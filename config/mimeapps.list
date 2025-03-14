@@ -87,17 +87,17 @@ image/x-xcdr=inkscape.desktop
 application/x-gnome-saved-search=lf.desktop
 inode/directory=lf.desktop
 
-# firefox.desktop
-application/x-extension-htm=firefox.desktop
-application/x-extension-html=firefox.desktop
-application/x-extension-shtml=firefox.desktop
-application/x-extension-xht=firefox.desktop
-application/x-extension-xhtml=firefox.desktop
-application/xhtml+xml=firefox.desktop
-text/html=firefox.desktop
-x-scheme-handler/chrome=firefox.desktop
-x-scheme-handler/http=firefox.desktop
-x-scheme-handler/https=firefox.desktop
+# zen-browser.desktop
+application/x-extension-htm=zen-browser.desktop
+application/x-extension-html=zen-browser.desktop
+application/x-extension-shtml=zen-browser.desktop
+application/x-extension-xht=zen-browser.desktop
+application/x-extension-xhtml=zen-browser.desktop
+application/xhtml+xml=zen-browser.desktop
+text/html=zen-browser.desktop
+x-scheme-handler/chrome=zen-browser.desktop
+x-scheme-handler/http=zen-browser.desktop
+x-scheme-handler/https=zen-browser.desktop
 
 # mpv.desktop
 application/mxf=mpv.desktop

@@ -15,7 +15,7 @@ export XDG_PUBLICSHARE_DIR
 export XDG_TEMPLATES_DIR
 export XDG_VIDEOS_DIR
 
-export BROWSER=/usr/bin/firefox
+export BROWSER=/usr/bin/zen-browser
 export EDITOR=/usr/bin/helix
 export VISUAL=/usr/bin/helix
 export TERMINAL=/usr/bin/foot

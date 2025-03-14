@@ -86,7 +86,7 @@ riverctl map normal $super       Q close
 # Software shortcuts.
 riverctl map normal $super Space spawn bemenu-run
 riverctl map normal $super P     spawn menu-bw
-riverctl map normal $super B     spawn firefox
+riverctl map normal $super B     spawn zen-browser
 riverctl map normal $super M     spawn thunderbird
 riverctl map normal $super T     spawn "$TERMINAL"
 riverctl map normal $super E     spawn "$TERMINAL -e lf"
@@ -158,13 +158,13 @@ riverctl map passthrough $super F11 enter-mode normal
 # Fix borders for GTK windows.
 # https://codeberg.org/river/wiki#some-windows-don-t-have-borders
 for app in \
-  firefox \
   imv \
   libreoffice-calc \
   libreoffice-startcenter \
   org.pulseaudio.pavucontrol \
   steam \
-  thunderbird
+  thunderbird \
+  zen
 do
   riverctl rule-add -app-id "$app" ssd
 done

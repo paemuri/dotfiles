@@ -1,7 +1,7 @@
 [Desktop Entry]
 Type=Application
-Name=Firefox web browser - personal profile
+Name=Zen web browser - personal profile
 GenericName=Web browser
-TryExec=firefox
-Exec=firefox %U
+TryExec=zen-browser
+Exec=zen-browser %U
 MimeType=text/html;text/xml;application/xhtml+xml;application/xml;application/rdf+xml;image/gif;image/jpeg;image/png;x-scheme-handler/http;x-scheme-handler/https;x-scheme-handler/chrome;
