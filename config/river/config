@@ -156,13 +156,7 @@ riverctl map passthrough $super F11 enter-mode normal
 
 # Fix borders for GTK windows.
 # https://codeberg.org/river/wiki#some-windows-don-t-have-borders
-for app in \
-  imv \
-  libreoffice-calc \
-  libreoffice-startcenter \
-  org.pulseaudio.pavucontrol \
-  steam \
-  zen
+for app in $(lswt | awk '{ print $2 }' | tail -n+2)
 do
   riverctl rule-add -app-id "$app" ssd
 done
