@@ -11,11 +11,19 @@ wob-listen &
 mpv /usr/share/sounds/freedesktop/stereo/service-login.oga &
 
 # Commands to run at startup.
-dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
-systemctl --user import-environment WAYLAND_DISPLAY
+dbus-update-activation-environment --systemd \
+  WAYLAND_DISPLAY \
+  XDG_CURRENT_DESKTOP \
+  XDG_RUNTIME_DIR \
+  XDG_SESSION_TYPE
+systemctl --user import-environment \
+  WAYLAND_DISPLAY \
+  XDG_CURRENT_DESKTOP \
+  XDG_RUNTIME_DIR \
+  XDG_SESSION_TYPE
+
 fix-gtk-settings
 ponymix --output set-volume 100
 ponymix --input  set-volume 25
 
 exec rivertile
-
