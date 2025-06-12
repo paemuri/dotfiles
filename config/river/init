@@ -12,6 +12,7 @@ mpv /usr/share/sounds/freedesktop/stereo/service-login.oga &
 
 # Commands to run at startup.
 dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
+systemctl --user import-environment WAYLAND_DISPLAY
 fix-gtk-settings
 ponymix --output set-volume 100
 ponymix --input  set-volume 25
