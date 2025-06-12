@@ -2,7 +2,7 @@
 Description=Wayland clipboard persistence
 
 [Service]
-ExecStart=/usr/bin/wl-clip-persist --clipboard both
+ExecStart=/usr/bin/wl-clip-persist --clipboard regular
 Restart=on-failure
 
 [Install]
