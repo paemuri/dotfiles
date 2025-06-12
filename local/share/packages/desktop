@@ -1,7 +1,6 @@
 bemenu
 bemenu-wayland
 brightnessctl
-clipmon-git
 glfw-wayland
 grim
 mako
@@ -13,6 +12,7 @@ waylock
 wbg
 wf-recorder
 wl-clipboard
+wl-clip-persist
 xcursor-simp1e
 xdg-desktop-portal-wlr
 xorg-xwayland
