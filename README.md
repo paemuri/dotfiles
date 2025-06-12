@@ -30,7 +30,7 @@ Linux.
 
 - Bash: shell
 - [Helix][2]: terminal editor
-- [Zen][3]: web browser
+- [Floorp][3]: web browser
 - [foot][4]: lightweight Wayland terminal
 - [River][5]: Wayland compositor / window manager
 - [Yambar][6]: Wayland panel with River integration
@@ -61,7 +61,7 @@ domain, without any additional terms or conditions.
 
 [1]: ./LICENSE
 [2]: https://helix-editor.com
-[3]: https://zen-browser.app/
+[3]: https://floorp.app
 [4]: https://codeberg.org/dnkl/foot
 [5]: https://github.com/riverwm/river
 [6]: https://codeberg.org/dnkl/yambar

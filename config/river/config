@@ -86,7 +86,7 @@ riverctl map normal $super       Q close
 # Software shortcuts.
 riverctl map normal $super Space spawn bemenu-run
 riverctl map normal $super P     spawn menu-bw
-riverctl map normal $super B     spawn zen-browser
+riverctl map normal $super B     spawn "$BROWSER"
 riverctl map normal $super T     spawn "$TERMINAL"
 riverctl map normal $super E     spawn "$TERMINAL -e lf"
 riverctl map normal $super C     spawn "$TERMINAL -e qalc"
