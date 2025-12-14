@@ -2,9 +2,12 @@
 
 for dir in \
   documents \
-  miscellaneous \
   gallery \
+  miscellaneous \
   audios
 do
-  rclone sync -Pv proton:/$dir/ ~/$dir/
+  echo "Downloading $dir..."
+  rclone sync --progress proton:/$dir/ ~/$dir/
+  echo "Downloaded $dir."
+  echo
 done
