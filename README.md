@@ -37,7 +37,7 @@ Linux.
 - [Mako][7]: Wayland notification daemon
 - [waylock][8]: simple Wayland locker
 - [Bemenu][9]: Wayland application menu and program runner
-- [imv][10]: Wayland image viewer
+- [viewnior][10]: Image viewer
 - [PCManFM][11]: file manager
 - [xpdf][12]: PDF reader
 - [mpv][13]: video player
@@ -68,7 +68,7 @@ domain, without any additional terms or conditions.
 [7]: https://github.com/emersion/mako
 [8]: https://github.com/ifreund/waylock
 [9]: https://github.com/Cloudef/bemenu
-[10]: https://github.com/eXeC64/imv
+[10]: https://siyanpanayotov.com/project/viewnior
 [11]: https://github.com/lxde/pcmanfm
 [12]: https://www.xpdfreader.com
 [13]: https://github.com/mpv-player/mpv
