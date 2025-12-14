@@ -1,7 +1,7 @@
 [Desktop Entry]
 Type=Application
-Name=LF file manager
+Name=PCManFM file manager
 GenericName=File manager
-TryExec=lf
-Exec=foot -e lf %u
+TryExec=pcmanfm
+Exec=pcmanfm
 MimeType=application/x-gnome-saved-search;inode/directory;

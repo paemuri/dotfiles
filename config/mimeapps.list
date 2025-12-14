@@ -83,9 +83,9 @@ image/x-vsd=inkscape.desktop
 image/x-wmf=inkscape.desktop
 image/x-xcdr=inkscape.desktop
 
-# lf.desktop
-application/x-gnome-saved-search=lf.desktop
-inode/directory=lf.desktop
+# pcmanfm.desktop
+application/x-gnome-saved-search=pcmanfm.desktop
+inode/directory=pcmanfm.desktop
 
 # floorp.desktop
 application/x-extension-htm=floorp.desktop
