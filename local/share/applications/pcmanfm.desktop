@@ -2,6 +2,6 @@
 Type=Application
 Name=PCManFM file manager
 GenericName=File manager
-TryExec=pcmanfm
-Exec=pcmanfm
+TryExec=pcmanfm-qt
+Exec=pcmanfm-qt
 MimeType=application/x-gnome-saved-search;inode/directory;
