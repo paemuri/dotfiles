@@ -1,7 +1,7 @@
 [Desktop Entry]
 Type=Application
-Name=XPDF document reader
+Name=qpdfview document reader
 GenericName=Document reader
-TryExec=xpdf
-Exec=xpdf %U
+TryExec=qpdfview
+Exec=qpdfview %U
 MimeType=application/pdf

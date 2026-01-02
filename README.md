@@ -39,7 +39,7 @@ Linux.
 - [Bemenu][9]: Wayland application menu and program runner
 - [viewnior][10]: Image viewer
 - [PCManFM-Qt][11]: file manager
-- [xpdf][12]: PDF reader
+- [qpdfview][12]: PDF reader
 - [mpv][13]: video player
 - [wbg][14]: Wayland background
 
@@ -70,7 +70,7 @@ domain, without any additional terms or conditions.
 [9]: https://github.com/Cloudef/bemenu
 [10]: https://siyanpanayotov.com/project/viewnior
 [11]: https://github.com/lxqt/pcmanfm-qt
-[12]: https://www.xpdfreader.com
+[12]: https://launchpad.net/qpdfview
 [13]: https://github.com/mpv-player/mpv
 [14]: https://codeberg.org/dnkl/wbg
 
