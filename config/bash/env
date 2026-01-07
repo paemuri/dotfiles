@@ -107,6 +107,11 @@ export BEMENU_OPTS="\
   --scf=#79740e \
 "
 
+# These two force Qt apps to use Adwaita Dark. I'll use it until I find a
+# better style.
+export QT_QPA_PLATFORM=xcb
+export QT_STYLE_OVERRIDE=Adwaita-Dark
+
 export PATH=$HOME/.local/bin
 PATH+=:$CARGO_HOME/bin
 PATH+=:$VOLTA_HOME/bin
