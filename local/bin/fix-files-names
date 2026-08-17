@@ -169,6 +169,11 @@ do
   rename "$filepath" heic img
 done
 
+for filepath in $(find $@ -iname  '*.cr3')
+do
+  rename "$filepath" cr3 img
+done
+
 for filepath in $(find $@ -iname  '*.gif')
 do
   rename "$filepath" gif img
