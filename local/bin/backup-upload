@@ -7,7 +7,7 @@ for dir in \
   audios
 do
   echo "Uploading $dir..."
-  rclone sync --progress ~/$dir/ proton:/$dir/
+  rclone sync --progress --protondrive-replace-existing-draft=true --cache-db-purge ~/$dir/ proton:/$dir/
   echo "Uploaded $dir."
   echo
 done
