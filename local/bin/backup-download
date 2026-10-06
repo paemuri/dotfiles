@@ -4,7 +4,8 @@ for dir in \
   documents \
   gallery \
   miscellaneous \
-  audios
+  audios \
+  keys
 do
   echo "Downloading $dir..."
   rclone sync --progress proton:/$dir/ ~/$dir/

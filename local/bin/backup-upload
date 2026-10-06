@@ -4,7 +4,8 @@ for dir in \
   documents \
   gallery \
   miscellaneous \
-  audios
+  audios \
+  keys
 do
   echo "Uploading $dir..."
   rclone sync --progress --protondrive-replace-existing-draft=true --cache-db-purge ~/$dir/ proton:/$dir/
