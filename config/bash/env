@@ -81,7 +81,6 @@ export FZF_ALT_C_COMMAND="fd --type=d"
 
 export WINEPREFIX=$XDG_DATA_HOME/wine
 
-export MANGOHUD=1
 export MANGOHUD_CONFIGFILE=$XDG_CONFIG_HOME/mangohud/mangohud.conf
 
 export WOBSOCK=$XDG_RUNTIME_DIR/wob.sock
