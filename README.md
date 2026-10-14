@@ -29,13 +29,13 @@ Linux.
 ### Things that I use
 
 - Bash: shell
-- [Helix][2]: terminal editor
+- [Helix][2]: terminal text editor
 - [Floorp][3]: web browser
 - [foot][4]: lightweight Wayland terminal
 - [River][5]: Wayland compositor / window manager
-- [Yambar][6]: Wayland panel with River integration
+- [Yambar][6]: Wayland panel / bar
 - [Mako][7]: Wayland notification daemon
-- [waylock][8]: simple Wayland locker
+- [waylock][8]: Wayland locker
 - [Bemenu][9]: Wayland application menu and program runner
 - [viewnior][10]: Image viewer
 - [PCManFM-Qt][11]: file manager
