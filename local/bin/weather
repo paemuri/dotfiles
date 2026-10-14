@@ -1,4 +1,4 @@
 #!/bin/sh
 
-curl wttr.in/Sao_Jose_dos_Campos
+curl https://wttr.in/Sao_Jose_dos_Campos
 read -n1
