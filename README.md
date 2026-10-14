@@ -29,19 +29,19 @@ Linux.
 ### Things that I use
 
 - Bash: shell
-- [Helix][2]: terminal text editor
-- [Floorp][3]: web browser
-- [foot][4]: lightweight Wayland terminal
-- [River][5]: Wayland compositor / window manager
-- [Yambar][6]: Wayland panel / bar
-- [Mako][7]: Wayland notification daemon
-- [waylock][8]: Wayland locker
-- [Bemenu][9]: Wayland application menu and program runner
-- [viewnior][10]: Image viewer
-- [PCManFM-Qt][11]: file manager
-- [Sioyek][12]: PDF reader
-- [mpv][13]: video player
-- [wbg][14]: Wayland background
+- [Helix][1]: terminal text editor
+- [Floorp][2]: web browser
+- [foot][3]: lightweight Wayland terminal
+- [River][4]: Wayland compositor / window manager
+- [Yambar][5]: Wayland panel / bar
+- [Mako][6]: Wayland notification daemon
+- [waylock][7]: Wayland locker
+- [Bemenu][8]: Wayland application menu and program runner
+- [viewnior][9]: Image viewer
+- [PCManFM-Qt][10]: file manager
+- [Sioyek][11]: PDF reader
+- [mpv][12]: video player
+- [wbg][13]: Wayland background
 
 ## Bootstrap
 
@@ -62,19 +62,19 @@ Unless you explicitly state otherwise, any contribution intentionally submitted
 for inclusion in the work by you shall be in the public domain, without any
 additional terms or conditions.
 
-[2]: https://helix-editor.com
-[3]: https://floorp.app
-[4]: https://codeberg.org/dnkl/foot
-[5]: https://github.com/riverwm/river
-[6]: https://codeberg.org/dnkl/yambar
-[7]: https://github.com/emersion/mako
-[8]: https://github.com/ifreund/waylock
-[9]: https://github.com/Cloudef/bemenu
-[10]: https://siyanpanayotov.com/project/viewnior
-[11]: https://github.com/lxqt/pcmanfm-qt
-[12]: https://sioyek.info
-[13]: https://github.com/mpv-player/mpv
-[14]: https://codeberg.org/dnkl/wbg
+[1]: https://helix-editor.com
+[2]: https://floorp.app
+[3]: https://codeberg.org/dnkl/foot
+[4]: https://github.com/riverwm/river
+[5]: https://codeberg.org/dnkl/yambar
+[6]: https://github.com/emersion/mako
+[7]: https://github.com/ifreund/waylock
+[8]: https://github.com/Cloudef/bemenu
+[9]: https://siyanpanayotov.com/project/viewnior
+[10]: https://github.com/lxqt/pcmanfm-qt
+[11]: https://sioyek.info
+[12]: https://github.com/mpv-player/mpv
+[13]: https://codeberg.org/dnkl/wbg
 
 [badge-1-img]: https://img.shields.io/badge/license-Unlicense-green?style=flat-square
 [badge-1-link]: ./LICENSE
