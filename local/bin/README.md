@@ -4,18 +4,10 @@ Personal executables.
 
 ## Files and subfolders
 
-### `backup-download`
-
-Downloads changes from `crypt` rclone remote.
-
 ### `backup-sync`
 
-Downloads changes from `crypt` rclone remote, fixes files' names, and
-then uploads those fixes.
-
-### `backup-upload`
-
-Uploads changes to `crypt` rclone remote.
+Two-way sync (`rclone bysinc`) with rclone remote used for backups. Extra
+arguments go to `rclone bisync` (e.g. `--resync`).
 
 ### `battery-alert`
 

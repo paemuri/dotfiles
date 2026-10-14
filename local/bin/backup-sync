@@ -2,6 +2,24 @@
 
 set -e
 
-backup-download
-fix-files-names ~/gallery/events/ ~/gallery/albums/
-backup-upload
+for dir in \
+  keys \
+  documents \
+  audios \
+  media \
+  miscellaneous \
+  gallery
+do
+  echo "Syncing $dir..."
+  rclone bisync ~/$dir/ proton:/$dir/ \
+    --resilient \
+    --recover \
+    --max-lock 2m \
+    --conflict-resolve newer \
+    --conflict-loser num \
+    --protondrive-replace-existing-draft=true \
+    --progress \
+    "$@"
+  echo "Synced $dir."
+  echo
+done
