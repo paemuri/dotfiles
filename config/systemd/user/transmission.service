@@ -11,8 +11,19 @@ ExecStart=/usr/bin/transmission-daemon -f --log-level=error
 ExecReload=/bin/kill -s HUP $MAINPID
 NoNewPrivileges=true
 MemoryDenyWriteExecute=true
-ProtectSystem=true
+ProtectSystem=strict
+ProtectHome=read-only
+ReadWritePaths=%h/downloads/torrents %h/.config/transmission-daemon
 PrivateTmp=true
+PrivateDevices=true
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6 AF_NETLINK
+RestrictNamespaces=true
+LockPersonality=true
+SystemCallFilter=@system-service
+SystemCallArchitectures=native
 
 [Install]
 WantedBy=default.target
