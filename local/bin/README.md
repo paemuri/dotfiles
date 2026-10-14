@@ -6,7 +6,7 @@ Personal executables.
 
 ### `backup-sync`
 
-Two-way sync (`rclone bysinc`) with rclone remote used for backups. Extra
+Two-way sync (`rclone bisync`) with rclone remote used for backups. Extra
 arguments go to `rclone bisync` (e.g. `--resync`).
 
 ### `battery-alert`
