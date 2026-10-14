@@ -15,7 +15,7 @@ alias unrar=unrar-free
 alias ssh="$SSH_COMMAND"
 alias streamlink="streamlink --player=mpv"
 alias scanimage=" \
-  doas scanimage \
+  scanimage \
     --device=$SANE_DEFAULT_DEVICE \
     -x210 \
     -y297 \
