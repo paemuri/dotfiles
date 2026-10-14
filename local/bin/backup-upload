@@ -1,11 +1,12 @@
 #!/bin/sh
 
 for dir in \
+  keys \
   documents \
-  gallery \
-  miscellaneous \
   audios \
-  keys
+  media \
+  miscellaneous \
+  gallery
 do
   echo "Uploading $dir..."
   rclone sync --progress --protondrive-replace-existing-draft=true --cache-db-purge ~/$dir/ proton:/$dir/

@@ -1,11 +1,12 @@
 #!/bin/sh
 
 for dir in \
+  keys \
   documents \
-  gallery \
-  miscellaneous \
   audios \
-  keys
+  media \
+  miscellaneous \
+  gallery
 do
   echo "Downloading $dir..."
   rclone sync --progress proton:/$dir/ ~/$dir/
