@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# Args.
-
 output=sql
 file=/dev/stdin
 
@@ -29,7 +27,7 @@ do
       then
         echo    "Invalid file: $opt." >&2
         echo    "Command should be:" >&2
-        echo -e "\tscreen <command> [-c|--crop] [-C|--copy]" >&2
+        echo -e "\tembrace <command> [-c|--crop] [-C|--copy]" >&2
         exit 1
       fi
       file=$opt
@@ -52,8 +50,6 @@ case $output in
     quote='"'
     ;;
 esac
-
-# Main.
 
 sed "s|$|$quote,$quote|" < $file |
   tr -d "\n" |
