@@ -5,41 +5,14 @@ text/gemini=amfora.desktop
 x-scheme-handler/gemini=amfora.desktop
 x-scheme-handler/gopher=amfora.desktop
 
-# qpdfview.desktop
-# application/oxps=qpdfview.desktop
-application/pdf=qpdfview.desktop
-# application/postscript=qpdfview.desktop
-# application/vnd.comicbook+zip=qpdfview.desktop
-# application/vnd.comicbook-rar=qpdfview.desktop
-# application/vnd.ms-xpsdocument=qpdfview.desktop
-# application/x-bzdvi=qpdfview.desktop
-# application/x-bzpdf=qpdfview.desktop
-# application/x-bzpostscript=qpdfview.desktop
-# application/x-cb7=qpdfview.desktop
-# application/x-cbr=qpdfview.desktop
-# application/x-cbt=qpdfview.desktop
-# application/x-cbz=qpdfview.desktop
-# application/x-dvi=qpdfview.desktop
-# application/x-ext-cb7=qpdfview.desktop
-# application/x-ext-cbr=qpdfview.desktop
-# application/x-ext-cbt=qpdfview.desktop
-# application/x-ext-cbz=qpdfview.desktop
-# application/x-ext-djv=qpdfview.desktop
-# application/x-ext-djvu=qpdfview.desktop
-# application/x-ext-dvi=qpdfview.desktop
-# application/x-ext-eps=qpdfview.desktop
-# application/x-ext-pdf=qpdfview.desktop
-# application/x-ext-ps=qpdfview.desktop
-# application/x-gzdvi=qpdfview.desktop
-# application/x-gzpdf=qpdfview.desktop
-# application/x-gzpostscript=qpdfview.desktop
-# application/x-xzpdf=qpdfview.desktop
-# image/vnd.djvu+multipage=qpdfview.desktop
-# image/vnd.djvu=qpdfview.desktop
-# image/x-bzeps=qpdfview.desktop
-# image/x-djvu=qpdfview.desktop
-# image/x-eps=qpdfview.desktop
-# image/x-gzeps=qpdfview.desktop
+# sioyek.desktop
+application/epub+zip=sioyek.desktop
+application/oxps=sioyek.desktop
+application/pdf=sioyek.desktop
+application/vnd.comicbook+zip=sioyek.desktop
+application/vnd.ms-xpsdocument=sioyek.desktop
+application/x-fictionbook+xml=sioyek.desktop
+application/x-mobipocket-ebook=sioyek.desktop
 
 # viewnior.desktop
 image/bmp=viewnior.desktop

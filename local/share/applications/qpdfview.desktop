@@ -1,7 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=qpdfview document reader
-GenericName=Document reader
-TryExec=qpdfview
-Exec=qpdfview %U
-MimeType=application/pdf
