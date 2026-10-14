@@ -40,7 +40,6 @@ prompt1() {
     return
   fi
 
-  git update-index --really-refresh -q &> /dev/null
   git_status=''
 
   if ! git diff --quiet --ignore-submodules --cached
