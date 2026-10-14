@@ -42,6 +42,8 @@ Linux.
 - [Sioyek][11]: PDF reader
 - [mpv][12]: video player
 - [wbg][13]: Wayland background
+- [Transmission][14]: bittorrent server
+- [Torresmo][15]: bittorrent client
 
 ## Bootstrap
 
@@ -75,6 +77,8 @@ additional terms or conditions.
 [11]: https://sioyek.info
 [12]: https://github.com/mpv-player/mpv
 [13]: https://codeberg.org/dnkl/wbg
+[14]: https://transmissionbt.com
+[15]: https://sr.ht/~paemuri/torresmo
 
 [badge-1-img]: https://img.shields.io/badge/license-Unlicense-green?style=flat-square
 [badge-1-link]: ./LICENSE
