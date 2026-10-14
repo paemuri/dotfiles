@@ -31,10 +31,10 @@ get_timestamp() {
     for d in $( \
       echo "$exif_creation_time" | \
       tr : ' ' | \
-      tr ' ' \n \
+      tr ' ' '\n' \
     )
     do
-      timestamp+=$(printf "%02d" "$d")
+      timestamp+=$(printf "%02d" "$((10#$d))")
     done
   fi
 
@@ -132,7 +132,7 @@ rename() {
   # Validates if could not fix the name.
   if test -z "$timestamp"
   then
-    echo "$filepath: could not fix" >&2 
+    echo "$filepath: could not fix" >&2
     return
   fi
 
