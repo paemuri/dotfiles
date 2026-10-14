@@ -3,7 +3,7 @@
 alt="Mod1"
 super="Mod4"
 
-$XDG_CONFIG_HOME/bash/env
+source $XDG_CONFIG_HOME/bash/env
 
 #########
 # Style #
@@ -64,7 +64,7 @@ do
   riverctl input $input tap                  enabled
   riverctl input $input tap-button-map       left-right-middle
   riverctl input $input scroll-method        two-finger
-done 
+done
 
 ##################
 # Software: main #
