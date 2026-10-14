@@ -47,19 +47,21 @@ Linux.
 
 Simply run `./bootstrap -i`.
 
-## License
+## Source code
 
-This project code is in the public domain. See the [LICENSE file][1].
+The main repository is on [SourceHut][source-srht]. A mirror exists on
+[GitHub][source-github] for convenience, but it might occasionally be
+outdated.
 
-Exceptions may contain specific licenses inside the files.
+### License and contribution
 
-### Contribution
+This project's code is in the public domain. See the
+[LICENSE file][source-license].
 
-Unless you explicitly state otherwise, any contribution intentionally
-submitted for inclusion in the work by you shall be in the public
-domain, without any additional terms or conditions.
+Unless you explicitly state otherwise, any contribution intentionally submitted
+for inclusion in the work by you shall be in the public domain, without any
+additional terms or conditions.
 
-[1]: ./LICENSE
 [2]: https://helix-editor.com
 [3]: https://floorp.app
 [4]: https://codeberg.org/dnkl/foot
@@ -76,3 +78,7 @@ domain, without any additional terms or conditions.
 
 [badge-1-img]: https://img.shields.io/badge/license-Unlicense-green?style=flat-square
 [badge-1-link]: ./LICENSE
+
+[source-srht]: https://git.sr.ht/~paemuri/dotfiles
+[source-github]: https://github.com/paemuri/dotfiles
+[source-license]: ./LICENSE
