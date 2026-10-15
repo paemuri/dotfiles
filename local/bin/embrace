@@ -27,7 +27,7 @@ do
       then
         echo    "Invalid file: $opt." >&2
         echo    "Command should be:" >&2
-        echo -e "\tembrace <command> [-c|--crop] [-C|--copy]" >&2
+        echo -e "\tembrace [--sql] [--json] [<file>]" >&2
         exit 1
       fi
       file=$opt
