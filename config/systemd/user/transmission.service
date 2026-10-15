@@ -7,7 +7,10 @@ After=network-online.target
 
 [Service]
 Type=notify
+ExecStartPre=/usr/bin/cp %E/transmission-daemon/settings.json \
+  %S/transmission/settings.json
 ExecStart=/usr/bin/transmission-daemon -f --log-level=error \
+  --config-dir %S/transmission \
   --rpc-bind-address unix:%t/transmission/transmission.sock
 ExecStartPost=+/usr/bin/ln -sfn transmission/transmission.sock \
   %t/transmission.sock
@@ -15,12 +18,14 @@ ExecStopPost=+/usr/bin/rm -f %t/transmission.sock
 ExecReload=/bin/kill -s HUP $MAINPID
 RuntimeDirectory=transmission
 RuntimeDirectoryMode=0700
+StateDirectory=transmission
+StateDirectoryMode=0700
 NoNewPrivileges=true
 MemoryDenyWriteExecute=true
+PrivateUsers=true
 ProtectSystem=strict
 ProtectHome=read-only
-ReadWritePaths=%h/downloads/torrents %h/.config/transmission-daemon
-ReadOnlyPaths=%h/.config/transmission-daemon/settings.json
+ReadWritePaths=%h/downloads/torrents
 PrivateTmp=true
 PrivateDevices=true
 ProtectKernelTunables=true
