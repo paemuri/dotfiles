@@ -38,10 +38,6 @@ ignores into `gsettings` commands.
 
 An enhanced `killall`.
 
-### `passgen`
-
-Personal password generator.
-
 ### `pkg-install`
 
 Simple `paru` wrapper that install all packages defined in
