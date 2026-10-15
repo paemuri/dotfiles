@@ -11,7 +11,6 @@ user_pref("extensions.formautofill.addresses.enabled", false);
 user_pref("extensions.formautofill.creditCards.available", false);
 user_pref("extensions.formautofill.creditCards.enabled", false);
 user_pref("extensions.getAddons.showPane", false);
-user_pref("extensions.quarantinedDomains.enabled", false);
 user_pref("intl.accept_languages", "en-US, en, pt-BR, pt");
 user_pref("javascript.use_us_english_locale", true);
 user_pref("network.cookie.lifetimePolicy", 0);
