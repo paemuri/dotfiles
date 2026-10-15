@@ -34,10 +34,6 @@ to do it manually.
 Translate config values from `config/gtk-3.0/settings.ini` that GTK
 ignores into `gsettings` commands.
 
-### `killall-withfire`
-
-An enhanced `killall`.
-
 ### `pkg-install`
 
 Simple `paru` wrapper that install all packages defined in

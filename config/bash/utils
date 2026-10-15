@@ -9,6 +9,7 @@ alias egrep="egrep --color=auto"
 alias fgrep="fgrep --color=auto"
 alias watch="watch --color --beep --no-title --no-wrap"
 alias pacman="pacman --color=auto"
+alias killall-withfire="pkill -KILL -f --"
 alias open=xdg-open
 alias rm=trash
 alias unrar=unrar-free
