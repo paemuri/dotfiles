@@ -60,7 +60,7 @@ export XCURSOR_THEME=Simp1e
 export XCURSOR_SIZE=24
 export XCURSOR_PATH=$XDG_DATA_HOME/icons:/usr/share/icons
 
-export SDL_VIDEODRIVER=wayland
+export SDL_VIDEODRIVER=wayland,x11
 export XDG_SESSION_TYPE=wayland
 export XDG_CURRENT_DESKTOP=river
 export MOZ_ENABLE_WAYLAND=1
