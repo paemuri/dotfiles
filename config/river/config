@@ -84,13 +84,14 @@ riverctl map normal $super+Shift F toggle-float
 riverctl map normal $super       Q close
 
 # Software shortcuts.
-riverctl map normal $super Space spawn bemenu-run
-riverctl map normal $super P     spawn menu-bw
-riverctl map normal $super B     spawn "$BROWSER"
-riverctl map normal $super T     spawn "$TERMINAL"
-riverctl map normal $super E     spawn pcmanfm-qt
-riverctl map normal $super C     spawn "$TERMINAL -e qalc"
-riverctl map normal $super W     spawn "$TERMINAL -e weather"
+riverctl map normal $super       Space spawn bemenu-run
+riverctl map normal $super       P     spawn rofi-rbw --target password
+riverctl map normal $super+Shift P     spawn rofi-rbw
+riverctl map normal $super       B     spawn "$BROWSER"
+riverctl map normal $super       T     spawn "$TERMINAL"
+riverctl map normal $super       E     spawn pcmanfm-qt
+riverctl map normal $super       C     spawn "$TERMINAL -e qalc"
+riverctl map normal $super       W     spawn "$TERMINAL -e weather"
 
 #######################
 # Software: secondary #

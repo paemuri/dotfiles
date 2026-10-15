@@ -1,0 +1,5 @@
+selector = bemenu
+clipboarder = wl-copy
+action = copy
+target = menu
+use-notify-send = true

@@ -4,7 +4,6 @@ auto-cpufreq
 bash
 bash-completion
 bat
-bitwarden-cli
 bluetui
 chafa
 croc
@@ -32,6 +31,7 @@ opendoas
 openssh
 openssl
 perl-image-exiftool
+rbw
 rclone
 ripgrep
 rsync

@@ -9,6 +9,7 @@ grim
 mako
 qt5-wayland
 river
+rofi-rbw
 slurp
 wayland
 waylock
@@ -16,6 +17,7 @@ wbg
 wf-recorder
 wl-clipboard
 wl-clip-persist
+wtype
 xcursor-simp1e
 xdg-desktop-portal-wlr
 xorg-xwayland

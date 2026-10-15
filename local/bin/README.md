@@ -64,7 +64,7 @@ Script to screenshot or screen record.
 ~Gambiarra~ *Workaround* script to force Veloren to run with
 XWayland, and also skip the launcher window.
 
-[See this thread for more info.][2]
+[See this thread for more info.][1]
 
 ### `volume`
 
@@ -81,7 +81,7 @@ Stops Transmission and disconnects from Mullvad.
 
 ### `weather`
 
-Opens terminal with weather info from [wttr.in][3].
+Opens terminal with weather info from [wttr.in][2].
 
 ### `wob-listen`
 
@@ -89,9 +89,8 @@ Configures and run wob.
 
 ### `yambar-mod-*`
 
-Personal modules (scripts) for my [yambar][4] config.
+Personal modules (scripts) for my [yambar][3] config.
 
-[1]: https://github.com/pltanton/bitwarden-dmenu
-[2]: https://www.reddit.com/r/Veloren/comments/qtxjdq/arch_linux_cant_play_it_graphics_error/
-[3]: https://wttr.in
-[4]: https://codeberg.org/dnkl/yambar
+[1]: https://www.reddit.com/r/Veloren/comments/qtxjdq/arch_linux_cant_play_it_graphics_error/
+[2]: https://wttr.in
+[3]: https://codeberg.org/dnkl/yambar
