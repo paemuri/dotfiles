@@ -7,8 +7,14 @@ After=network-online.target
 
 [Service]
 Type=notify
-ExecStart=/usr/bin/transmission-daemon -f --log-level=error
+ExecStart=/usr/bin/transmission-daemon -f --log-level=error \
+  --rpc-bind-address unix:%t/transmission/transmission.sock
+ExecStartPost=+/usr/bin/ln -sfn transmission/transmission.sock \
+  %t/transmission.sock
+ExecStopPost=+/usr/bin/rm -f %t/transmission.sock
 ExecReload=/bin/kill -s HUP $MAINPID
+RuntimeDirectory=transmission
+RuntimeDirectoryMode=0700
 NoNewPrivileges=true
 MemoryDenyWriteExecute=true
 ProtectSystem=strict
