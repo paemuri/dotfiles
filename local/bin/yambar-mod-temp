@@ -6,7 +6,7 @@ last_symbol=""
 while true
 do
 
-  temp="$(cut -c1-2 /sys/class/thermal/thermal_zone0/temp)"
+  temp="$(( $(cat /sys/class/thermal/thermal_zone0/temp) / 1000 ))"
   text="$temp°C"
   symbol=""
 
