@@ -12,9 +12,9 @@ do
     *.rar) unrar-free --extract "$file";;
     *.7z) 7z x "$file";;
     *)
-      echo    "Invalid archive file: $file." >&2
-      echo    "Command should be:" >&2
-      echo -e "\textract <archive_file> [...<archive_file>]" >&2
+      echo "Invalid archive file: $file." >&2
+      echo "Command should be:" >&2
+      printf '\textract <archive_file> [...<archive_file>]\n' >&2
       exit 1
     ;;
   esac

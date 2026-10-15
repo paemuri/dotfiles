@@ -8,17 +8,17 @@ regex() {
 
 get_timestamp() {
 
-  local filepath="$1"
+  filepath="$1"
 
   # Tries to parse the creation time from exiftool.
-  local exif_creation_time=$( \
+  exif_creation_time=$( \
     exiftool "$filepath" | \
     grep -i 'create date' | \
     head -1 | \
     cut -d : -f 2- | \
     awk '{ $1=$1; print }' \
   )
-  local timestamp=$( \
+  timestamp=$( \
     echo "$exif_creation_time" | \
     tr -d ': ' \
   )
@@ -34,7 +34,7 @@ get_timestamp() {
       tr ' ' '\n' \
     )
     do
-      timestamp+=$(printf "%02d" "$((10#$d))")
+      timestamp="$timestamp$(printf "%02d" "${d#0}")"
     done
   fi
 
@@ -45,7 +45,7 @@ get_timestamp() {
   then
 
     timestamp=''
-    local fname="${file%.*}" # Removes extension.
+    fname="${file%.*}" # Removes extension.
 
     # Incomplete ones (still needed?)
     if regex "$fname" '^(img|vid)-\d{1,13}-\d{3}$'
@@ -105,7 +105,7 @@ get_timestamp() {
   while test "${#timestamp}" -gt 0 && \
     test "${#timestamp}" -lt 14
   do
-    timestamp+="0"
+    timestamp="${timestamp}0"
   done
 
   # Prints value to return it.
@@ -114,11 +114,11 @@ get_timestamp() {
 
 rename() {
 
-  local filepath="$1"
-  local dir=$(dirname "$filepath")
-  local file=$(basename "$filepath")
-  local format="$2"
-  local prefix="$3"
+  filepath="$1"
+  dir=$(dirname "$filepath")
+  file=$(basename "$filepath")
+  format="$2"
+  prefix="$3"
 
   # Ignores the ones that were already fixed.
   if regex "$file" $prefix'-\d{14}-\d{3}\.'$format
@@ -127,7 +127,7 @@ rename() {
   fi
 
   # Gets the file's timestamp.
-  local timestamp=$(get_timestamp "$filepath")
+  timestamp=$(get_timestamp "$filepath")
 
   # Validates if could not fix the name.
   if test -z "$timestamp"
@@ -137,12 +137,13 @@ rename() {
   fi
 
   # Create unique new filepath.
-  local new_filepath=''
-  local suffix="001"
-  while new_filepath="$dir/$prefix-$timestamp-$suffix.$format" && \
+  new_filepath=''
+  n=1
+  while suffix=$(printf "%03d" "$n") && \
+    new_filepath="$dir/$prefix-$timestamp-$suffix.$format" && \
     test -f "$new_filepath"
   do
-    suffix=$(printf "%03d" $(( 10#$suffix + 1 )))
+    n=$((n + 1))
   done
 
   echo "$filepath → $new_filepath"

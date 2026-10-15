@@ -3,32 +3,32 @@
 device="$1"
 if [ "$device" = "" ]
 then
-  echo    "Missing device." >&2
-  echo    "Command should be:" >&2
-  echo -e "\tvolume (input|output) (increase|decrease|mute)" >&2
+  echo "Missing device." >&2
+  echo "Command should be:" >&2
+  printf '\tvolume (input|output) (increase|decrease|mute)\n' >&2
   exit 1
 fi
 if [ "$device" != "input" ] && [ "$device" != "output" ]
 then
-  echo    "Invalid argument: $device." >&2
-  echo    "Command should be:" >&2
-  echo -e "\tvolume (input|output) (increase|decrease|mute)" >&2
+  echo "Invalid argument: $device." >&2
+  echo "Command should be:" >&2
+  printf '\tvolume (input|output) (increase|decrease|mute)\n' >&2
   exit 1
 fi
 
 cmd="$2"
 if [ "$cmd" = "" ]
 then
-  echo    "Missing cmd." >&2
-  echo    "Command should be:" >&2
-  echo -e "\tvolume (input|output) (increase|decrease|mute)" >&2
+  echo "Missing cmd." >&2
+  echo "Command should be:" >&2
+  printf '\tvolume (input|output) (increase|decrease|mute)\n' >&2
   exit 1
 fi
 if [ "$cmd" != "increase" ] && [ "$cmd" != "decrease" ] && [ "$cmd" != "mute" ]
 then
-  echo    "Invalid argument: $cmd." >&2
-  echo    "Command should be:" >&2
-  echo -e "\tvolume (input|output) (increase|decrease|mute)" >&2
+  echo "Invalid argument: $cmd." >&2
+  echo "Command should be:" >&2
+  printf '\tvolume (input|output) (increase|decrease|mute)\n' >&2
   exit 1
 fi
 

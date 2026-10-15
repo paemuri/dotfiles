@@ -1,4 +1,4 @@
 #!/bin/sh
 
 curl https://wttr.in/Sao_Jose_dos_Campos
-read -n1
+read -r _ # Freeze.

@@ -3,7 +3,7 @@
 alt="Mod1"
 super="Mod4"
 
-source $XDG_CONFIG_HOME/bash/env
+. $XDG_CONFIG_HOME/bash/env
 
 #########
 # Style #

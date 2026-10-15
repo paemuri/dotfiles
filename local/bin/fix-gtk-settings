@@ -7,7 +7,7 @@ then
 fi
 
 grep_setting() {
-  local field="$1"
+  field="$1"
   grep "$field" $config_file | sed 's/.*\s*=\s*//'
 }
 

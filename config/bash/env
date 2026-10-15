@@ -4,7 +4,7 @@ export XDG_CONFIG_HOME=$HOME/.config
 export XDG_CACHE_HOME=$HOME/.cache
 export XDG_DATA_HOME=$HOME/.local/share
 
-source $XDG_CONFIG_HOME/user-dirs.dirs
+. $XDG_CONFIG_HOME/user-dirs.dirs
 export XDG_DESKTOP_DIR
 export XDG_DOCUMENTS_DIR
 export XDG_DOWNLOAD_DIR
@@ -109,11 +109,11 @@ export BEMENU_OPTS="\
 export QT_STYLE_OVERRIDE=Adwaita-Dark
 
 export PATH=$HOME/.local/bin
-PATH+=:$CARGO_HOME/bin
-PATH+=:$VOLTA_HOME/bin
-PATH+=:$GOPATH/bin
-PATH+=:/opt
-PATH+=:/usr/bin
-PATH+=:/usr/local/bin
-PATH+=:/usr/local/sbin
-PATH+=:/usr/bin/vendor_perl
+PATH=$PATH:$CARGO_HOME/bin
+PATH=$PATH:$VOLTA_HOME/bin
+PATH=$PATH:$GOPATH/bin
+PATH=$PATH:/opt
+PATH=$PATH:/usr/bin
+PATH=$PATH:/usr/local/bin
+PATH=$PATH:/usr/local/sbin
+PATH=$PATH:/usr/bin/vendor_perl

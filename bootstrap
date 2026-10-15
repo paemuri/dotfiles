@@ -15,8 +15,8 @@ do
   done
 done
 
-source $here/config/bash/env
-test -r $here/config/bash/secret && source $here/config/bash/secret
+. $here/config/bash/env
+test -r $here/config/bash/secret && . $here/config/bash/secret
 
 mkdir -p ~/downloads/torrents/results
 mkdir -p ~/downloads/torrents/in-progress

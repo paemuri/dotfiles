@@ -7,9 +7,9 @@
 capacity="$1"
 if test "$capacity" = ""
 then
-  echo    "Missing capacity." >&2
-  echo    "Command should be:" >&2
-  echo -e "\tbattery-alert <capacity> <is_charging>" >&2
+  echo "Missing capacity." >&2
+  echo "Command should be:" >&2
+  printf '\tbattery-alert <capacity> <is_charging>\n' >&2
   exit 1
 elif test "$capacity" -ne "$capacity"
 then
@@ -20,9 +20,9 @@ fi
 is_charging="$2"
 if test "$is_charging" = ""
 then
-  echo    "Missing is_charging." >&2
-  echo    "Command should be:" >&2
-  echo -e "\tbattery-alert <capacity> <is_charging>" >&2
+  echo "Missing is_charging." >&2
+  echo "Command should be:" >&2
+  printf '\tbattery-alert <capacity> <is_charging>\n' >&2
   exit 1
 elif test "$is_charging" != "false" && test "$is_charging" != "true"
 then
@@ -32,9 +32,9 @@ fi
 
 if test "$3" != ""
 then
-  echo    "Unkown arguments." >&2
-  echo    "Command should be:" >&2
-  echo -e "\tbattery-alert <capacity>" >&2
+  echo "Unkown arguments." >&2
+  echo "Command should be:" >&2
+  printf '\tbattery-alert <capacity>\n' >&2
   exit 1
 fi
 
