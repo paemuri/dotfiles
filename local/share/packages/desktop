@@ -8,6 +8,7 @@ glfw-wayland
 grim
 mako
 qt5-wayland
+qt6-wayland
 river
 rofi-rbw
 slurp
