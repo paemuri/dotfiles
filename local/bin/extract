@@ -9,7 +9,7 @@ do
     *.tar.xz|*.txz) tar -xJvf "$file";;
     *.tar.zst) tar --zstd -xvf "$file";;
     *.zip) unzip "$file";;
-    *.rar) unrar x "$file";;
+    *.rar) unrar-free --extract "$file";;
     *.7z) 7z x "$file";;
     *)
       echo    "Invalid archive file: $file." >&2
