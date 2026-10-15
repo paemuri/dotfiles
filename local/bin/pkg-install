@@ -2,8 +2,8 @@
 
 set -e
 
-cat $XDG_DATA_HOME/packages/* |
-  paru -Sy --needed --noconfirm -
-
 pkg-update
+
+cat $XDG_DATA_HOME/packages/* |
+  paru -S --needed --noconfirm -
 
