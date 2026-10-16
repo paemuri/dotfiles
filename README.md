@@ -31,7 +31,7 @@ These are my configuration files for my personal notebook running Arch Linux.
 - [Helix][1]: terminal text editor
 - [Floorp][2]: web browser
 - [foot][3]: lightweight Wayland terminal
-- [River][4]: Wayland compositor / window manager
+- [river-classic][4]: Wayland compositor / window manager
 - [Yambar][5]: Wayland panel / bar
 - [Mako][6]: Wayland notification daemon
 - [waylock][7]: Wayland locker
@@ -65,7 +65,7 @@ additional terms or conditions.
 [1]: https://helix-editor.com
 [2]: https://floorp.app
 [3]: https://codeberg.org/dnkl/foot
-[4]: https://github.com/riverwm/river
+[4]: https://codeberg.org/river/river-classic
 [5]: https://codeberg.org/dnkl/yambar
 [6]: https://github.com/emersion/mako
 [7]: https://github.com/ifreund/waylock
