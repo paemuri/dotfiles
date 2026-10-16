@@ -1,82 +1,93 @@
 #!/bin/bash
 
-reset="\033[m"
-white="\033[38;2;253;244;193m"       # fdf4c1
-green="\033[38;2;121;116;14m"        # 79740e
-light_green="\033[38;2;184;187;38m"  # b8bb26
-yellow="\033[38;2;181;118;20m"       # b57614
-light_yellow="\033[38;2;250;189;47m" # fabd2f
+reset=$(printf '\033[m')
+white=$(printf '\033[38;2;253;244;193m')       # fdf4c1
+green=$(printf '\033[38;2;121;116;14m')        # 79740e
+light_green=$(printf '\033[38;2;184;187;38m')  # b8bb26
+yellow=$(printf '\033[38;2;181;118;20m')       # b57614
+light_yellow=$(printf '\033[38;2;250;189;47m') # fabd2f
+
+# PS1 runs these in a subshell, so their variables never leak.
 
 prompt1() {
 
-  path=$(pwd | sed "s|^$HOME|~|")
-  echo -en "$green$(whoami)$white in $light_green$path$white"
+  # Replace $HOME with ~ in $path.
+  case $PWD in
+    "$HOME"|"$HOME"/*) path="~${PWD#"$HOME"}" ;;
+    *)                 path=$PWD ;;
+  esac
+  printf '%s' "$green$USER$white in $light_green$path$white"
 
-  # Should be in a Git project.
-  git_work_tree=$(git rev-parse --is-inside-work-tree 2> /dev/null)
-  if test "$git_work_tree" != "true"
+  # Should be in a Git project and not in .git/. Also, $status will be used to
+  # fetch more Git info.
+  if ! status=$(git \
+    --no-optional-locks \
+    status \
+    --porcelain=v2 \
+    --branch \
+    --ignore-submodules \
+    2> /dev/null)
   then
-    echo -en "$reset"
+    printf '%s' "$reset"
     return
   fi
 
-  # Should have a current branch.
-  git_branch=$( \
-    git symbolic-ref --quiet --short HEAD 2> /dev/null || \
-    git rev-parse --short HEAD 2> /dev/null)
-  if test -z "$git_branch"
+  staged=''
+  changed=''
+  new=''
+  # Lines look like `# branch.head main`, `? new-file` or `1 XY ...`, where X is
+  # the staged state and Y the work tree state (`.` means unchanged).
+  while read -r kind field value
+  do
+    case $kind in
+      '#')
+        case $field in
+          branch.oid)  oid=$value ;;
+          branch.head) branch=$value ;;
+        esac
+        ;;
+      '?')
+        new=1
+        ;;
+      1|2|u)
+        case $field in [!.]?) staged=1 ;; esac
+        case $field in ?[!.]) changed=1 ;; esac
+        ;;
+    esac
+  done <<EOF
+$status
+EOF
+
+  # Detached HEAD: show the short commit hash instead.
+  if test "$branch" = '(detached)'
   then
-    echo -en "$reset"
-    return
+    branch=$(printf '%.7s' "$oid")
   fi
 
-  echo -en "$white on $light_yellow$git_branch$white"
+  printf '%s' "$white on $light_yellow$branch$white"
 
-  # Should not be in .git.
-  git_dir=$(git rev-parse --is-inside-git-dir 2> /dev/null)
-  if test "$git_dir" != "false"
+  states=''
+  test -n "$staged" && add_state stage
+  test -n "$changed" && add_state changes
+  test -n "$new" && add_state new
+  git rev-parse --verify --quiet refs/stash > /dev/null && add_state stash
+
+  if test -n "$states"
   then
-    echo -en "$reset"
-    return
+    printf ' with %s' "$states$white"
   fi
 
-  git_status=''
+  printf '%s' "$reset"
+}
 
-  if ! git diff --quiet --ignore-submodules --cached
-  then
-    git_status+="${yellow}stage"
-  fi
-
-  if ! git diff-files --quiet --ignore-submodules --
-  then
-    test -n "$git_status" && git_status+="$white and "
-    git_status+="${yellow}changes"
-  fi
-
-  git_new_files=$(git ls-files --others --exclude-standard)
-  if test -n "$git_new_files"
-  then
-    test -n "$git_status" && git_status+="$white and "
-    git_status+="${yellow}new"
-  fi
-
-  if git rev-parse --verify refs/stash &> /dev/null
-  then
-    test -n "$git_status" && git_status+="$white and "
-    git_status+="${yellow}stash"
-  fi
-
-  if test -n "$git_status"
-  then
-    echo -en " with $git_status$white"
-  fi
-
-  echo -en "$reset"
+add_state() {
+  states="${states:+$states$white and }$yellow$1"
 }
 
 prompt2() {
-  echo -en "→ "
+  printf '→ '
 }
 
-export PS1="\n\$(prompt1)\n\$(prompt2)"
-export PS2="\$(prompt2)"
+# Bash only: `\n` is a Bash prompt escape.
+PS1='\n$(prompt1)\n$(prompt2)'
+PS2='$(prompt2)'
