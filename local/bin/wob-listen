@@ -1,5 +1,5 @@
 #!/bin/sh
 
-rm -f $WOBSOCK
-mkfifo $WOBSOCK
-tail -f $WOBSOCK | wob
+rm -f "$WOBSOCK"
+mkfifo "$WOBSOCK"
+tail -f "$WOBSOCK" | wob
