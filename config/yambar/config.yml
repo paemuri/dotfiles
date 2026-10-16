@@ -5,7 +5,7 @@ bar:
   location: "top"
   foreground: "fdf4c1ff"
   background: "282828ff"
-  font: "Fira Mono" 
+  font: "Fira Mono"
   spacing: 7
 
   border:

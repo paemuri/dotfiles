@@ -1,6 +1,5 @@
 #!/bin/sh
 
-alt="Mod1"
 super="Mod4"
 
 . $XDG_CONFIG_HOME/bash/env
