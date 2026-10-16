@@ -33,7 +33,6 @@ mkdir -p ~/downloads/torrents/results
 mkdir -p ~/downloads/torrents/in-progress
 mkdir -p "$XDG_SCREENSHOTS_DIR"
 mkdir -p "$SCREEN_RECORDS_DIR"
-mkdir -p ~/.mozilla
 mkdir -p "$(dirname "$NODE_REPL_HISTORY")"
 mkdir -p "$(dirname "$HISTFILE")"
 mkdir -p "$(dirname "$LESSHISTFILE")"
