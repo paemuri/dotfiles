@@ -2,8 +2,6 @@
 Description=transmission
 AssertPathIsDirectory=%h/downloads/torrents/results
 AssertPathIsDirectory=%h/downloads/torrents/in-progress
-Wants=network-online.target
-After=network-online.target
 
 [Service]
 Type=notify
