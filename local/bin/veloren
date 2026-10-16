@@ -2,6 +2,5 @@
 
 "$TERMINAL" -e /usr/bin/airshipper update
 
-WAYLAND_DISPLAY=
-/usr/bin/airshipper run
+WAYLAND_DISPLAY='' /usr/bin/airshipper run
 

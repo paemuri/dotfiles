@@ -1,6 +1,6 @@
 #!/bin/sh
 
-here="$(realpath $(dirname $0))"
+here="$(realpath "$(dirname "$0")")"
 
 for dir in \
   "config" \
@@ -8,27 +8,27 @@ for dir in \
   "local/share/applications" \
   "local/share/packages"
 do
-  mkdir -p ~/.$dir
-  for item in $here/$dir/*
+  mkdir -p ~/."$dir"
+  for item in "$here/$dir"/*
   do
-    ln -snfv "$item" ~/.$dir/
+    ln -snfv "$item" ~/."$dir"/
   done
 done
 
-. $here/config/bash/env
-test -r $here/config/bash/secret && . $here/config/bash/secret
+. "$here/config/bash/env"
+test -r "$here/config/bash/secret" && . "$here/config/bash/secret"
 
 mkdir -p ~/downloads/torrents/results
 mkdir -p ~/downloads/torrents/in-progress
-mkdir -p $XDG_SCREENSHOTS_DIR
-mkdir -p $SCREEN_RECORDS_DIR
+mkdir -p "$XDG_SCREENSHOTS_DIR"
+mkdir -p "$SCREEN_RECORDS_DIR"
 mkdir -p ~/.mozilla
-mkdir -p $(dirname $NODE_REPL_HISTORY)
-mkdir -p $(dirname $HISTFILE)
-mkdir -p $(dirname $LESSHISTFILE)
+mkdir -p "$(dirname "$NODE_REPL_HISTORY")"
+mkdir -p "$(dirname "$HISTFILE")"
+mkdir -p "$(dirname "$LESSHISTFILE")"
 
 # Exceptions.
-ln -snfv $DOTFILES/config/floorp ~/.floorp
+ln -snfv "$DOTFILES/config/floorp" ~/.floorp
 
 if test "$1" = "-i" || test "$1" = "--install"
 then
@@ -40,7 +40,7 @@ fi
 if test -n "$MULLVAD_ACCOUNT_NUMBER" && \
   test "$(mullvad account get)" = "Not logged in on any account"
 then
-  mullvad account login $MULLVAD_ACCOUNT_NUMBER
+  mullvad account login "$MULLVAD_ACCOUNT_NUMBER"
   mullvad lockdown-mode set on
   mullvad auto-connect set on
   mullvad relay set location de
