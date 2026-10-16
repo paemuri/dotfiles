@@ -4,4 +4,4 @@ Name=Floorp web browser - personal profile
 GenericName=Web browser
 TryExec=floorp
 Exec=floorp %U
-MimeType=text/html;text/xml;application/xhtml+xml;application/xml;application/rdf+xml;image/gif;image/jpeg;image/png;x-scheme-handler/http;x-scheme-handler/https;x-scheme-handler/chrome;
+MimeType=application/x-extension-htm;application/x-extension-html;application/x-extension-shtml;application/x-extension-xht;application/x-extension-xhtml;application/xhtml+xml;text/html;x-scheme-handler/chrome;x-scheme-handler/http;x-scheme-handler/https;
