@@ -51,19 +51,15 @@ riverctl map-pointer normal $super       BTN_RIGHT resize-view
 riverctl set-repeat 50 300
 
 # Pointers.
-pointer_inputs=$(riverctl list-inputs | grep "pointer")
-for input in $pointer_inputs
-do
-  riverctl input $input click-method         clickfinger
-  riverctl input $input drag                 enabled
-  riverctl input $input disable-while-typing disabled
-  riverctl input $input middle-emulation     disabled
-  riverctl input $input natural-scroll       enabled
-  riverctl input $input left-handed          disabled
-  riverctl input $input tap                  enabled
-  riverctl input $input tap-button-map       left-right-middle
-  riverctl input $input scroll-method        two-finger
-done
+riverctl input "pointer-*" click-method         clickfinger
+riverctl input "pointer-*" drag                 enabled
+riverctl input "pointer-*" disable-while-typing disabled
+riverctl input "pointer-*" middle-emulation     disabled
+riverctl input "pointer-*" natural-scroll       enabled
+riverctl input "pointer-*" left-handed          disabled
+riverctl input "pointer-*" tap                  enabled
+riverctl input "pointer-*" tap-button-map       left-right-middle
+riverctl input "pointer-*" scroll-method        two-finger
 
 ##################
 # Software: main #
