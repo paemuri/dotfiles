@@ -3,6 +3,10 @@ name = Rafael Escobar
 email = rafael@paemuri.com
 [tag]
 sort = version:refname
+[diff]
+algorithm = histogram
+[fetch]
+prune = true
 [push]
 autoSetupRemote = true
 [init]
