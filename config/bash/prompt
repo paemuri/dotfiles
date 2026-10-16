@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 reset="\033[m"
 white="\033[38;2;253;244;193m"       # fdf4c1

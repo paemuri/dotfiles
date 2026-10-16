@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/bash
 
-source ~/.config/bash/env
+. ~/.config/bash/env
 
 if test -z "$WAYLAND_DISPLAY" && test "$(tty)" = "/dev/tty1"
 then
@@ -9,10 +9,17 @@ then
   exec river -log-level info > $XDG_DATA_HOME/river/logs/$timestamp.log 2>&1
 fi
 
-source $XDG_CONFIG_HOME/bash/prompt
-source $XDG_CONFIG_HOME/bash/utils
-source /usr/share/bash-completion/bash_completion
+# Everything below only matters for interactive shells.
+case $- in
+  *i*) ;;
+  *)   return ;;
+esac
 
+. "$XDG_CONFIG_HOME/bash/prompt"
+. "$XDG_CONFIG_HOME/bash/utils"
+
+# Bash only.
+. /usr/share/bash-completion/bash_completion
 shopt -s \
   checkwinsize \
   cmdhist \
