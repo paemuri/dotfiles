@@ -6,8 +6,10 @@ last_symbol=""
 while true
 do
 
-  state="$(iwctl station wlan0 show | grep State | awk '{ print $2 }')"
-  ssid="$(iwctl station wlan0 show | grep network | awk '{ print $3 }')"
+  info="$(iwctl station wlan0 show)"
+  state="$(printf '%s\n' "$info" | sed -n 's/^ *State  *\(.*[^ ]\) *$/\1/p')"
+  ssid="$(printf '%s\n' "$info" |
+    sed -n 's/^ *Connected network  *\(.*[^ ]\) *$/\1/p')"
 
   text="$state"
   if test "$text" = "connected"
