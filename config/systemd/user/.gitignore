@@ -1,4 +1,3 @@
 *
 !.gitignore
 !transmission.service
-!wl-clip-persist.service
