@@ -34,13 +34,13 @@ fi
 
 cmd_record() {
 
-  pid_file=$data_home/wf-recorder.pid
+  pid_file=$XDG_RUNTIME_DIR/wf-recorder.pid
 
-  current_pid=$(cat $pid_file 2>/dev/null)
-  if test -n "$current_pid"
+  current_pid=$(cat "$pid_file" 2>/dev/null)
+  if test -n "$current_pid" && kill -0 "$current_pid" 2>/dev/null
   then
-    kill -sINT $current_pid
-    rm $pid_file
+    kill -s INT "$current_pid"
+    rm "$pid_file"
     sleep 1s
     notify-send "Record saved"
     exit
@@ -52,7 +52,7 @@ cmd_record() {
   wf-recorder ${geometry:+-g "$geometry"} -f$record_file > $log_file 2>&1 &
 
   current_pid=$!
-  echo $current_pid > $pid_file
+  echo "$current_pid" > "$pid_file"
 }
 
 cmd_shot() {

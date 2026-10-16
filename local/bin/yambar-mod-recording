@@ -7,13 +7,11 @@ last_symbol=$(uuidgen)
 while true
 do
 
-  pid_file=${XDG_DATA_HOME:-$HOME/.local/share}/screen/wf-recorder.pid
-  current_pid=$(cat $pid_file 2>/dev/null)
-  current_process="$(ps -d | grep "$current_pid" | grep -v grep)"
+  pid_file=$XDG_RUNTIME_DIR/wf-recorder.pid
+  current_pid=$(cat "$pid_file" 2>/dev/null)
 
   symbol=""
-  if test -n "$current_pid" && \
-    test -n "$current_process"
+  if test -n "$current_pid" && kill -0 "$current_pid" 2>/dev/null
   then
     symbol=""
   fi
