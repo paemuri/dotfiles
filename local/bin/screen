@@ -26,10 +26,10 @@ usage_error() {
 
 geometry=""
 
-data_home=${XDG_DATA_HOME:-$HOME/.local/share}/screen
-if ! test -d $data_home/logs
+state_home=${XDG_STATE_HOME:-$HOME/.local/state}/screen
+if ! test -d $state_home/logs
 then
-  mkdir -p $data_home/logs
+  mkdir -p $state_home/logs
 fi
 
 cmd_record() {
@@ -48,7 +48,7 @@ cmd_record() {
 
   current_date=$(date +%F-%H-%M-%S)
   record_file=$SCREEN_RECORDS_DIR/$current_date.mp4
-  log_file=$data_home/logs/$current_date.log
+  log_file=$state_home/logs/$current_date.log
   wf-recorder ${geometry:+-g "$geometry"} -f$record_file > $log_file 2>&1 &
 
   current_pid=$!

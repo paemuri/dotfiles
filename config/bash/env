@@ -3,6 +3,7 @@
 export XDG_CONFIG_HOME=$HOME/.config
 export XDG_CACHE_HOME=$HOME/.cache
 export XDG_DATA_HOME=$HOME/.local/share
+export XDG_STATE_HOME=$HOME/.local/state
 
 . $XDG_CONFIG_HOME/user-dirs.dirs
 export XDG_DESKTOP_DIR
@@ -38,13 +39,13 @@ export GIT_SSH_COMMAND="$SSH_COMMAND"
 export RUSTUP_HOME=$XDG_DATA_HOME/rustup
 export CARGO_HOME=$XDG_DATA_HOME/cargo
 
-export NODE_REPL_HISTORY=$XDG_DATA_HOME/node/repl-history
+export NODE_REPL_HISTORY=$XDG_STATE_HOME/node/repl-history
 export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/config
 export VOLTA_HOME=$XDG_DATA_HOME/volta
 
 export GOPATH=$XDG_DATA_HOME/go
 
-export HISTFILE=$XDG_DATA_HOME/bash/history
+export HISTFILE=$XDG_STATE_HOME/bash/history
 export HISTCONTROL=ignoreboth:erasedups
 export HISTFILESIZE=99999
 export HISTSIZE=99999
@@ -62,7 +63,7 @@ export SDL_VIDEODRIVER=wayland,x11
 export XDG_SESSION_TYPE=wayland
 export XDG_CURRENT_DESKTOP=river
 
-export LESSHISTFILE=$XDG_DATA_HOME/less/history
+export LESSHISTFILE=$XDG_STATE_HOME/less/history
 
 export SANE_DEFAULT_DEVICE=pixma:04A9183D_216141
 
