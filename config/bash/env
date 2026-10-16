@@ -37,8 +37,6 @@ export GIT_SSH_COMMAND="$SSH_COMMAND"
 
 export RUSTUP_HOME=$XDG_DATA_HOME/rustup
 export CARGO_HOME=$XDG_DATA_HOME/cargo
-export CARGO_NAME="Rafael Escobar"
-export CARGO_EMAIL=rescobar@pm.me
 
 export NODE_REPL_HISTORY=$XDG_DATA_HOME/node/repl-history
 export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/config
@@ -63,10 +61,8 @@ export XCURSOR_PATH=$XDG_DATA_HOME/icons:/usr/share/icons
 export SDL_VIDEODRIVER=wayland,x11
 export XDG_SESSION_TYPE=wayland
 export XDG_CURRENT_DESKTOP=river
-export MOZ_ENABLE_WAYLAND=1
 
 export LESSHISTFILE=$XDG_DATA_HOME/less/history
-export LESSKEY=$XDG_CONFIG_HOME/less/keys
 
 export PGSERVICEFILE=$XDG_CONFIG_HOME/postgresql/pg_service.conf
 export PSQL_HISTORY=$XDG_DATA_HOME/psql/history
