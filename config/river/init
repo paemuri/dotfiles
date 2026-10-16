@@ -1,7 +1,14 @@
 #!/bin/sh
 
+# Pass the session to D-Bus and SystemD services before anything starts.
+dbus-update-activation-environment --systemd \
+  WAYLAND_DISPLAY \
+  XDG_CURRENT_DESKTOP \
+  XDG_RUNTIME_DIR \
+  XDG_SESSION_TYPE
+
 # Actual River config.
-$XDG_CONFIG_HOME/river/config
+"$XDG_CONFIG_HOME/river/config"
 
 # Desktop services.
 wbg ~/gallery/wallpaper.jpg &
@@ -10,18 +17,7 @@ mako &
 wob-listen &
 mpv /usr/share/sounds/freedesktop/stereo/service-login.oga &
 
-# Commands to run at startup.
-dbus-update-activation-environment --systemd \
-  WAYLAND_DISPLAY \
-  XDG_CURRENT_DESKTOP \
-  XDG_RUNTIME_DIR \
-  XDG_SESSION_TYPE
-systemctl --user import-environment \
-  WAYLAND_DISPLAY \
-  XDG_CURRENT_DESKTOP \
-  XDG_RUNTIME_DIR \
-  XDG_SESSION_TYPE
-
+# Defaults and fixes.
 fix-gtk-settings
 ponymix --output set-volume 100
 ponymix --input  set-volume 25
