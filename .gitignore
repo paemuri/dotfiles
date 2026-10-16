@@ -1,4 +1,2 @@
 /.gitsecret/keys/random_seed
 /.gitsecret/keys/pubring.kbx~
-!.gitignore
-!*.secret
