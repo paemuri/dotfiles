@@ -1,6 +1,6 @@
 #!/bin/bash
 
-. ~/.config/bash/env
+. "${XDG_CONFIG_HOME:-$HOME/.config}/bash/env"
 
 if test -z "$WAYLAND_DISPLAY" && test "$(tty)" = "/dev/tty1"
 then
