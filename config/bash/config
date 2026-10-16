@@ -24,6 +24,5 @@ esac
 shopt -s \
   checkwinsize \
   cmdhist \
-  dotglob \
   globstar \
   histappend
