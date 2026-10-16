@@ -29,7 +29,7 @@ esac
 
 test "$#" -gt 0 || usage_error "missing archive file"
 
-# Keep going after a failure, like most Unix tools, but exits with 1 if any
+# Keep going after a failure, like most Unix tools, but exit with 1 if any
 # archive couldn't be extracted.
 status=0
 for file in "$@"
