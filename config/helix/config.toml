@@ -14,23 +14,9 @@ git-ignore = false
 git-global = false
 git-exclude = false
 
-# Space+f: filtered picker (no hidden or ignored files).
-# Space+F: everything.
-# Space+/: global search; follows whichever picker was opened last.
+# Space H and Space I: toggle hidden / git-ignored files in the file picker and
+# global search. One option per key: Helix drops several `:set`/`:toggle` in a
+# binding, and a picker opened by the same key still uses the old values.
 [keys.normal.space]
-f = [
-  ":set file-picker.hidden true",
-  ":set file-picker.ignore true",
-  ":set file-picker.git-ignore true",
-  ":set file-picker.git-global true",
-  ":set file-picker.git-exclude true",
-  "file_picker",
-]
-F = [
-  ":set file-picker.hidden false",
-  ":set file-picker.ignore false",
-  ":set file-picker.git-ignore false",
-  ":set file-picker.git-global false",
-  ":set file-picker.git-exclude false",
-  "file_picker",
-]
+H = ":toggle file-picker.hidden"
+I = ":toggle file-picker.git-ignore"
