@@ -4,8 +4,7 @@
 
 ## About
 
-This are my configuration files for my personal notebook running Arch
-Linux.
+This are my configuration files for my personal notebook running Arch Linux.
 
 ### Ideas
 
@@ -52,8 +51,7 @@ Simply run `./bootstrap -i`.
 ## Source code
 
 The main repository is on [SourceHut][source-srht]. A mirror exists on
-[GitHub][source-github] for convenience, but it might occasionally be
-outdated.
+[GitHub][source-github] for convenience, but it might occasionally be outdated.
 
 ### License and contribution
 
