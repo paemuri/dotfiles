@@ -107,6 +107,7 @@ export QT_STYLE_OVERRIDE=Adwaita-Dark
 export PATH=$HOME/.local/bin
 PATH=$PATH:$CARGO_HOME/bin
 PATH=$PATH:$VOLTA_HOME/bin
+PATH=$PATH:$XDG_DATA_HOME/npm/bin
 PATH=$PATH:$GOPATH/bin
 PATH=$PATH:/usr/local/sbin
 PATH=$PATH:/usr/local/bin
