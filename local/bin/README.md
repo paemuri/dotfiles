@@ -6,14 +6,14 @@ Personal executables.
 
 ### `backup-sync`
 
-Two-way sync (`rclone bisync`) with rclone remote used for backups. Extra
+Two-way sync (`rclone bisync`) with the rclone remote used for backups. Extra
 arguments go to `rclone bisync` (e.g. `--resync`).
 
 ### `battery-alert`
 
-Simple script that alerts that the battery is running out. *When*
-it is alerted is defined inside the yambar modules/scripts (it's
-probably not the best place, but it's there).
+Simple script that alerts that the battery is running out. *When* it is alerted
+is defined inside the yambar modules/scripts (it's probably not the best place,
+but it's there).
 
 ### `extract`
 
@@ -21,23 +21,22 @@ Utility to extract files.
 
 ### `embrace`
 
-Script that takes a file and turns every line into an array (SQL or
-JSON).
+Script that takes a file and turns every line into an array (SQL or JSON).
 
 ### `fix-files-names`
 
-Script to organize my media files. I have to many images and videos
-to do it manually.
+Script to organize my media files. I have too many images and videos to do it
+manually.
 
 ### `fix-gtk-settings`
 
-Translate config values from `config/gtk-3.0/settings.ini` that GTK
-ignores into `gsettings` commands.
+Translates config values from `config/gtk-3.0/settings.ini` that GTK ignores
+into `gsettings` commands.
 
 ### `pkg-install`
 
-Simple `paru` wrapper that install all packages defined in
-`$HOME/local/share/packages/`.
+Simple `paru` wrapper that installs all packages defined in
+`~/.local/share/packages/`.
 
 ### `pkg-update`
 
@@ -53,15 +52,15 @@ Script to screenshot or screen record.
 
 ### `veloren`
 
-~Gambiarra~ *Workaround* script to force Veloren to run with
-XWayland, and also skip the launcher window.
+~Gambiarra~ *Workaround* script to force Veloren to run with XWayland, and also
+skip the launcher window.
 
 [See this thread for more info.][1]
 
 ### `volume`
 
-Script to handle mic/audio volume and mute, and also send the correct
-to wob.
+Script to handle mic/audio volume and mute, and also send the correct value to
+wob.
 
 ### `vpn-connect`
 
@@ -73,11 +72,11 @@ Stops Transmission and disconnects from Mullvad.
 
 ### `weather`
 
-Opens terminal with weather info from [wttr.in][2].
+Shows weather info from [wttr.in][2] on the terminal.
 
 ### `wob-listen`
 
-Configures and run wob.
+Configures and runs wob.
 
 ### `yambar-mod-*`
 

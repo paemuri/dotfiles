@@ -1,11 +1,11 @@
 # config folder
 
-Applications configurations.
+Application configurations.
 
 ## Files and subfolders
 
-The sub-folders names are self-explanatory, but there are two files
-here that can lead to some confusion.
+The subfolders' names are self-explanatory, but there are two files here that
+can lead to some confusion.
 
 ### `mimeapps.list`
 
@@ -16,7 +16,7 @@ defined as a MIME type.
 
 ### `user-dirs.dirs`
 
-This files defines the default users folders inside `$HOME`, like the
-music folder, the downloads folder, etc.
+This file defines the default user folders inside `$HOME`, like the music
+folder, the downloads folder, etc.
 
 [1]: https://specifications.freedesktop.org/mime-apps-spec/mime-apps-spec-latest.html

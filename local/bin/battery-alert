@@ -32,7 +32,7 @@ fi
 
 if test "$3" != ""
 then
-  echo "Unkown arguments." >&2
+  echo "Unknown arguments." >&2
   echo "Command should be:" >&2
   printf '\tbattery-alert <capacity>\n' >&2
   exit 1

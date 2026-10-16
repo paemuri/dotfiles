@@ -4,23 +4,23 @@
 
 ## About
 
-This are my configuration files for my personal notebook running Arch Linux.
+These are my configuration files for my personal notebook running Arch Linux.
 
 ### Ideas
 
-1. If possible (and not too cumbersome), try to write down as much
+1. If possible (and not too cumbersome), try to write down as many
    definitions/configurations as possible. Updates can change the default values
    and that is a pain in the ass.
 2. Follow XDG directories whenever it's possible. It's way more organized than
    leaving multiple hidden files at `$HOME`.
-3. All scripts should be POSIX compliant, with a plain `/bin/sh` shebang. Only
-   exception is Bash's own configuration, in `config/bash`, which only Bash ever
-   loads. `config/bash/env` is also sourced by `/bin/sh` scripts, so stays
-   POSIX.
+3. All scripts should be POSIX compliant, with a plain `/bin/sh` shebang. The
+   only exception is Bash's own configuration, in `config/bash`, which only Bash
+   ever loads. `config/bash/env` is also sourced by `/bin/sh` scripts, so it
+   stays POSIX.
 
 ### Folders
 
-- `config/`: programs configurations
+- `config/`: program configurations
 - `local/bin/`: personal executables
 - `local/share/applications/`: personal .desktop files
 - `local/share/packages/`: lists of used Arch packages
