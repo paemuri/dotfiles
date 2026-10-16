@@ -3,5 +3,5 @@ Type=Application
 Name=Sioyek document reader
 GenericName=Document reader
 TryExec=sioyek
-Exec=sioyek %U
+Exec=sioyek %F
 MimeType=application/epub+zip;application/oxps;application/pdf;application/vnd.comicbook+zip;application/vnd.ms-xpsdocument;application/x-fictionbook+xml;application/x-mobipocket-ebook;
