@@ -4,9 +4,9 @@
 
 if test -z "$WAYLAND_DISPLAY" && test "$(tty)" = "/dev/tty1"
 then
-  mkdir -p $XDG_DATA_HOME/river/logs
+  mkdir -p "$XDG_DATA_HOME/river/logs"
   timestamp=$(date +%F-%H-%M-%S)
-  exec river -log-level info > $XDG_DATA_HOME/river/logs/$timestamp.log 2>&1
+  exec river -log-level info > "$XDG_DATA_HOME/river/logs/$timestamp.log" 2>&1
 fi
 
 # Everything below only matters for interactive shells.
@@ -26,4 +26,3 @@ shopt -s \
   dotglob \
   globstar \
   histappend
-
