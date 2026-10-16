@@ -11,6 +11,17 @@ do
   mkdir -p ~/."$dir"
   for item in "$here/$dir"/*
   do
+    name="$(basename "$item")"
+    test "$name" = README.md && continue # Ignore README.md.
+
+    # ln would create the link inside a real directory instead of replacing it.
+    target=~/."$dir/$name"
+    if test -d "$target" && ! test -L "$target"
+    then
+      echo "Skipping $target: it's a real directory." >&2
+      continue
+    fi
+
     ln -snfv "$item" ~/."$dir"/
   done
 done
