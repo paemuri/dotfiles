@@ -64,9 +64,6 @@ export XDG_CURRENT_DESKTOP=river
 
 export LESSHISTFILE=$XDG_DATA_HOME/less/history
 
-export PGSERVICEFILE=$XDG_CONFIG_HOME/postgresql/pg_service.conf
-export PSQL_HISTORY=$XDG_DATA_HOME/psql/history
-
 export SANE_DEFAULT_DEVICE=pixma:04A9183D_216141
 
 export FZF_DEFAULT_COMMAND=fd

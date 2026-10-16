@@ -1,8 +1,6 @@
 go
 hugo
 lldb
-pgcli
-postgresql
 rustup
 superhtml
 texlive-core
