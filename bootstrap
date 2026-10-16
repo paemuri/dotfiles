@@ -37,6 +37,7 @@ mkdir -p ~/.mozilla
 mkdir -p "$(dirname "$NODE_REPL_HISTORY")"
 mkdir -p "$(dirname "$HISTFILE")"
 mkdir -p "$(dirname "$LESSHISTFILE")"
+mkdir -p "$XDG_DATA_HOME/mangohud"
 
 # Exceptions.
 ln -snfv "$DOTFILES/config/floorp" ~/.floorp
