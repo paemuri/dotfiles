@@ -1,36 +1,50 @@
 #!/bin/sh
 
-device="$1"
-if [ "$device" = "" ]
-then
-  echo "Missing device." >&2
-  echo "Command should be:" >&2
-  printf '\tvolume (input|output) (increase|decrease|mute)\n' >&2
-  exit 1
-fi
-if [ "$device" != "input" ] && [ "$device" != "output" ]
-then
-  echo "Invalid argument: $device." >&2
-  echo "Command should be:" >&2
-  printf '\tvolume (input|output) (increase|decrease|mute)\n' >&2
-  exit 1
-fi
+help() {
+  cat <<'EOF'
+Changes the volume of the default output or input, and shows it in wob.
 
+Usage: volume [OPTION] DEVICE ACTION
+
+Options:
+  -h, --help  Print this help and exit
+
+Arguments:
+  DEVICE  input or output
+  ACTION  increase or decrease (by 10%, up to 150%), or mute (toggle)
+EOF
+}
+
+usage_error() {
+  echo "volume: $1" >&2
+  echo "Run \`volume --help\` for usage." >&2
+  exit 2
+}
+
+case $1 in
+  -h|--help)
+    help
+    exit 0
+    ;;
+esac
+
+device="$1"
 cmd="$2"
-if [ "$cmd" = "" ]
-then
-  echo "Missing cmd." >&2
-  echo "Command should be:" >&2
-  printf '\tvolume (input|output) (increase|decrease|mute)\n' >&2
-  exit 1
-fi
-if [ "$cmd" != "increase" ] && [ "$cmd" != "decrease" ] && [ "$cmd" != "mute" ]
-then
-  echo "Invalid argument: $cmd." >&2
-  echo "Command should be:" >&2
-  printf '\tvolume (input|output) (increase|decrease|mute)\n' >&2
-  exit 1
-fi
+
+test -n "$device" || usage_error "missing device"
+case $device in
+  input|output) ;;
+  *) usage_error "invalid device: $device (expected input or output)" ;;
+esac
+
+test -n "$cmd" || usage_error "missing action"
+case $cmd in
+  increase|decrease|mute) ;;
+  *) usage_error "invalid action: $cmd (expected increase, decrease or mute)" ;;
+esac
+
+shift 2
+test "$#" -eq 0 || usage_error "unknown arguments: $*"
 
 ponymix_args=""
 if [ "$cmd" = "mute" ]

@@ -2,6 +2,40 @@
 
 set -e
 
+help() {
+  cat <<'EOF'
+Renames photos and videos to img-/vid-<timestamp>-<n>.<ext>, taking the date
+from their EXIF data or from their current name.
+
+Usage: fix-files-names [OPTION] DIR...
+
+Options:
+  -h, --help  Print this help and exit
+EOF
+}
+
+usage_error() {
+  echo "fix-files-names: $1" >&2
+  echo "Run \`fix-files-names --help\` for usage." >&2
+  exit 2
+}
+
+case $1 in
+  -h|--help)
+    help
+    exit 0
+    ;;
+esac
+
+# Without arguments, find would rename everything under the current directory.
+test "$#" -gt 0 || usage_error "missing directory"
+for dir in "$@"
+do
+  test -d "$dir" || usage_error "not a directory: $dir"
+done
+
+exit_code=0
+
 regex() {
   echo "$1" | pcre2grep "$2" >/dev/null
 }
@@ -132,7 +166,8 @@ rename() {
   # Validates if could not fix the name.
   if test -z "$timestamp"
   then
-    echo "$filepath: could not fix" >&2
+    echo "fix-files-names: $filepath: could not fix" >&2
+    exit_code=1
     return
   fi
 
@@ -148,51 +183,53 @@ rename() {
 
   echo "$filepath → $new_filepath"
   mv "$filepath" "$new_filepath"
-  touch -t $(echo "$timestamp" | sed 's/./&./12') "$new_filepath"
+  touch -t "$(echo "$timestamp" | sed 's/./&./12')" "$new_filepath"
 }
 
 tmp_ifs="$IFS"
 IFS='
 '
 
-for filepath in $(find $@ -iname  '*.jpg' -o -iname '*.jpeg')
+for filepath in $(find "$@" -iname  '*.jpg' -o -iname '*.jpeg')
 do
   rename "$filepath" jpg img
 done
 
-for filepath in $(find $@ -iname  '*.png')
+for filepath in $(find "$@" -iname  '*.png')
 do
   rename "$filepath" png img
 done
 
-for filepath in $(find $@ -iname  '*.heic')
+for filepath in $(find "$@" -iname  '*.heic')
 do
   rename "$filepath" heic img
 done
 
-for filepath in $(find $@ -iname  '*.cr3')
+for filepath in $(find "$@" -iname  '*.cr3')
 do
   rename "$filepath" cr3 img
 done
 
-for filepath in $(find $@ -iname  '*.gif')
+for filepath in $(find "$@" -iname  '*.gif')
 do
   rename "$filepath" gif img
 done
 
-for filepath in $(find $@ -iname  '*.webp')
+for filepath in $(find "$@" -iname  '*.webp')
 do
   rename "$filepath" webp img
 done
 
-for filepath in $(find $@ -iname  '*.mp4')
+for filepath in $(find "$@" -iname  '*.mp4')
 do
   rename "$filepath" mp4 vid
 done
 
-for filepath in $(find $@ -iname  '*.mov')
+for filepath in $(find "$@" -iname  '*.mov')
 do
   rename "$filepath" mov vid
 done
 
 IFS="$tmp_ifs"
+
+exit "$exit_code"

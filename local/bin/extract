@@ -1,5 +1,37 @@
 #!/bin/sh
 
+help() {
+  cat <<'EOF'
+Extracts archives into the current directory.
+
+Usage: extract [OPTION] FILE...
+
+Options:
+  -h, --help  Print this help and exit
+
+Supported formats: .tar.bz(2), .tbz(2), .tar.gz, .tgz, .tar.xz, .txz,
+.tar.zst, .zip, .rar, .7z
+EOF
+}
+
+usage_error() {
+  echo "extract: $1" >&2
+  echo "Run \`extract --help\` for usage." >&2
+  exit 2
+}
+
+case $1 in
+  -h|--help)
+    help
+    exit 0
+    ;;
+esac
+
+test "$#" -gt 0 || usage_error "missing archive file"
+
+# Keep going after a failure, like most Unix tools, but exits with 1 if any
+# archive couldn't be extracted.
+status=0
 for file in "$@"
 do
   echo "Extracting $file."
@@ -12,10 +44,10 @@ do
     *.rar) unrar-free --extract "$file";;
     *.7z) 7z x "$file";;
     *)
-      echo "Invalid archive file: $file." >&2
-      echo "Command should be:" >&2
-      printf '\textract <archive_file> [...<archive_file>]\n' >&2
-      exit 1
-    ;;
-  esac
+      echo "extract: $file: unsupported archive format" >&2
+      false
+      ;;
+  esac || status=1
 done
+
+exit "$status"

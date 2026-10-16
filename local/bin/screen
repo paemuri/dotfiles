@@ -1,5 +1,29 @@
 #!/bin/sh
 
+help() {
+  cat <<'EOF'
+Takes screenshots and screen recordings.
+
+Usage: screen [OPTION]... COMMAND
+
+Commands:
+  shot    Take a screenshot (saved to $XDG_SCREENSHOTS_DIR)
+  record  Start a screen recording, or stop the one in progress (saved to
+          $SCREEN_RECORDS_DIR)
+
+Options:
+  -h, --help  Print this help and exit
+  -c, --crop  Select an area first
+  -C, --copy  Copy the screenshot to the clipboard instead of saving it
+EOF
+}
+
+usage_error() {
+  echo "screen: $1" >&2
+  echo "Run \`screen --help\` for usage." >&2
+  exit 2
+}
+
 geometry=""
 
 data_home=${XDG_DATA_HOME:-$HOME/.local/share}/screen
@@ -64,7 +88,11 @@ main() {
     shift
 
     case $opt in
-      # Arguments.
+      # Options.
+      -h|--help)
+        help
+        exit 0
+        ;;
       -c|--crop)
         crop=1
         ;;
@@ -72,38 +100,26 @@ main() {
         copy=1
         ;;
       -*)
-        echo "Invalid argument: $opt." >&2
-        echo "Command should be:" >&2
-        printf '\tscreen <command> [-c|--crop] [-C|--copy]\n' >&2
-        exit 1
+        usage_error "unknown option: $opt"
         ;;
       # Commands.
       record|shot)
         cmd=$opt
         ;;
       *)
-        echo "Invalid command: $opt. Should be only 'record' or 'shot'." >&2
-        echo "Command should be:" >&2
-        printf '\tscreen <command> [-c|--crop] [-C|--copy]\n' >&2
-        exit 1
+        usage_error "unknown command: $opt (expected shot or record)"
         ;;
     esac
   done
 
-
-  if test "$cmd" = ""
-  then
-    echo "Missing command." >&2
-    echo "Command should be:" >&2
-    printf '\tscreen <command> [-c|--crop] [-C|--copy]\n' >&2
-    exit 1
-  fi
+  test -n "$cmd" || usage_error "missing command"
 
   # Main.
 
   if test "$crop" = 1
   then
-    geometry="$(slurp)"
+    # Cancelled selection (Esc): stop instead of capturing the whole screen.
+    geometry="$(slurp)" || exit 1
   fi
 
   case $cmd in

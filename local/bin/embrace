@@ -1,5 +1,27 @@
 #!/bin/sh
 
+help() {
+  cat <<'EOF'
+Turns every line of a file into an SQL tuple or a JSON array.
+
+Usage: embrace [OPTION]... [FILE]
+
+Options:
+  -h, --help  Print this help and exit
+      --sql   Output an SQL tuple, like ('a','b') (default)
+      --json  Output a JSON array, like ["a","b"]
+
+Arguments:
+  FILE  File to read (default: standard input)
+EOF
+}
+
+usage_error() {
+  echo "embrace: $1" >&2
+  echo "Run \`embrace --help\` for usage." >&2
+  exit 2
+}
+
 output=sql
 file=/dev/stdin
 
@@ -10,6 +32,10 @@ do
   shift
 
   case $opt in
+    -h|--help)
+      help
+      exit 0
+      ;;
     --sql)
       output=sql
       ;;
@@ -17,17 +43,12 @@ do
       output=json
       ;;
     -*)
-      echo "Invalid argument: $opt." >&2
-      echo "Command should be:" >&2
-      printf '\tembrace [--sql] [--json] [<file>]\n' >&2
-      exit 1
+      usage_error "unknown option: $opt"
       ;;
     *)
       if ! test -f "$opt"
       then
-        echo "Invalid file: $opt." >&2
-        echo "Command should be:" >&2
-        printf '\tembrace [--sql] [--json] [<file>]\n' >&2
+        echo "embrace: $opt: no such file" >&2
         exit 1
       fi
       file=$opt
@@ -51,7 +72,7 @@ case $output in
     ;;
 esac
 
-sed "s|$|$quote,$quote|" < $file |
+sed "s|$|$quote,$quote|" < "$file" |
   tr -d "\n" |
   sed "s|,$quote$|$close|" |
   sed "s|^|$open$quote|"

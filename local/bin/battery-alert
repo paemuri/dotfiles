@@ -1,42 +1,52 @@
 #!/bin/sh
 
+help() {
+  cat <<EOF
+Notifies when the battery is low (15%) or critical (5%), once per level.
+
+Usage: battery-alert [OPTION] CAPACITY IS_CHARGING
+
+Options:
+  -h, --help  Print this help and exit
+
+Arguments:
+  CAPACITY     Battery capacity, from 0 to 100
+  IS_CHARGING  Either true or false
+EOF
+}
+
+usage_error() {
+  echo "battery-alert: $1" >&2
+  echo "Run \`battery-alert --help\` for usage." >&2
+  exit 2
+}
+
 #
 # Arguments.
 #
 
+case $1 in
+  -h|--help)
+    help
+    exit 0
+    ;;
+esac
+
 capacity="$1"
-if test "$capacity" = ""
-then
-  echo "Missing capacity." >&2
-  echo "Command should be:" >&2
-  printf '\tbattery-alert <capacity> <is_charging>\n' >&2
-  exit 1
-elif test "$capacity" -ne "$capacity"
-then
-  echo "Invalid capacity: should be an integer number between 0-100." >&2
-  exit 2
-fi
-
 is_charging="$2"
-if test "$is_charging" = ""
-then
-  echo "Missing is_charging." >&2
-  echo "Command should be:" >&2
-  printf '\tbattery-alert <capacity> <is_charging>\n' >&2
-  exit 1
-elif test "$is_charging" != "false" && test "$is_charging" != "true"
-then
-  echo "Invalid is_charging: should be either true or false." >&2
-  exit 2
-fi
 
-if test "$3" != ""
-then
-  echo "Unknown arguments." >&2
-  echo "Command should be:" >&2
-  printf '\tbattery-alert <capacity>\n' >&2
-  exit 1
-fi
+test -n "$capacity" || usage_error "missing capacity"
+test "$capacity" -ge 0 2> /dev/null && test "$capacity" -le 100 ||
+  usage_error "invalid capacity: $capacity (expected 0 to 100)"
+
+test -n "$is_charging" || usage_error "missing is_charging"
+case $is_charging in
+  true|false) ;;
+  *) usage_error "invalid is_charging: $is_charging (expected true or false)" ;;
+esac
+
+shift 2
+test "$#" -eq 0 || usage_error "unknown arguments: $*"
 
 #
 # Cached last alert data.
@@ -55,14 +65,14 @@ last_alert="$(cat "$cache_path")"
 # Ignores and resets if charging.
 if test "$is_charging" = "true"
 then
-  > $cache_path
+  : > "$cache_path"
   exit 0
 fi
 
 # Resets if normal capacity.
 if test "$last_alert" != "" && test "$capacity" -gt 15
 then
-  > $cache_path
+  : > "$cache_path"
 fi
 
 # Alerts low if between 5-15.
@@ -85,4 +95,3 @@ then
     "Battery level is critical!" \
     "Battery capacity at $capacity%! Charge the notebook now!"
 fi
-
