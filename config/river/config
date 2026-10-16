@@ -18,9 +18,9 @@ riverctl border-width           2
 riverctl attach-mode    top
 riverctl default-layout rivertile
 
-##########
-# Ouputs #
-##########
+###########
+# Outputs #
+###########
 
 # Output focusing.
 riverctl map normal $super       Period focus-output next
