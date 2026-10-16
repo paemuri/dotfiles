@@ -31,7 +31,7 @@ test "$#" -gt 0 || usage_error "missing archive file"
 
 # Keep going after a failure, like most Unix tools, but exit with 1 if any
 # archive couldn't be extracted.
-status=0
+exit_code=0
 for file in "$@"
 do
   echo "Extracting $file."
@@ -47,7 +47,7 @@ do
       echo "extract: $file: unsupported archive format" >&2
       false
       ;;
-  esac || status=1
+  esac || exit_code=1
 done
 
-exit "$status"
+exit "$exit_code"
