@@ -2,5 +2,4 @@
 
 rm -f $WOBSOCK
 mkfifo $WOBSOCK
-# Add config in flags. INI file will only be valid in next version.
 tail -f $WOBSOCK | wob
