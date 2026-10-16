@@ -4,7 +4,7 @@ adwaita-qt6
 bemenu
 bemenu-wayland
 brightnessctl
-glfw-wayland
+glfw
 grim
 mako
 qt5-wayland
