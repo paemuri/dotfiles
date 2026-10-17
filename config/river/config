@@ -12,7 +12,7 @@ super="Mod4"
 riverctl border-color-focused   0x79740e
 riverctl border-color-unfocused 0x282828
 riverctl border-color-urgent    0x9d0006
-riverctl border-width           2
+riverctl border-width           5
 
 # Layout.
 riverctl attach-mode    top
