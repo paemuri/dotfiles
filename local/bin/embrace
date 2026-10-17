@@ -27,7 +27,6 @@ file=/dev/stdin
 
 while test "$#" -gt 0
 do
-
   opt="$1"
   shift
 
@@ -72,7 +71,21 @@ case $output in
     ;;
 esac
 
-sed "s|$|$quote,$quote|" < "$file" |
+# Escape the quote character before joining. SQL doubles single quotes; JSON
+# escapes \ and ".
+escape() {
+  case $output in
+    sql)
+      sed "s/'/''/g"
+      ;;
+    json)
+      sed -e 's/\\/\\\\/g' -e 's/"/\\"/g'
+      ;;
+  esac
+}
+
+escape < "$file" |
+  sed "s|$|$quote,$quote|" |
   tr -d "\n" |
-  sed "s|,$quote$|$close|" |
+  sed "s|,$quote\$|$close|" |
   sed "s|^|$open$quote|"
