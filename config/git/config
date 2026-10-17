@@ -1,16 +1,26 @@
 [user]
 name = Rafael Escobar
 email = rafael@paemuri.com
+signingkey = D882219026508FDF900CACAE7A968A9450DDE41C
+
 [tag]
 sort = version:refname
+
 [diff]
 algorithm = histogram
+
 [fetch]
 prune = true
+
+[commit]
+gpgsign = true
+
 [push]
 autoSetupRemote = true
+
 [init]
 defaultBranch = main
+
 [sendemail]
 verify = off
 annotate = yes
