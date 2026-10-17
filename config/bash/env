@@ -30,7 +30,7 @@ export DOTFILES=$PROJECTS_DIR/paemuri/dotfiles
 export GRIM_DEFAULT_DIR=$XDG_SCREENSHOTS_DIR
 
 export GNUPGHOME=$KEYS_DIR/gnupg
-export SSH_CONFIG=$KEYS_DIR/ssh/config
+export SSH_CONFIG=$XDG_CONFIG_HOME/ssh/config
 
 export SSH_COMMAND="ssh -F $SSH_CONFIG"
 export RSYNC_RSH="$SSH_COMMAND"
