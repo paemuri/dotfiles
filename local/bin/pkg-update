@@ -7,8 +7,7 @@ doas rm -f /tmp/magick-*
 paru -Sy --noconfirm --needed archlinux-keyring
 paru -Su --noconfirm
 
-orphans="$(paru -Qtdq)"
-if test -n "$orphans"
+if orphans="$(paru -Qtdq)" && test -n "$orphans"
 then
   paru -Rns --noconfirm $orphans
 fi
