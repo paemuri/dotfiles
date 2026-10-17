@@ -1,6 +1,8 @@
 #!/bin/sh
 
 here="$(realpath "$(dirname "$0")")"
+. "$here"/config/bash/env
+test -r "$here"/config/bash/secret && . "$here"/config/bash/secret
 
 for dir in \
   "config" \
@@ -26,8 +28,10 @@ do
   done
 done
 
-. "$here/config/bash/env"
-test -r "$here/config/bash/secret" && . "$here/config/bash/secret"
+# Exceptions; files located outside of XDG dirs.
+ln -snfv "$here"/config/floorp ~/.floorp
+ln -snfv "$here"/config/gnupg/gpg-agent.conf "$GNUPGHOME"/gpg-agent.conf
+ln -snfv "$here"/config/gnupg/gpg.conf "$GNUPGHOME"/gpg.conf
 
 mkdir -p ~/downloads/torrents/results
 mkdir -p ~/downloads/torrents/in-progress
@@ -36,10 +40,7 @@ mkdir -p "$SCREEN_RECORDS_DIR"
 mkdir -p "$(dirname "$NODE_REPL_HISTORY")"
 mkdir -p "$(dirname "$HISTFILE")"
 mkdir -p "$(dirname "$LESSHISTFILE")"
-mkdir -p "$XDG_DATA_HOME/mangohud"
-
-# Exceptions.
-ln -snfv "$here/config/floorp" ~/.floorp
+mkdir -p "$XDG_DATA_HOME"/mangohud
 
 if test "$1" = "-i" || test "$1" = "--install"
 then
