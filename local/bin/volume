@@ -55,5 +55,10 @@ else
 fi
 
 val=$(ponymix --$device $ponymix_args)
-col=$(ponymix --$device is-muted && echo muted)
-echo $val $col > $WOBSOCK
+ponymix --$device is-muted && val="$val muted"
+
+# Check whether its a FIFO.
+test -p "$WOBSOCK" || exit 1
+
+# Enqueue those values without blocking.
+WOB_VAL=$val timeout 0.2 sh -c 'echo "$WOB_VAL" > "$WOBSOCK"' || exit 1
