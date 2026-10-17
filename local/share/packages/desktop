@@ -7,6 +7,7 @@ brightnessctl
 glfw
 grim
 mako
+pinentry-bemenu
 qt5-wayland
 qt6-wayland
 river-classic
