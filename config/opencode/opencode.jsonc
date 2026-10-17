@@ -1,0 +1,10 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "model": "opencode-go/deepseek-v4.1-flash",
+  "permissions": [
+    { "action": "read", "resource": "*.secret", "effect": "deny" },
+    { "action": "read", "resource": "$HOME/keys/*", "effect": "deny" },
+    { "action": "shell", "resource": "git push *", "effect": "deny" }
+  ]
+}
+
