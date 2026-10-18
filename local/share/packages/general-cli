@@ -5,7 +5,6 @@ bash
 bash-completion
 bat
 bluetui
-chafa
 croc
 fd
 ffmpegthumbnailer
@@ -17,6 +16,7 @@ helix
 htop
 imagemagick
 impala
+iwd
 jq
 libqalculate
 libsixel
@@ -37,8 +37,10 @@ ripgrep
 rsync
 sl
 streamlink
+torresmo
 transmission-cli
 trash-cli
+ttfe
 vim
 vimv-git
 xan
