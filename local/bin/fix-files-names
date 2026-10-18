@@ -79,7 +79,8 @@ get_timestamp() {
   then
 
     timestamp=''
-    fname="${file%.*}" # Removes extension.
+    fname="${filepath##*/}" # Basename.
+    fname="${fname%.*}"     # Removes extension.
 
     # Incomplete ones (still needed?)
     if regex "$fname" '^(img|vid)-\d{1,13}-\d{3}$'
@@ -186,50 +187,36 @@ rename() {
   touch -t "$(echo "$timestamp" | sed 's/./&./12')" "$new_filepath"
 }
 
-tmp_ifs="$IFS"
-IFS='
-'
+# Find every matching file at once, then rename each by extension. Reading
+# from a file avoids both word splitting and globbing of the paths.
+tmp_file="${TMPDIR:-/tmp}/fix-files-names.$$"
+find "$@" \( \
+  -iname '*.jpg' \
+  -o -iname '*.jpeg' \
+  -o -iname '*.png' \
+  -o -iname '*.heic' \
+  -o -iname '*.cr3' \
+  -o -iname '*.gif' \
+  -o -iname '*.webp' \
+  -o -iname '*.mp4' \
+  -o -iname '*.mov' \
+  \) -print > "$tmp_file"
 
-for filepath in $(find "$@" -iname  '*.jpg' -o -iname '*.jpeg')
+while IFS= read -r filepath
 do
-  rename "$filepath" jpg img
-done
+  ext=$(printf '%s' "${filepath##*.}" | tr '[:upper:]' '[:lower:]')
+  case $ext in
+    jpg|jpeg) rename "$filepath" jpg  img ;;
+    png)      rename "$filepath" png  img ;;
+    heic)     rename "$filepath" heic img ;;
+    cr3)      rename "$filepath" cr3  img ;;
+    gif)      rename "$filepath" gif  img ;;
+    webp)     rename "$filepath" webp img ;;
+    mp4)      rename "$filepath" mp4  vid ;;
+    mov)      rename "$filepath" mov  vid ;;
+  esac
+done < "$tmp_file"
 
-for filepath in $(find "$@" -iname  '*.png')
-do
-  rename "$filepath" png img
-done
-
-for filepath in $(find "$@" -iname  '*.heic')
-do
-  rename "$filepath" heic img
-done
-
-for filepath in $(find "$@" -iname  '*.cr3')
-do
-  rename "$filepath" cr3 img
-done
-
-for filepath in $(find "$@" -iname  '*.gif')
-do
-  rename "$filepath" gif img
-done
-
-for filepath in $(find "$@" -iname  '*.webp')
-do
-  rename "$filepath" webp img
-done
-
-for filepath in $(find "$@" -iname  '*.mp4')
-do
-  rename "$filepath" mp4 vid
-done
-
-for filepath in $(find "$@" -iname  '*.mov')
-do
-  rename "$filepath" mov vid
-done
-
-IFS="$tmp_ifs"
+rm -f "$tmp_file"
 
 exit "$exit_code"
