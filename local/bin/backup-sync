@@ -2,6 +2,16 @@
 
 set -e
 
+# Log transfers.
+log_dir=${XDG_STATE_HOME:-$HOME/.local/state}/backup-sync
+mkdir -p "$log_dir"
+# Delete logs older than 30 days.
+find "$log_dir" -name '*.log' -mtime +30 -exec rm -f {} +
+log_file="$log_dir/$(date +%Y-%m-%d-%H-%M-%S).log"
+echo "Logging to $log_file"
+
+exec > "$log_file" 2>&1
+
 for dir in \
   keys \
   documents \
@@ -18,7 +28,7 @@ do
     --conflict-resolve newer \
     --conflict-loser num \
     --protondrive-replace-existing-draft=true \
-    --progress \
+    --verbose \
     "$@"
   echo "Synced $dir."
   echo
