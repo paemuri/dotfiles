@@ -20,5 +20,5 @@ do
     echo
   fi
 
-  sleep 1m
+  sleep 60
 done

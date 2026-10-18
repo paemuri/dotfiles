@@ -6,7 +6,7 @@ last_symbol=""
 while true
 do
 
-  raw="$(df -h --output=pcent,used / | tail -1)"
+  raw="$(df -h --output=pcent,used / | tail -n 1)"
   percent="$(echo $raw | awk '{ print $1 }' | tr -d %)"
   usage="$(echo $raw | awk '{ print $2 }')"
   text="$percent% $usage"
@@ -22,5 +22,5 @@ do
     echo
   fi
 
-  sleep 1m
+  sleep 60
 done

@@ -6,7 +6,7 @@ last_symbol=""
 while true
 do
 
-  raw_output="$(free -m | sed '2!d' | tr -s ' ' | cut -d' ' -f2,3)"
+  raw_output="$(free -m | sed -n '2p' | tr -s ' ' | cut -d' ' -f2,3)"
   total="${raw_output% *}"
   usage="${raw_output#* }"
   percent="$(( usage * 100 / total ))"
@@ -23,5 +23,5 @@ do
     echo
   fi
 
-  sleep 1s
+  sleep 1
 done

@@ -51,14 +51,14 @@ cmd_record() {
   then
     kill -s INT "$current_pid"
     rm "$pid_file"
-    sleep 1s
+    sleep 1
     notify-send "Record saved"
     exit
   fi
 
   select_geometry "$crop"
 
-  current_date=$(date +%F-%H-%M-%S)
+  current_date=$(date +%Y-%m-%d-%H-%M-%S)
   record_file=$SCREEN_RECORDS_DIR/$current_date.mp4
   log_file=$state_home/logs/$current_date.log
   wf-recorder ${geometry:+-g "$geometry"} -f$record_file > $log_file 2>&1 &
@@ -84,7 +84,7 @@ cmd_shot() {
     msg="saved"
   fi
 
-  sleep 1s
+  sleep 1
   notify-send "Screenshot $msg"
 }
 

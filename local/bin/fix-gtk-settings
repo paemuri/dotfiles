@@ -9,7 +9,7 @@ fi
 
 grep_setting() {
   field="$1"
-  grep "$field" $config_file | sed 's/.*\s*=\s*//'
+  grep "$field" $config_file | sed 's/.*[[:space:]]*=[[:space:]]*//'
 }
 
 gtk_theme="$(grep_setting gtk-theme-name)"
