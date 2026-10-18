@@ -13,10 +13,12 @@ These are my configuration files for my personal notebook running Arch Linux.
    and that is a pain in the ass.
 2. Follow XDG directories whenever it's possible. It's way more organized than
    leaving multiple hidden files at `$HOME`.
-3. All scripts should be POSIX compliant, with a plain `/bin/sh` shebang. The
-   only exception is Bash's own configuration, in `config/bash`, which only Bash
-   ever loads. `config/bash/env` is also sourced by `/bin/sh` scripts, so it
-   stays POSIX.
+3. All scripts should be POSIX compliant, with a plain `/bin/sh` shebang, and
+   must pass `shellcheck`. The only exception is Bash's own configuration, in
+   `config/bash`, which only Bash ever loads. `config/bash/env` is also sourced
+   by `/bin/sh` scripts, so it stays POSIX.
+4. If there's no default formatting tool for the file type, the preferred
+   formatting rules are: 1) 2-spaces indentation, and 2) 80-chars width limit.
 
 ### Folders
 

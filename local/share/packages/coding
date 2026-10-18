@@ -3,6 +3,7 @@ hugo
 lldb
 opencode
 rustup
+shellcheck
 superhtml
 typst
 volta-bin
