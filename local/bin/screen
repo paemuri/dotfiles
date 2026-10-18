@@ -41,7 +41,6 @@ select_geometry() {
 }
 
 cmd_record() {
-
   crop="$1"
 
   pid_file=$XDG_RUNTIME_DIR/wf-recorder.pid
@@ -68,7 +67,6 @@ cmd_record() {
 }
 
 cmd_shot() {
-
   copy="$1"
   crop="$2"
   msg=""
@@ -88,17 +86,13 @@ cmd_shot() {
   notify-send "Screenshot $msg"
 }
 
-main() {
-
-  # Args.
-
+get_args() {
   crop=0
   copy=0
   cmd=""
 
   while test "$#" -gt 0
   do
-
     opt="$1"
     shift
 
@@ -128,9 +122,10 @@ main() {
   done
 
   test -n "$cmd" || usage_error "missing command"
+}
 
-  # Main.
-
+main() {
+  get_args "$@"
   case $cmd in
     record)
       cmd_record "$crop"
