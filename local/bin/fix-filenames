@@ -7,7 +7,7 @@ help() {
 Renames photos and videos to img-/vid-<timestamp>-<n>.<ext>, taking the date
 from their EXIF data or from their current name.
 
-Usage: fix-files-names [OPTION] DIR...
+Usage: fix-filenames [OPTION] DIR...
 
 Options:
   -h, --help  Print this help and exit
@@ -15,8 +15,8 @@ EOF
 }
 
 usage_error() {
-  echo "fix-files-names: $1" >&2
-  echo "Run \`fix-files-names --help\` for usage." >&2
+  echo "fix-filenames: $1" >&2
+  echo "Run \`fix-filenames --help\` for usage." >&2
   exit 2
 }
 
@@ -167,7 +167,7 @@ rename() {
   # Validates if could not fix the name.
   if test -z "$timestamp"
   then
-    echo "fix-files-names: $filepath: could not fix" >&2
+    echo "fix-filenames: $filepath: could not fix" >&2
     exit_code=1
     return
   fi
@@ -189,7 +189,7 @@ rename() {
 
 # Find every matching file at once, then rename each by extension. Reading
 # from a file avoids both word splitting and globbing of the paths.
-tmp_file="${TMPDIR:-/tmp}/fix-files-names.$$"
+tmp_file="${TMPDIR:-/tmp}/fix-filenames.$$"
 find "$@" \( \
   -iname '*.jpg' \
   -o -iname '*.jpeg' \

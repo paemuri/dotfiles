@@ -23,7 +23,7 @@ Utility to extract files.
 
 Script that takes a file and turns every line into an array (SQL or JSON).
 
-### `fix-files-names`
+### `fix-filenames`
 
 Script to organize my media files. I have too many images and videos to do it
 manually.
