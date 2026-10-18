@@ -80,7 +80,7 @@ riverctl map normal $super       Q close
 
 # Software shortcuts.
 riverctl map normal $super       Space spawn bemenu-run
-riverctl map normal $super       P     spawn rofi-rbw --target password
+riverctl map normal $super       P     spawn "rofi-rbw --target password"
 riverctl map normal $super+Shift P     spawn rofi-rbw
 riverctl map normal $super       B     spawn "$BROWSER"
 riverctl map normal $super       T     spawn "$TERMINAL"
