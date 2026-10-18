@@ -1,5 +1,7 @@
 #!/bin/sh
 
+set -e
+
 config_file="${XDG_CONFIG_HOME:-$HOME/.config}/gtk-3.0/settings.ini"
 if ! test -f "$config_file"
 then
