@@ -6,6 +6,7 @@ bemenu-wayland
 brightnessctl
 glfw
 grim
+libnotify
 mako
 pinentry-bemenu
 qt5-wayland
@@ -23,5 +24,6 @@ wl-clip-persist
 wtype
 xcursor-simp1e
 xdg-desktop-portal-wlr
+xdg-utils
 xorg-xwayland
 yambar-wayland
