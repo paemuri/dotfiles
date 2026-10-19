@@ -31,6 +31,7 @@ opendoas
 openssh
 openssl
 perl-image-exiftool
+qrencode
 rbw
 rclone
 ripgrep
