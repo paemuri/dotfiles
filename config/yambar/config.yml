@@ -71,7 +71,7 @@ bar:
           - string:
               text: "{text}"
     - backlight:
-        name: "amdgpu_bl1"
+        name: "amdgpu_bl2"
         content:
           - string:
               font: *awesome
