@@ -76,7 +76,7 @@ Shows weather info from [wttr.in][2] on the terminal.
 
 ### `wob-listen`
 
-Configures and runs wob.
+Runs wob.
 
 ### `yambar-mod-*`
 
