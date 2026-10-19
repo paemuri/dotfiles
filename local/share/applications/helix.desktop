@@ -4,4 +4,4 @@ Name=Helix text editor
 GenericName=Text editor
 TryExec=helix
 Exec=foot -e helix %F
-MimeType=application/csv;application/json;application/tab-separated-values;application/x-shellscript;inode/x-empty;text/comma-separated-values;text/css;text/csv;text/english;text/javascript;text/markdown;text/plain;text/spreadsheet;text/tab-separated-values;text/x-c++;text/x-c++hdr;text/x-c++src;text/x-c;text/x-chdr;text/x-comma-separated-values;text/x-csrc;text/x-csv;text/x-java;text/x-makefile;text/x-markdown;text/x-moc;text/x-pascal;text/x-tcl;text/x-tex;text/xml;
+MimeType=application/csv;application/json;application/tab-separated-values;application/x-shellscript;inode/x-empty;text/comma-separated-values;text/css;text/csv;text/javascript;text/markdown;text/plain;text/spreadsheet;text/tab-separated-values;text/x-c++;text/x-c++hdr;text/x-c++src;text/x-c;text/x-chdr;text/x-comma-separated-values;text/x-csrc;text/x-csv;text/x-java;text/x-makefile;text/x-markdown;text/x-moc;text/x-pascal;text/x-tcl;text/xml;
