@@ -2,8 +2,6 @@
 
 set -e
 
-doas rm -f /tmp/magick-*
-
 paru -Sy --noconfirm --needed archlinux-keyring
 paru -Su --noconfirm
 
