@@ -14,7 +14,10 @@ do
   for item in "$here/$dir"/*
   do
     name="$(basename "$item")"
-    test "$name" = README.md && continue # Ignore README.md.
+    case $name in
+      README.md) continue ;;    # Ignore README.md.
+      floorp|gnupg) continue ;; # Handled by the exceptions below.
+    esac
 
     # ln would create the link inside a real directory instead of replacing it.
     target=~/."$dir/$name"
