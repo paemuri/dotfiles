@@ -29,7 +29,11 @@ do
 done
 
 # Exceptions; files located outside of XDG dirs.
-ln -snfv "$here"/config/floorp ~/.floorp
+mkdir -p ~/.floorp/personal
+ln -snfv "$here"/config/floorp/installs.ini ~/.floorp/installs.ini
+ln -snfv "$here"/config/floorp/profiles.ini ~/.floorp/profiles.ini
+ln -snfv "$here"/config/floorp/personal/user.js ~/.floorp/personal/user.js
+mkdir -p "$GNUPGHOME"
 ln -snfv "$here"/config/gnupg/gpg-agent.conf "$GNUPGHOME"/gpg-agent.conf
 ln -snfv "$here"/config/gnupg/gpg.conf "$GNUPGHOME"/gpg.conf
 
