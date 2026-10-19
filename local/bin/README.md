@@ -78,9 +78,10 @@ Shows weather info from [wttr.in][2] on the terminal.
 
 Runs wob.
 
-### `yambar-mod-*`
+### `yambar-mod`
 
-Personal modules (scripts) for my [yambar][3] config.
+Personal modules (scripts) for my [yambar][3] config. The first argument selects
+the module (e.g. `yambar-mod audio`).
 
 [1]: https://www.reddit.com/r/Veloren/comments/qtxjdq/arch_linux_cant_play_it_graphics_error/
 [2]: https://wttr.in

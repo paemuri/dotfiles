@@ -1,0 +1,158 @@
+#!/bin/sh
+
+# Yambar script modules. Each subcommand prints "field|type|value" lines and
+# re-emits a field only when its value changes.
+
+last_text=""
+last_symbol=""
+
+emit() {
+  if test "$1" != "$last_text" || test "$2" != "$last_symbol"
+  then
+    last_text="$1"
+    last_symbol="$2"
+    echo "text|string|$1"
+    echo "symbol|string|$2"
+    echo
+  fi
+}
+
+run() {
+  while true
+  do
+    "$1"
+    emit "$text" "$symbol"
+    sleep "$2"
+  done
+}
+
+mod_audio() {
+  volume="$(ponymix --output get-volume)"
+  text="$volume"
+  if ponymix --output is-muted
+  then
+    symbol=""
+  elif test "$volume" -eq 0
+  then
+    symbol=""
+  elif test "$volume" -lt 50
+  then
+    symbol=""
+  else
+    symbol=""
+  fi
+}
+
+mod_battery() {
+  device_name="BAT1"
+
+  state="$(tr '[:upper:]' '[:lower:]' < /sys/class/power_supply/$device_name/status)"
+  capacity="$(cat /sys/class/power_supply/$device_name/capacity)"
+  text="$capacity%"
+
+  symbol=""
+  charging="true"
+  if test "$state" = "discharging"
+  then
+    charging="false"
+    if test "$capacity" -le 20
+    then
+      symbol=""
+    elif test "$capacity" -le 40
+    then
+      symbol=""
+    elif test "$capacity" -le 60
+    then
+      symbol=""
+    elif test "$capacity" -le 80
+    then
+      symbol=""
+    else
+      symbol=""
+    fi
+  fi
+
+  battery-alert "$capacity" "$charging"
+}
+
+mod_disk() {
+  raw="$(df -h --output=pcent,used / | tail -n 1)"
+  percent="$(echo $raw | awk '{ print $1 }' | tr -d %)"
+  usage="$(echo $raw | awk '{ print $2 }')"
+  text="$percent% $usage"
+  symbol=""
+}
+
+mod_memory() {
+  raw_output="$(free -m | sed -n '2p' | tr -s ' ' | cut -d' ' -f2,3)"
+  total="${raw_output% *}"
+  usage="${raw_output#* }"
+  percent="$(( usage * 100 / total ))"
+  text="$percent% ${usage}M"
+  symbol=""
+}
+
+mod_mic() {
+  volume="$(ponymix --input get-volume)"
+  text="$volume"
+  if ponymix --input is-muted
+  then
+    symbol=""
+  else
+    symbol=""
+  fi
+}
+
+mod_temp() {
+  temp="$(( $(cat /sys/class/thermal/thermal_zone0/temp) / 1000 ))"
+  text="$temp°C"
+  symbol=""
+}
+
+mod_uptime() {
+  time="$(uptime | awk -F, '{ print $1 }' | sed 's/.* up //')"
+  text="$time"
+  symbol=""
+}
+
+mod_wifi() {
+  info="$(iwctl station wlan0 show)"
+  state="$(printf '%s\n' "$info" | sed -n 's/^ *State  *\(.*[^ ]\) *$/\1/p')"
+  ssid="$(printf '%s\n' "$info" |
+    sed -n 's/^ *Connected network  *\(.*[^ ]\) *$/\1/p')"
+  text="$state"
+  if test "$text" = "connected"
+  then
+    text="$ssid"
+  fi
+  symbol=""
+}
+
+mod_recording() {
+  pid_file=$XDG_RUNTIME_DIR/wf-recorder.pid
+  current_pid=$(cat "$pid_file" 2>/dev/null)
+  symbol=""
+  if test -n "$current_pid" && kill -0 "$current_pid" 2>/dev/null
+  then
+    symbol=""
+  fi
+}
+
+case $1 in
+  audio)   run mod_audio 1 ;;
+  battery) run mod_battery 1 ;;
+  disk)    run mod_disk 60 ;;
+  memory)  run mod_memory 1 ;;
+  mic)     run mod_mic 1 ;;
+  temp)    run mod_temp 1 ;;
+  uptime)  run mod_uptime 60 ;;
+  wifi)    run mod_wifi 1 ;;
+  recording)
+    last_symbol=$(uuidgen)
+    run mod_recording 1
+    ;;
+  *)
+    echo "yambar-mod: unknown module: ${1:-}" >&2
+    exit 2
+    ;;
+esac

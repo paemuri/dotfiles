@@ -40,14 +40,16 @@ bar:
 
   right:
     - script:
-        path: /home/paemuri/.local/bin/yambar-mod-recording
+        path: /home/paemuri/.local/bin/yambar-mod
+        args: ["recording"]
         content:
           - string:
               font: *awesome
               foreground: "9d0006ff"
               text: "{symbol}"
     - script:
-        path: /home/paemuri/.local/bin/yambar-mod-uptime
+        path: /home/paemuri/.local/bin/yambar-mod
+        args: ["uptime"]
         content:
           - string:
               font: *awesome
@@ -55,7 +57,8 @@ bar:
           - string:
               text: "{text}"
     - script:
-        path: /home/paemuri/.local/bin/yambar-mod-audio
+        path: /home/paemuri/.local/bin/yambar-mod
+        args: ["audio"]
         content:
           - string:
               font: *awesome
@@ -63,7 +66,8 @@ bar:
           - string:
               text: "{text}"
     - script:
-        path: /home/paemuri/.local/bin/yambar-mod-mic
+        path: /home/paemuri/.local/bin/yambar-mod
+        args: ["mic"]
         content:
           - string:
               font: *awesome
@@ -79,7 +83,8 @@ bar:
           - string:
               text: "{percent}%"
     - script:
-        path: /home/paemuri/.local/bin/yambar-mod-wifi
+        path: /home/paemuri/.local/bin/yambar-mod
+        args: ["wifi"]
         content:
           - string:
               font: *awesome
@@ -87,7 +92,8 @@ bar:
           - string:
               text: "{text}"
     - script:
-        path: /home/paemuri/.local/bin/yambar-mod-memory
+        path: /home/paemuri/.local/bin/yambar-mod
+        args: ["memory"]
         content:
           - string:
               font: *awesome
@@ -95,7 +101,8 @@ bar:
           - string:
               text: "{text}"
     - script:
-        path: /home/paemuri/.local/bin/yambar-mod-temp
+        path: /home/paemuri/.local/bin/yambar-mod
+        args: ["temp"]
         content:
           - string:
               font: *awesome
@@ -103,7 +110,8 @@ bar:
           - string:
               text: "{text}"
     - script:
-        path: /home/paemuri/.local/bin/yambar-mod-disk
+        path: /home/paemuri/.local/bin/yambar-mod
+        args: ["disk"]
         content:
           - string:
               font: *awesome
@@ -111,7 +119,8 @@ bar:
           - string:
               text: "{text}"
     - script:
-        path: /home/paemuri/.local/bin/yambar-mod-battery
+        path: /home/paemuri/.local/bin/yambar-mod
+        args: ["battery"]
         content:
           - string:
               font: *awesome
