@@ -72,7 +72,10 @@ mod_battery() {
     fi
   fi
 
-  battery-alert "$capacity" "$charging"
+  if test "$text" != "$last_text" || test "$symbol" != "$last_symbol"
+  then
+    battery-alert "$capacity" "$charging"
+  fi
 }
 
 mod_disk() {
