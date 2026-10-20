@@ -85,6 +85,6 @@ additional terms or conditions.
 [badge-1-link]: ./LICENSE
 
 [source-srht]: https://git.sr.ht/~paemuri/dotfiles
-[source-github]: https://codeberg.org/paemuri/dotfiles
+[source-codeberg]: https://codeberg.org/paemuri/dotfiles
 [source-github]: https://github.com/paemuri/dotfiles
 [source-license]: ./LICENSE
