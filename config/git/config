@@ -17,6 +17,7 @@ gpgsign = true
 
 [push]
 autoSetupRemote = true
+followTags = true
 
 [init]
 defaultBranch = main
