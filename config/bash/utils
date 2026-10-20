@@ -26,6 +26,11 @@ alias scanimage=" \
 "
 
 gdiff() {
+  preview_args=''
+  if test "$#" -gt 0
+  then
+    preview_args="$(printf '%q ' "$@")"
+  fi
   git diff "$@" --name-only |
-    fzf -m --ansi --preview "git diff $* --color=always -- {-1}"
+    fzf -m --ansi --preview "git diff ${preview_args} --color=always -- {-1}"
 }
