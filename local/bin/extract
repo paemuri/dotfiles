@@ -9,8 +9,8 @@ Usage: extract [OPTION] FILE...
 Options:
   -h, --help  Print this help and exit
 
-Supported formats: .tar.bz(2), .tbz(2), .tar.gz, .tgz, .tar.xz, .txz,
-.tar.zst, .zip, .rar, .7z
+Supported formats: .tar, .tar.bz(2), .tbz(2), .tar.gz, .tgz, .tar.xz, .txz,
+.tar.zst, .gz, .bz2, .zip, .rar, .7z
 EOF
 }
 
@@ -40,6 +40,9 @@ do
     *.tar.gz|*.tgz) tar -xzvf "$file";;
     *.tar.xz|*.txz) tar -xJvf "$file";;
     *.tar.zst) tar --zstd -xvf "$file";;
+    *.tar) tar -xvf "$file";;
+    *.gz) gunzip "$file";;
+    *.bz2) bunzip2 "$file";;
     *.zip) unzip "$file";;
     *.rar) unrar-free --extract "$file";;
     *.7z) 7z x "$file";;
