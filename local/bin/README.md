@@ -42,6 +42,10 @@ Simple `paru` wrapper that installs all packages defined in
 
 Another `paru` wrapper. It updates all installed packages.
 
+### `prune-logs`
+
+Deletes `.log` files older than 30 days from the given dirs.
+
 ### `screen`
 
 Script to screenshot or screen record.

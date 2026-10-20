@@ -5,7 +5,7 @@
 if test -z "$WAYLAND_DISPLAY" && test "$(tty)" = "/dev/tty1"
 then
   mkdir -p "$XDG_STATE_HOME/river/logs"
-  find "$XDG_STATE_HOME/river/logs" -name '*.log' -mtime +30 -exec rm -f {} +
+  prune-logs "$XDG_STATE_HOME/river/logs"
   timestamp=$(date +%F-%H-%M-%S)
   exec river -log-level info > "$XDG_STATE_HOME/river/logs/$timestamp.log" 2>&1
 fi

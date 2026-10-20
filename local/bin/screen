@@ -27,10 +27,11 @@ usage_error() {
 geometry=""
 
 state_home=${XDG_STATE_HOME:-$HOME/.local/state}/screen
-if ! test -d $state_home/logs
+if ! test -d "$state_home/logs"
 then
-  mkdir -p $state_home/logs
+  mkdir -p "$state_home/logs"
 fi
+prune-logs "$state_home/logs"
 
 select_geometry() {
   if test "$1" = 1

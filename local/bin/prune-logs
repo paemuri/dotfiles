@@ -1,0 +1,35 @@
+#!/bin/sh
+
+# Deletes .log files older than 30 days.
+
+help() {
+  cat <<'EOF'
+Deletes .log files older than 30 days from the given dirs.
+
+Usage: prune-logs DIR...
+
+Arguments:
+  DIR  Directory to prune; missing directories are ignored
+EOF
+}
+
+usage_error() {
+  echo "prune-logs: $1" >&2
+  echo "Run \`prune-logs --help\` for usage." >&2
+  exit 2
+}
+
+case $1 in
+  -h|--help)
+    help
+    exit 0
+    ;;
+esac
+
+test "$#" -gt 0 || usage_error "missing directory"
+
+for dir in "$@"
+do
+  test -d "$dir" || continue
+  find "$dir" -name '*.log' -mtime +30 -exec rm -f {} +
+done
