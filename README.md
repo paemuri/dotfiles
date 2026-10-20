@@ -53,7 +53,8 @@ Simply run `./bootstrap -i`.
 ## Source code
 
 The main repository is on [SourceHut][source-srht]. A mirror exists on
-[GitHub][source-github] for convenience, but it might occasionally be outdated.
+[Codeberg][source-codeberg] and [GitHub][source-github] for convenience, but it
+might occasionally be outdated.
 
 ### License and contribution
 
@@ -84,5 +85,6 @@ additional terms or conditions.
 [badge-1-link]: ./LICENSE
 
 [source-srht]: https://git.sr.ht/~paemuri/dotfiles
+[source-github]: https://codeberg.org/paemuri/dotfiles
 [source-github]: https://github.com/paemuri/dotfiles
 [source-license]: ./LICENSE
