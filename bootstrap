@@ -61,8 +61,6 @@ mkdir -p "$XDG_DATA_HOME"/mangohud
 if test "$1" = "-i" || test "$1" = "--install"
 then
   pkg-install
-  rustup toolchain install stable
-  volta install node npm
 fi
 
 if test -n "$MULLVAD_ACCOUNT_NUMBER" && \

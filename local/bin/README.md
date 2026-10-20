@@ -15,6 +15,10 @@ Simple script that alerts that the battery is running out. *When* it is alerted
 is defined inside the yambar modules/scripts (it's probably not the best place,
 but it's there).
 
+### `clean-comments`
+
+Outputs the file stripped of comments, blank lines and trailing whitespaces.
+
 ### `extract`
 
 Utility to extract files.
@@ -35,12 +39,12 @@ into `gsettings` commands.
 
 ### `pkg-install`
 
-Simple `paru` wrapper that installs all packages defined in
-`~/.local/share/packages/`.
+Installs the packages listed in `~/.local/share/packages/` and configure package
+managers.
 
 ### `pkg-update`
 
-Another `paru` wrapper. It updates all installed packages.
+Updates all explicitly installed packages.
 
 ### `prune-logs`
 

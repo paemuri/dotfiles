@@ -1,0 +1,33 @@
+#!/bin/sh
+
+# Prints a package list with comments, blank lines, and trailing whitespace
+# removed.
+
+help() {
+  cat <<'EOF'
+Strips comments, blank lines, and trailing whitespace from FILE.
+
+Usage: clean-comments FILE
+
+Arguments:
+  FILE  File to clean
+EOF
+}
+
+usage_error() {
+  echo "clean-comments: $1" >&2
+  echo "Run \`clean-comments --help\` for usage." >&2
+  exit 2
+}
+
+case $1 in
+  -h|--help)
+    help
+    exit 0
+    ;;
+esac
+
+test "$#" -gt 0 || usage_error "missing file"
+test -r "$1" || usage_error "cannot read: $1"
+
+sed -e 's/#.*//' -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//' -e '/^$/d' "$1"

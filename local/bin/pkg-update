@@ -9,3 +9,8 @@ if orphans="$(paru -Qtdq)" && test -n "$orphans"
 then
   paru -Rns --noconfirm $orphans
 fi
+
+if command -v npm > /dev/null 2>&1
+then
+  npm update --global
+fi

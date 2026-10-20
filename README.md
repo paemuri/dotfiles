@@ -25,7 +25,7 @@ These are my configuration files for my personal notebook running Arch Linux.
 - `config/`: program configurations
 - `local/bin/`: personal executables
 - `local/share/applications/`: personal .desktop files
-- `local/share/packages/`: lists of used Arch packages
+- `local/share/packages/`: lists of used packages
 
 ### Things that I use
 
