@@ -31,6 +31,13 @@ do
 
     ln -snfv "$item" ~/."$dir"/
   done
+
+  # Remove links whose target no longer exists, e.g. after a config was deleted
+  # or renamed in the repository.
+  for link in ~/."$dir"/*
+  do
+    test -L "$link" && test ! -e "$link" && rm -f "$link"
+  done
 done
 
 # Exceptions; files located outside of XDG dirs.
