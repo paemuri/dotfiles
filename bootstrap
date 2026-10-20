@@ -1,5 +1,7 @@
 #!/bin/sh
 
+set -e
+
 here="$(realpath "$(dirname "$0")")"
 . "$here"/config/bash/env
 test -r "$here"/config/bash/secret && . "$here"/config/bash/secret
@@ -57,7 +59,7 @@ then
 fi
 
 if test -n "$MULLVAD_ACCOUNT_NUMBER" && \
-  test "$(mullvad account get)" = "Not logged in on any account"
+  mullvad account get 2>/dev/null | grep -qi 'not logged in'
 then
   mullvad account login "$MULLVAD_ACCOUNT_NUMBER"
   mullvad lockdown-mode set on
