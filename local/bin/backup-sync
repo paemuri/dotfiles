@@ -11,8 +11,20 @@ echo "Logging to $log_file"
 
 exec > "$log_file" 2>&1
 
+# keys is copied, not synced, to prevent retarded overwrites. Also, GnuPG junk
+# is ignored.
+echo "Syncing keys..."
+rclone copy ~/keys/ proton:/keys/ \
+  --exclude 'gnupg/.#lk*' \
+  --exclude 'gnupg/S.*' \
+  --exclude 'gnupg/random_seed' \
+  --protondrive-replace-existing-draft=true \
+  --verbose \
+  "$@"
+echo "Synced keys."
+echo
+
 for dir in \
-  keys \
   documents \
   audios \
   media \
