@@ -37,6 +37,10 @@ manually.
 Translates config values from `config/gtk-3.0/settings.ini` that GTK ignores
 into `gsettings` commands.
 
+### `fmt-pfp`
+
+Writes my personal profile picture in the given size (in pixels).
+
 ### `pkg-install`
 
 Installs the packages listed in `~/.local/share/packages/` and configure package

@@ -1,0 +1,81 @@
+#!/bin/sh
+
+set -eu
+
+# Resizes the 2048px master profile picture to SIZE pixels square, writing
+# ./pfp-SIZE.jpg in the current directory.
+
+help() {
+  cat <<'EOF'
+Resizes the 2048px master profile picture to a square JPEG.
+
+Usage: fmt-pfp SIZE
+
+Arguments:
+  SIZE  Output edge length in pixels (1-2048)
+
+Output:
+  ./pfp-SIZE.jpg
+EOF
+}
+
+usage_error() {
+  echo "fmt-pfp: $1" >&2
+  echo "Run \`fmt-pfp --help\` for usage." >&2
+  exit 2
+}
+
+case ${1-} in
+  -h|--help)
+    help
+    exit 0
+    ;;
+esac
+
+test "$#" -eq 1 || usage_error "expected exactly one argument"
+
+src="$HOME/gallery/pfp/2048.jpg"
+
+test -r "$src" || usage_error "cannot read: $src"
+
+size=$1
+case $size in
+  ''|*[!0-9]*) usage_error "SIZE must be a positive integer: $size";;
+esac
+
+# Strip leading zeros so 0512 and 512 behave the same.
+while test "${size#0}" != "$size"; do
+  size=${size#0}
+done
+
+test -n "$size" || usage_error "SIZE must be positive"
+
+# Check the length before doing arithmetic: `test` cannot handle arbitrarily
+# large integers.
+case $size in
+  ????*) usage_error "SIZE must not exceed 2048";;
+esac
+
+test "$size" -le 2048 || usage_error "SIZE must not exceed 2048"
+
+out="./pfp-$size.jpg"
+
+test ! -e "$out" || {
+  echo "fmt-pfp: $out already exists; remove it first." >&2
+  exit 1
+}
+
+if test "$size" -eq 2048; then
+  # Already the target size: copy the bytes instead of re-encoding.
+  cp -- "$src" "$out"
+else
+  magick "$src" \
+    -filter Lanczos \
+    -resize "${size}x${size}" \
+    -sampling-factor 4:4:4 \
+    -quality 96 \
+    -define jpeg:dct-method=float \
+    "$out"
+fi
+
+echo "Wrote $out."
