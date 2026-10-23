@@ -90,6 +90,7 @@ lldb
 opencode
 rustup
 shellcheck
+standard
 superhtml
 typst
 volta-bin

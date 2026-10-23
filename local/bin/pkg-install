@@ -8,5 +8,3 @@ clean-comments "$XDG_DATA_HOME/packages/arch" | paru -S --needed --noconfirm -
 
 rustup toolchain install stable
 volta install node npm
-
-clean-comments "$XDG_DATA_HOME/packages/npm" | xargs -r npm install --global
