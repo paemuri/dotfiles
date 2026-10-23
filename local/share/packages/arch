@@ -91,7 +91,7 @@ opencode
 rustup
 shellcheck
 standard
-superhtml
+superhtml-git
 typst
 volta-bin
 zig
