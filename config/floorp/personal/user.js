@@ -16,6 +16,9 @@ user_pref("javascript.use_us_english_locale", true);
 user_pref("layout.spellcheckDefault", 0);
 user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
 
+// Graphics.
+user_pref("dom.webgpu.enabled", true);
+
 // Search & URL bar.
 user_pref("browser.search.separatePrivateDefault.enabled", true);
 user_pref("browser.search.suggest.enabled", false);
