@@ -8,9 +8,8 @@ These are my configuration files for my personal notebook running Arch Linux.
 
 ### Ideas
 
-1. If possible (and not too cumbersome), try to write down as many
-   definitions/configurations as possible. Updates can change the default values
-   and that is a pain in the ass.
+1. Do not write definitions/configurations that have the same value as their
+   default. That is a pain in the ass to maintain.
 2. Follow XDG directories whenever it's possible. It's way more organized than
    leaving multiple hidden files at `$HOME`.
 3. All scripts should be POSIX compliant, with a plain `/bin/sh` shebang, and
