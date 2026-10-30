@@ -83,3 +83,17 @@ user_pref("toolkit.telemetry.server", "data:,");
 user_pref("toolkit.telemetry.shutdownPingSender.enabled", false);
 user_pref("toolkit.telemetry.unified", false);
 user_pref("toolkit.telemetry.updatePing.enabled", false);
+
+// AI/ML features.
+user_pref("browser.ai.control.default", "blocked");
+user_pref("browser.ml.enable", false);
+user_pref("browser.ml.chat.enabled", false);
+user_pref("browser.ml.chat.page", false);
+user_pref("browser.ml.chat.shortcuts", false);
+user_pref("browser.ml.linkPreview.enabled", false);
+user_pref("extensions.ml.enabled", false);
+
+// Tab groups: manual only.
+user_pref("browser.tabs.dragDrop.createGroup.enabled", false);
+user_pref("browser.tabs.groups.smart.enabled", false);
+user_pref("browser.tabs.groups.smart.userEnabled", false);
