@@ -86,6 +86,12 @@ user_pref("toolkit.telemetry.updatePing.enabled", false);
 
 // AI/ML features.
 user_pref("browser.ai.control.default", "blocked");
+user_pref("browser.ai.control.linkPreviewKeyPoints", "blocked");
+user_pref("browser.ai.control.pdfjsAltText", "blocked");
+user_pref("browser.ai.control.sidebarChatbot", "blocked");
+user_pref("browser.ai.control.smartTabGroups", "blocked");
+user_pref("browser.ai.control.smartWindow", "blocked");
+user_pref("browser.ai.control.translations", "blocked");
 user_pref("browser.ml.enable", false);
 user_pref("browser.ml.chat.enabled", false);
 user_pref("browser.ml.chat.page", false);
