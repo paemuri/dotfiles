@@ -23,5 +23,4 @@ followTags = true
 defaultBranch = main
 
 [sendemail]
-verify = off
 annotate = yes

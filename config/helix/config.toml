@@ -4,7 +4,6 @@ theme = "gruvbox_dark_hard"
 line-number = "relative"
 bufferline = "always"
 auto-pairs = false
-auto-format = true
 
 [editor.file-picker]
 hidden = false

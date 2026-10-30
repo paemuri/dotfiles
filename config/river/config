@@ -15,7 +15,6 @@ riverctl border-color-urgent    0x9d0006
 riverctl border-width           5
 
 # Layout.
-riverctl attach-mode    top
 riverctl default-layout rivertile
 
 ###########
@@ -138,9 +137,8 @@ do
 done
 
 # Cursor.
-riverctl xcursor-theme        "$XCURSOR_THEME"
-riverctl focus-follows-cursor disabled
-riverctl set-cursor-warp      on-output-change
+riverctl xcursor-theme   "$XCURSOR_THEME"
+riverctl set-cursor-warp on-output-change
 
 # Passthrough mode.
 riverctl declare-mode passthrough

@@ -1,8 +1,6 @@
 // General.
 user_pref("browser.aboutConfig.showWarning", false);
-user_pref("browser.download.autohideButton", true);
 user_pref("browser.download.dir", "/home/paemuri/downloads");
-user_pref("browser.download.useDownloadDir", true);
 user_pref("browser.preferences.experimental.hidden", true);
 user_pref("browser.shell.checkDefaultBrowser", false);
 user_pref("browser.startup.homepage", "chrome://browser/content/blanktab.html");
@@ -17,7 +15,6 @@ user_pref("intl.locale.requested", "en");
 user_pref("javascript.use_us_english_locale", true);
 user_pref("layout.spellcheckDefault", 0);
 user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
-user_pref("webgl.disabled", false);
 
 // Search & URL bar.
 user_pref("browser.search.separatePrivateDefault.enabled", true);
@@ -53,10 +50,8 @@ user_pref("extensions.formautofill.addresses.capture.enabled", false);
 user_pref("extensions.formautofill.addresses.enabled", false);
 user_pref("extensions.formautofill.creditCards.enabled", false);
 user_pref("extensions.formautofill.creditCards.supported", "off");
-user_pref("privacy.firstparty.isolate", false);
 user_pref("privacy.globalprivacycontrol.enabled", true);
 user_pref("privacy.history.custom", true);
-user_pref("privacy.resistFingerprinting", false);
 user_pref("privacy.sanitize.sanitizeOnShutdown", false);
 user_pref("privacy.trackingprotection.enabled", true);
 user_pref("privacy.trackingprotection.socialtracking.enabled", true);
@@ -111,9 +106,6 @@ user_pref("toolkit.telemetry.updatePing.enabled", false);
 // Extensions.
 user_pref("browser.discovery.enabled", false);
 user_pref("extensions.blocklist.enabled", true);
-user_pref("extensions.getAddons.showPane", false);
-user_pref("extensions.htmlaboutaddons.recommendations.enabled", false);
-user_pref("extensions.webcompat-reporter.enabled", false);
 user_pref("extensions.webcompat.enable_shims", true);
 
 // Devtools.

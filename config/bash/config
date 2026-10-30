@@ -22,7 +22,5 @@ esac
 # Bash only.
 . /usr/share/bash-completion/bash_completion
 shopt -s \
-  checkwinsize \
-  cmdhist \
   globstar \
   histappend
