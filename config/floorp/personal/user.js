@@ -1,43 +1,31 @@
-// Preferences.
+// General.
 user_pref("browser.aboutConfig.showWarning", false);
 user_pref("browser.download.autohideButton", true);
 user_pref("browser.download.dir", "/home/paemuri/downloads");
 user_pref("browser.download.useDownloadDir", true);
 user_pref("browser.preferences.experimental.hidden", true);
-user_pref("browser.search.separatePrivateDefault.enabled", true);
-user_pref("browser.search.suggest.enabled", false);
 user_pref("browser.shell.checkDefaultBrowser", false);
 user_pref("browser.startup.homepage", "chrome://browser/content/blanktab.html");
 user_pref("browser.startup.page", 3);
 user_pref("browser.tabs.warnOnClose", true);
 user_pref("browser.toolbars.bookmarks.visibility", "never");
 user_pref("browser.translations.enable", false);
-user_pref("browser.urlbar.suggest.searches", false);
-user_pref("extensions.formautofill.addresses.capture.enabled", false);
-user_pref("extensions.formautofill.addresses.enabled", false);
-user_pref("extensions.formautofill.creditCards.enabled", false);
-user_pref("extensions.formautofill.creditCards.supported", "off");
-user_pref("extensions.getAddons.showPane", false);
+user_pref("dom.storage.next_gen", true);
 user_pref("findbar.highlightAll", true);
 user_pref("intl.accept_languages", "en-US, en, pt-BR, pt");
 user_pref("intl.locale.requested", "en");
 user_pref("javascript.use_us_english_locale", true);
 user_pref("layout.spellcheckDefault", 0);
-user_pref("privacy.history.custom", true);
-user_pref("privacy.sanitize.sanitizeOnShutdown", false);
-user_pref("signon.autofillForms", false);
-user_pref("signon.generation.enabled", false);
-user_pref("signon.management.page.breach-alerts.enabled", false);
-user_pref("signon.rememberSignons", false);
 user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
 user_pref("webgl.disabled", false);
 
-// Security/privacy.
-user_pref("browser.crashReports.unsubmittedCheck.autoSubmit2", false);
-user_pref("browser.discovery.enabled", false);
-user_pref("browser.helperApps.deleteTempFileOnExit", true);
-user_pref("browser.ipProtection.blockIPProtectionCallouts", true);
-user_pref("browser.ipProtection.enabled", true);
+// Search & URL bar.
+user_pref("browser.search.separatePrivateDefault.enabled", true);
+user_pref("browser.search.suggest.enabled", false);
+user_pref("browser.urlbar.suggest.quicksuggest.sponsored", false);
+user_pref("browser.urlbar.suggest.searches", false);
+
+// New tab.
 user_pref("browser.newtab.preload", false);
 user_pref("browser.newtabpage.activity-stream.feeds.discoverystreamfeed", false);
 user_pref("browser.newtabpage.activity-stream.feeds.section.topstories", false);
@@ -47,39 +35,50 @@ user_pref("browser.newtabpage.activity-stream.showSponsored", false);
 user_pref("browser.newtabpage.activity-stream.showSponsoredTopSites", false);
 user_pref("browser.newtabpage.activity-stream.telemetry", false);
 user_pref("browser.newtabpage.enabled", false);
+
+// Passwords.
+user_pref("signon.autofillForms", false);
+user_pref("signon.generation.enabled", false);
+user_pref("signon.management.page.breach-alerts.enabled", false);
+user_pref("signon.rememberSignons", false);
+
+// Privacy.
+user_pref("browser.helperApps.deleteTempFileOnExit", true);
 user_pref("browser.pagethumbnails.capturing_disabled", true);
-user_pref("browser.places.speculativeConnect.enabled", false);
 user_pref("browser.region.network.url", "");
 user_pref("browser.region.update.enabled", false);
-user_pref("browser.safebrowsing.downloads.remote.enabled", false);
-user_pref("browser.tabs.crashReporting.sendReport", false);
 user_pref("browser.uitour.enabled", false);
 user_pref("browser.uitour.url", "");
-user_pref("browser.urlbar.suggest.quicksuggest.sponsored", false);
-user_pref("datareporting.healthreport.uploadEnabled", false);
-user_pref("datareporting.policy.dataSubmissionEnabled", false);
-user_pref("devtools.debugger.remote-enabled", false);
+user_pref("extensions.formautofill.addresses.capture.enabled", false);
+user_pref("extensions.formautofill.addresses.enabled", false);
+user_pref("extensions.formautofill.creditCards.enabled", false);
+user_pref("extensions.formautofill.creditCards.supported", "off");
+user_pref("privacy.firstparty.isolate", false);
+user_pref("privacy.globalprivacycontrol.enabled", true);
+user_pref("privacy.history.custom", true);
+user_pref("privacy.resistFingerprinting", false);
+user_pref("privacy.sanitize.sanitizeOnShutdown", false);
+user_pref("privacy.trackingprotection.enabled", true);
+user_pref("privacy.trackingprotection.socialtracking.enabled", true);
+user_pref("privacy.window.name.update.enabled", true);
+user_pref("services.sync.engine.floorp-workspaces", false);
+user_pref("services.sync.engine.passwords", false);
+user_pref("services.sync.engine.tabs", false);
+
+// Security & network.
+user_pref("browser.ipProtection.blockIPProtectionCallouts", true);
+user_pref("browser.ipProtection.enabled", true);
+user_pref("browser.places.speculativeConnect.enabled", false);
+user_pref("browser.safebrowsing.downloads.remote.enabled", false);
 user_pref("dom.disable_window_move_resize", true);
 user_pref("dom.security.https_only_mode", true);
 user_pref("dom.security.https_only_mode_send_http_background_request", false);
-user_pref("dom.storage.next_gen", true);
-user_pref("extensions.blocklist.enabled", true);
-user_pref("extensions.htmlaboutaddons.recommendations.enabled", false);
-user_pref("extensions.webcompat-reporter.enabled", false);
-user_pref("extensions.webcompat.enable_shims", true);
 user_pref("network.http.speculative-parallel-limit", 0);
 user_pref("network.prefetch-next", false);
-user_pref("nimbus.rollouts.enabled", false);
 user_pref("pdfjs.disabled", true);
 user_pref("pdfjs.enableScripting", false);
 user_pref("permissions.delegation.enabled", false);
 user_pref("permissions.manager.defaultsUrl", "");
-user_pref("privacy.firstparty.isolate", false);
-user_pref("privacy.globalprivacycontrol.enabled", true);
-user_pref("privacy.resistFingerprinting", false);
-user_pref("privacy.trackingprotection.enabled", true);
-user_pref("privacy.trackingprotection.socialtracking.enabled", true);
-user_pref("privacy.window.name.update.enabled", true);
 user_pref("security.cert_pinning.enforcement_level", 2);
 user_pref("security.dialog_enable_delay", 1000);
 user_pref("security.family_safety.mode", 0);
@@ -89,9 +88,13 @@ user_pref("security.remote_settings.crlite_filters.enabled", true);
 user_pref("security.ssl.require_safe_negotiation", true);
 user_pref("security.tls.enable_0rtt_data", false);
 user_pref("security.tls.version.enable-deprecated", false);
-user_pref("services.sync.engine.floorp-workspaces", false);
-user_pref("services.sync.engine.passwords", false);
-user_pref("services.sync.engine.tabs", false);
+
+// Telemetry & experiments.
+user_pref("browser.crashReports.unsubmittedCheck.autoSubmit2", false);
+user_pref("browser.tabs.crashReporting.sendReport", false);
+user_pref("datareporting.healthreport.uploadEnabled", false);
+user_pref("datareporting.policy.dataSubmissionEnabled", false);
+user_pref("nimbus.rollouts.enabled", false);
 user_pref("toolkit.coverage.endpoint.base", "");
 user_pref("toolkit.coverage.opt-out", true);
 user_pref("toolkit.telemetry.archive.enabled", false);
@@ -105,7 +108,16 @@ user_pref("toolkit.telemetry.shutdownPingSender.enabled", false);
 user_pref("toolkit.telemetry.unified", false);
 user_pref("toolkit.telemetry.updatePing.enabled", false);
 
+// Extensions.
+user_pref("browser.discovery.enabled", false);
+user_pref("extensions.blocklist.enabled", true);
+user_pref("extensions.getAddons.showPane", false);
+user_pref("extensions.htmlaboutaddons.recommendations.enabled", false);
+user_pref("extensions.webcompat-reporter.enabled", false);
+user_pref("extensions.webcompat.enable_shims", true);
+
 // Devtools.
+user_pref("devtools.debugger.remote-enabled", false);
 user_pref("devtools.netmonitor.persistlog", true);
 user_pref("devtools.webconsole.persistlog", true);
 
@@ -117,10 +129,10 @@ user_pref("browser.ai.control.sidebarChatbot", "blocked");
 user_pref("browser.ai.control.smartTabGroups", "blocked");
 user_pref("browser.ai.control.smartWindow", "blocked");
 user_pref("browser.ai.control.translations", "blocked");
-user_pref("browser.ml.enable", false);
 user_pref("browser.ml.chat.enabled", false);
 user_pref("browser.ml.chat.page", false);
 user_pref("browser.ml.chat.shortcuts", false);
+user_pref("browser.ml.enable", false);
 user_pref("browser.ml.linkPreview.enabled", false);
 user_pref("extensions.ml.enabled", false);
 
